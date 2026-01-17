@@ -16,7 +16,7 @@ const Services6 = () => {
 			id: "ai-allied-services",
 			name: "AI & Allied Services",
 			title: "AI & Allied Services",
-			desc: "enfycon pioneers in AI and allied services, crafting innovative solutions that redefine industries. From machine learning to cutting-edge technologies, we drive transformative outcomes for a smarter future.",
+			desc: "At enfycon, we lead the way in AI and allied services, building intelligent solutions that redefine how industries operate. Leveraging machine learning and emerging technologies, we drive meaningful transformation for a smarter tomorrow.",
 			services: getALlServices()?.slice(0, 3),
 		},
 		{
@@ -53,7 +53,7 @@ const Services6 = () => {
 								<i className="tji-box"></i>OUR Services
 							</span>
 							<h2 className="sec-title  title-anim tw:!text-white ">
-								Comprehensive Services for Corporates
+								Innovative Solutions for Modern Enterprises
 							</h2>
 						</div>
 					</div>
