@@ -14,7 +14,6 @@ export default function Services() {
 		<div>
 			<BackToTop />
 			<Header />
-			<Header isStickyHeader={true} />
 			<div id="smooth-wrapper">
 				<div id="smooth-content">
 					<main>

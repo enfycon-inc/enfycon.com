@@ -46,8 +46,8 @@ const Header = ({ isStickyHeader = false }) => {
 
 			<header
 				className={`header-area header-2 section-gap-x ${isStickyHeader
-						? `header-duplicate header-sticky ${isSticky ? "sticky" : ""}`
-						: "header-absolute"
+					? `header-duplicate header-sticky ${isSticky ? "sticky" : ""}`
+					: "header-absolute"
 					}`}
 			>
 				<div className="container-fluid">

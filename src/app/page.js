@@ -21,7 +21,6 @@ export default function Home() {
 		<div>
 			<BackToTop />
 			<Header />
-			<Header isStickyHeader={true} />
 			<div id="smooth-wrapper">
 				<div id="smooth-content">
 					<main>
@@ -31,7 +30,7 @@ export default function Home() {
 						<Industries1 />
 						<About2 />
 						<Services9 />
-					
+
 						<Services2 />
 						<Portfolios2 />
 						<Process />

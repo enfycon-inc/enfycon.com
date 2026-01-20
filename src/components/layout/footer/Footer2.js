@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Footer2 = () => {
 	return (
-		<footer className="tj-footer-section footer-2 section-gap-x">
+		<footer className="tj-footer-section footer-2">
 			<div className="footer-top">
 				<div className="container">
 					<div className="row">
@@ -155,9 +155,9 @@ const Footer2 = () => {
 							<div className="copyright-content-area">
 								<div className="copyright-text">
 									<p>
-										&copy; 2025
+										&copy; {new Date().getFullYear()} {" "}
 										<Link
-											href="https://themeforest.net/user/theme-junction/portfolio"
+											href="https://enfycon.com"
 											target="_blank"
 										>
 											enfycon

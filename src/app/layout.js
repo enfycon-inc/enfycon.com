@@ -16,7 +16,6 @@ import "./assets/css/nice-select2.css";
 import "./assets/css/odometer-theme-default.css";
 import "./globals.scss";
 import "./tailwind.css";
-import "./assets/css/deb.css";
 
 
 const bodyFont = Mona_Sans({
