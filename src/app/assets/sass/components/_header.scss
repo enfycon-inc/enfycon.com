@@ -11,43 +11,86 @@ START: Theme Header CSS
 	z-index: 99;
 
 
-&.header-2 {
-	&.header-absolute {
-		position: fixed;
-		top: 0px;
-		left: 0;
-		width: 100%;
-		z-index: 999;
-		background-color: rgb(14, 14, 41);
-		border-radius: 0;
-
-		>.container-fluid {
-			--bs-gutter-x: 0;
-
-			>.row {
-				--bs-gutter-x: 0;
-			}
-		}
-
-		.header-wrapper {
+	&.header-2 {
+		&.header-absolute {
+			position: fixed;
+			top: 0px;
+			left: 0;
+			width: 100%;
+			z-index: 999;
 			background-color: rgb(14, 14, 41);
-			backdrop-filter: none;
-			padding: 0 20px;
 			border-radius: 0;
-		}
 
-		.search_popup {
-			background-color: rgba(255, 255, 255, 0.1);
-			backdrop-filter: blur(10px);
+			>.container-fluid {
+				--bs-gutter-x: 0;
 
-			.search-box {
-
-				input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="search"]),
-				input[type="text"] {
-					background-color: var(--tj-color-common-white);
+				>.row {
+					--bs-gutter-x: 0;
 				}
 			}
+
+			.header-wrapper {
+				background-color: rgb(14, 14, 41);
+				backdrop-filter: none;
+				padding: 0 20px;
+				border-radius: 0;
+			}
+
+			.search_popup {
+				background-color: rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(10px);
+
+				.search-box {
+
+					input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="search"]),
+					input[type="text"] {
+						background-color: var(--tj-color-common-white);
+					}
+				}
+			}
+
+			&.section-gap-x {
+				margin-inline-start: 0;
+				margin-inline-end: 0;
+			}
+
+			@media #{$sm, $xs} {
+				top: 0px;
+				inset-inline-start: 0px;
+				width: 100%;
+			}
 		}
+
+		&.header-sticky {
+			.header-wrapper {
+				padding: 0 8px;
+			}
+		}
+	}
+
+
+	&.header-duplicate {
+		display: none;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&.sticky {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		inset-inline-start: 0;
+		-webkit-animation: sticky 0.9s;
+		animation: sticky 0.9s;
+		border-bottom: none;
+		z-index: 1002;
+		-webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+		box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+		opacity: 1;
+		visibility: visible;
+		// background-color: var(--tj-color-common-white);
+		background-color: rgb(14, 14, 41);
+		display: block;
 
 		&.section-gap-x {
 			margin-inline-start: 0;
@@ -55,98 +98,52 @@ START: Theme Header CSS
 		}
 
 		@media #{$sm, $xs} {
-			top: 0px;
-			inset-inline-start: 0px;
 			width: 100%;
-		}
-	}
 
-	&.header-sticky {
-		.header-wrapper {
-			padding: 0 8px;
-		}
-	}
-}
-
-
-&.header-duplicate {
-	display: none;
-	opacity: 0;
-	visibility: hidden;
-}
-
-&.sticky {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	inset-inline-start: 0;
-	-webkit-animation: sticky 0.9s;
-	animation: sticky 0.9s;
-	border-bottom: none;
-	z-index: 1002;
-	-webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
-	box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
-	opacity: 1;
-	visibility: visible;
-	// background-color: var(--tj-color-common-white);
-	background-color: rgb(14, 14, 41);
-	display: block;
-
-	&.section-gap-x {
-		margin-inline-start: 0;
-		margin-inline-end: 0;
-	}
-
-	@media #{$sm, $xs} {
-		width: 100%;
-
-		&.section-gap-x {
-			margin-inline-start: 0;
-			margin-inline-end: 0;
-		}
-	}
-}
-
-@media #{$xl} {
-
-	
-}
-
-@media #{$lg} {
-
-	
-
-	&.header-2 {
-		&.header-absolute {
-			.header-wrapper {
-				padding: 0 16px;
-			}
-		}
-
-		&.header-sticky {
-			.header-wrapper {
-				padding: 0 4px;
+			&.section-gap-x {
+				margin-inline-start: 0;
+				margin-inline-end: 0;
 			}
 		}
 	}
-}
 
-@media #{$md, $sm, $xs} {
+	@media #{$xl} {}
 
-	&.header-2 {
-		&.header-absolute {
-			.header-wrapper {
-				padding: 15px 12px;
+	@media #{$lg} {
+
+
+
+		&.header-2 {
+			&.header-absolute {
+				.header-wrapper {
+					padding: 0 16px;
+				}
 			}
-		}
 
-		&.header-sticky {
-			.header-wrapper {
-				padding: 15px 0;
+			&.header-sticky {
+				.header-wrapper {
+					padding: 0 4px;
+				}
 			}
 		}
 	}
-}
+
+	@media #{$md, $sm, $xs} {
+
+		&.header-2 {
+			&.header-absolute {
+				.header-wrapper {
+					padding: 15px 12px;
+				}
+			}
+
+			&.header-sticky {
+				.header-wrapper {
+					padding: 15px 0;
+				}
+			}
+		}
+	}
 }
 
 .header-top {
@@ -298,6 +295,9 @@ START: Theme Header CSS
 }
 
 .site_logo {
+	display: flex;
+	align-items: center;
+
 	.logo {
 		display: inline-block;
 		max-width: 136px;
