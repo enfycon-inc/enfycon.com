@@ -2,6 +2,8 @@
 import BootstrapWrapper from "@/components/shared/wrappers/BootstrapWrapper";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { serviceCategories } from "@/data/servicesData";
 import CtaSidebar from "../cta/CtaSidebar";
 
 const ServicesDetailsPrimary = ({ option }) => {
@@ -175,28 +177,89 @@ const ServicesDetailsPrimary = ({ option }) => {
 					</div>
 					<div className="col-lg-4">
 						<aside className="tj-main-sidebar">
-							{/* <!-- Service List --> */}
+							{/* <!-- Service List with Pagination --> */}
 							<div
 								className="tj-sidebar-widget service-categories wow fadeInUp"
 								data-wow-delay=".1s"
 							>
 								<h4 className="widget-title">More Services</h4>
-								<ul>
-									{sidebarItems?.length
-										? sidebarItems?.map(({ shortTitle, id }, idx) => (
-											<li key={idx}>
-												<Link
-													className={`${currentId === id ? "active" : ""}`}
-													href={`/services/${id}`}
-												>
-													{shortTitle}
-													<span className="icon">
-														<i className="tji-arrow-right"></i>
+								{(() => {
+									const itemsPerPage = 5;
+									const [currentPage, setCurrentPage] = useState(1);
+									const allItems = items || [];
+									const totalPages = Math.ceil(allItems.length / itemsPerPage);
+
+									const currentItems = allItems.slice(
+										(currentPage - 1) * itemsPerPage,
+										currentPage * itemsPerPage
+									);
+
+									return (
+										<>
+											<ul>
+												{currentItems.length > 0 ? (
+													currentItems.map(({ shortTitle, id }, idx) => (
+														<li key={idx}>
+															<Link
+																className={`${currentId === id ? "active" : ""}`}
+																href={`/services/${id}`}
+															>
+																{shortTitle}
+																<span className="icon">
+																	<i className="tji-arrow-right"></i>
+																</span>
+															</Link>
+														</li>
+													))
+												) : (
+													<li>No items available</li>
+												)}
+											</ul>
+											{totalPages > 1 && (
+												<div className="pagination-controls d-flex justify-content-between mt-3 align-items-center">
+													<button
+														className="btn btn-sm btn-outline-light border-0"
+														onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+														disabled={currentPage === 1}
+														style={{ opacity: currentPage === 1 ? 0.5 : 1 }}
+													>
+														<i className="tji-arrow-left"></i> Prev
+													</button>
+													<span className="text-muted small">
+														{currentPage} / {totalPages}
 													</span>
-												</Link>
-											</li>
-										))
-										: ""}
+													<button
+														className="btn btn-sm btn-outline-light border-0"
+														onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+														disabled={currentPage === totalPages}
+														style={{ opacity: currentPage === totalPages ? 0.5 : 1 }}
+													>
+														Next <i className="tji-arrow-right"></i>
+													</button>
+												</div>
+											)}
+										</>
+									);
+								})()}
+							</div>
+
+							{/* <!-- Service Categories Widget --> */}
+							<div
+								className="tj-sidebar-widget service-categories wow fadeInUp"
+								data-wow-delay=".2s"
+							>
+								<h4 className="widget-title">Service Categories</h4>
+								<ul>
+									{serviceCategories?.map((category, idx) => (
+										<li key={idx}>
+											<a href="#" onClick={(e) => e.preventDefault()}>
+												{category.name}
+												<span className="icon">
+													<i className="tji-arrow-right"></i>
+												</span>
+											</a>
+										</li>
+									))}
 								</ul>
 							</div>
 

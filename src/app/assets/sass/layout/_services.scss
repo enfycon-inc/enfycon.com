@@ -667,8 +667,60 @@ START: Services CSS
 
 @media (min-width: 992px) {
 	.service-details-image {
-		height: 350px !important;
+		height: 390px !important;
 		object-fit: cover !important;
 		width: 100% !important;
+	}
+}
+
+// Tablet Devices
+@media #{$md} {
+	.service-details-image {
+		height: 300px !important;
+		object-fit: cover !important;
+		width: 100% !important;
+	}
+}
+
+// Mobile Devices
+@media #{$sm, $xs} {
+	.service-details-image {
+		height: 250px !important;
+		object-fit: cover !important;
+		width: 100% !important;
+	}
+}
+
+.service-section {
+	h3 {
+		font-family: var(--tj-ff-heading);
+		font-weight: var(--tj-fw-bold);
+		font-size: var(--tj-fs-h4); // Using h4 size for section headers
+		color: var(--tj-color-theme-secondary);
+		margin-bottom: 20px;
+	}
+
+	h5 {
+		font-family: var(--tj-ff-heading);
+		font-weight: var(--tj-fw-sbold);
+		font-size: var(--tj-fs-h6);
+		color: var(--tj-color-theme-secondary);
+	}
+
+	p,
+	li {
+		font-family: var(--tj-ff-body);
+		font-size: 18px; // Increased from default for better readability
+		color: var(--tj-color-text-body);
+		line-height: 1.7; // Increased line height for better readability
+	}
+
+	.challenge-item {
+		transition: all 0.3s ease-in-out;
+
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+		}
 	}
 }
