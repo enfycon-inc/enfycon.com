@@ -39,7 +39,7 @@ const ServicesDetailsPrimary = ({ option }) => {
 							<div className="blog-text">
 								{/* Service Overview */}
 								{currentItem?.overview && (
-									<div className="wow fadeInUp" data-wow-delay=".3s">
+									<div className="service-section wow fadeInUp" data-wow-delay=".3s">
 										{currentItem.overview.split('\n').map((paragraph, index) => (
 											paragraph.trim() && <p key={index} className="mb-4">{paragraph}</p>
 										))}
@@ -55,7 +55,7 @@ const ServicesDetailsPrimary = ({ option }) => {
 												<div className="col-md-6 mb-3" key={idx}>
 													<div className="challenge-item p-3 py-4 border rounded h-100 bg-light">
 														<h5 className="h6 text-primary">{item.title}</h5>
-														<p className="small mb-0 text-muted">{item.desc}</p>
+														<p className="mb-0">{item.desc}</p>
 													</div>
 												</div>
 											))}
