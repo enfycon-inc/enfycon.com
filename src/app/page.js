@@ -10,7 +10,7 @@ import Services2 from "@/components/sections/services/Services2";
 import Services6 from "@/components/sections/services/Services6";
 import Services9 from "@/components/sections/services/Services9";
 import Testimonials2 from "@/components/sections/testimonials/Testimonials2";
-import IndustryCardHome from "@/components/shared/cards/IndustryCardHome";
+import Industries1 from "@/components/sections/industries/Industries1";
 import BackToTop from "@/components/shared/others/BackToTop";
 import ClientWrapper from "@/components/shared/wrappers/ClientWrapper";
 
@@ -25,7 +25,7 @@ export default function Home() {
 						<Hero2 />
 						<Brands2 />
 						<Services6 />
-					<IndustryCardHome/>
+						<Industries1 />
 						<About2 />
 						<Services9 />
 

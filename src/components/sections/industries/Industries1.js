@@ -1,45 +1,25 @@
 "use client";
-import IndustryCard from "@/components/shared/cards/IndustryCard";
+import IndustryCardHome from "@/components/shared/cards/IndustryCardHome";
+
+import { industriesData } from "@/data/industriesData";
 
 const Industries1 = () => {
-    const industries = [
-        {
-            id: "healthcare",
-            title: "HEALTHCARE",
-            icon: "fa-solid fa-heart-pulse",
-            bgColor: "#8B5CF6", // Vibrant purple
-        },
-        {
-            id: "legal",
-            title: "LEGAL",
-            icon: "fa-solid fa-scale-balanced",
-            bgColor: "#1E40AF", // Deep blue
-        },
-        {
-            id: "finance",
-            title: "FINANCE",
-            icon: "fa-solid fa-chart-line",
-            bgColor: "#10B981", // Emerald green
-        },
-        {
-            id: "banking",
-            title: "BANKING",
-            icon: "fa-solid fa-building-columns",
-            bgColor: "#0891B2", // Teal
-        },
-        {
-            id: "manufacturing",
-            title: "MANUFACTURING",
-            icon: "fa-solid fa-industry",
-            bgColor: "#F97316", // Vibrant orange
-        },
-        {
-            id: "human-resources",
-            title: "HUMAN RESOURCES",
-            icon: "fa-solid fa-users",
-            bgColor: "#EC4899", // Vibrant pink/magenta
-        },
-    ];
+    const industryConfig = {
+        banking: { color: "#0891B2", icon: "fa-solid fa-building-columns" }, // Teal
+        finance: { color: "#10B981", icon: "fa-solid fa-chart-line" }, // Emerald green
+        healthcare: { color: "#8B5CF6", icon: "fa-solid fa-heart-pulse" }, // Vibrant purple
+        "human-resource": { color: "#EC4899", icon: "fa-solid fa-users" }, // Vibrant pink
+        legal: { color: "#1E40AF", icon: "fa-solid fa-scale-balanced" }, // Deep blue
+        logistics: { color: "#F59E0B", icon: "fa-solid fa-truck-fast" }, // Amber
+        manufacturing: { color: "#F97316", icon: "fa-solid fa-industry" }, // Vibrant orange
+        "supply-chain": { color: "#6366F1", icon: "fa-solid fa-boxes-stacked" }, // Indigo
+    };
+
+    const industries = industriesData.map(industry => ({
+        ...industry,
+        bgColor: industryConfig[industry.id]?.color || "#64748B",
+        icon: industryConfig[industry.id]?.icon || "fa-solid fa-briefcase"
+    }));
 
     return (
         <section className="industry-section section-top-gap section-bottom-gap">
@@ -67,8 +47,8 @@ const Industries1 = () => {
                 </div>
                 <div className="row justify-content-center g-4">
                     {industries.map((industry, idx) => (
-                        <div key={idx} className="col-12 col-sm-6 col-md-4 col-lg-2">
-                            <IndustryCard industry={industry} idx={idx} />
+                        <div key={idx} className="col-12 col-sm-6 col-md-4 col-lg-3">
+                            <IndustryCardHome industry={industry} idx={idx} />
                         </div>
                     ))}
                 </div>
@@ -76,5 +56,6 @@ const Industries1 = () => {
         </section>
     );
 };
+
 
 export default Industries1;
