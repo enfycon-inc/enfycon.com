@@ -1,0 +1,58 @@
+export const industriesData = [
+    {
+        id: "banking",
+        title: "Banking",
+        desc: "Empowering banking institutions with secure digital solutions, modern core banking systems, and innovative fintech platforms for enhanced customer experiences.",
+        image: "/images/industries/banking.jpg",
+        icon: "tji-banking",
+    },
+    {
+        id: "finance",
+        title: "Finance",
+        desc: "Transforming financial services with intelligent automation, risk management solutions, and next-generation payment systems for the digital economy.",
+        image: "/images/industries/finance.jpg",
+        icon: "tji-finance",
+    },
+    {
+        id: "healthcare",
+        title: "Healthcare",
+        desc: "Revolutionizing healthcare delivery with digital health platforms, telemedicine solutions, and advanced patient management systems.",
+        image: "/images/industries/health-care.jpg",
+        icon: "tji-healthcare",
+    },
+    {
+        id: "human-resource",
+        title: "Human Resource",
+        desc: "Streamlining HR operations with intelligent workforce management, talent acquisition platforms, and employee engagement solutions.",
+        image: "/images/industries/human-resource.jpg",
+        icon: "tji-hr",
+    },
+    {
+        id: "legal",
+        title: "Legal",
+        desc: "Modernizing legal services with case management systems, document automation, and AI-powered legal research platforms.",
+        image: "/images/industries/legal.jpg",
+        icon: "tji-legal",
+    },
+    {
+        id: "logistics",
+        title: "Logistics",
+        desc: "Optimizing logistics operations with real-time tracking, route optimization, and intelligent fleet management solutions.",
+        image: "/images/industries/logistic.jpg",
+        icon: "tji-logistics",
+    },
+    {
+        id: "manufacturing",
+        title: "Manufacturing",
+        desc: "Driving Industry 4.0 transformation with smart factory solutions, IoT integration, and advanced production management systems.",
+        image: "/images/industries/manufacturing.jpg",
+        icon: "tji-manufacturing",
+    },
+    {
+        id: "supply-chain",
+        title: "Supply Chain",
+        desc: "Enhancing supply chain efficiency with end-to-end visibility, predictive analytics, and automated procurement solutions.",
+        image: "/images/industries/supply-chain.jpg",
+        icon: "tji-supply-chain",
+    },
+];
