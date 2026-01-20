@@ -40,7 +40,9 @@ const ServicesDetailsPrimary = ({ option }) => {
 								{/* Service Overview */}
 								{currentItem?.overview && (
 									<div className="wow fadeInUp" data-wow-delay=".3s">
-										<p>{currentItem.overview}</p>
+										{currentItem.overview.split('\n').map((paragraph, index) => (
+											paragraph.trim() && <p key={index} className="mb-4">{paragraph}</p>
+										))}
 									</div>
 								)}
 
@@ -83,7 +85,7 @@ const ServicesDetailsPrimary = ({ option }) => {
 								{/* Why Enfycon Section */}
 								{currentItem?.whyEnfycon?.length > 0 && (
 									<div className="service-section mt-5 wow fadeInUp" data-wow-delay=".3s">
-										<h3 className="h4 mb-4">Why Choose Enfycon?</h3>
+										<h3 className="h4 mb-4">Why Choose enfycon?</h3>
 										<div className="bg-light p-4 rounded border-start border-primary border-4">
 											<ul className="list-unstyled mb-0">
 												{currentItem.whyEnfycon.map((item, idx) => (
