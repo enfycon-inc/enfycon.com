@@ -82,13 +82,13 @@ const ServicesDetailsPrimary = ({ option }) => {
 									</div>
 								)}
 
-								{/* Why Enfycon Section */}
-								{currentItem?.whyEnfycon?.length > 0 && (
+								{/* Why enfycon Section */}
+								{currentItem?.whyenfycon?.length > 0 && (
 									<div className="service-section mt-5 wow fadeInUp" data-wow-delay=".3s">
 										<h3 className="h4 mb-4">Why Choose enfycon?</h3>
 										<div className="bg-light p-4 rounded border-start border-primary border-4">
 											<ul className="list-unstyled mb-0">
-												{currentItem.whyEnfycon.map((item, idx) => (
+												{currentItem.whyenfycon.map((item, idx) => (
 													<li key={idx} className="smb-2">
 														<i className="tji-star me-2 text-warning"></i> {item}
 													</li>
