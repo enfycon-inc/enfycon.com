@@ -1,36 +1,5 @@
 export const serviceCategories = [
-    {
-        id: "it-professional-staffing",
-        name: "IT Professional Staffing",
-        title: "IT Professional Staffing",
-        desc: "Connect with top-tier IT talent to power your digital transformation. Our staffing solutions provide skilled professionals across all technology domains, ensuring you have the expertise to drive innovation.",
-        services: [
-            {
-                id: "us-it-staffing",
-                title: "US IT Staffing",
-                desc: "Access elite US-based IT professionals to strengthen your team with top-tier talent for mission-critical projects.",
-                desc3: "Access elite US-based IT professionals to strengthen your team with top-tier talent for mission-critical projects.",
-                img4: "/images/service/us-it-staffing.png",
-                iconName: "tji-service-1",
-            },
-            {
-                id: "domestic-it-staffing",
-                title: "Domestic IT Staffing",
-                desc: "Connect with skilled domestic IT talent across various technologies to meet your local business requirements.",
-                desc3: "Connect with skilled domestic IT talent across various technologies to meet your local business requirements.",
-                img4: "/images/service/domestic-it-staffing.png",
-                iconName: "tji-service-2",
-            },
-            {
-                id: "offshore-dedicated-teams",
-                title: "Offshore Dedicated Teams",
-                desc: "Build dedicated offshore development teams that work as an extension of your organization, delivering quality at scale.",
-                desc3: "Build dedicated offshore development teams that work as an extension of your organization, delivering quality at scale.",
-                img4: "/images/service/offshore-dedicated-teams.png",
-                iconName: "tji-service-3",
-            },
-        ],
-    },
+   
     {
         id: "ai-allied-services",
         name: "Custom Professional AI Services",
@@ -60,6 +29,38 @@ export const serviceCategories = [
                 desc3: "Create personalized customer experiences using AI-driven insights and intelligent engagement strategies.",
                 img4: "/images/service/personalized-customer-engagement.jpg",
                 iconName: "tji-customer",
+            },
+        ],
+    },
+     {
+        id: "it-professional-staffing",
+        name: "IT Professional Staffing",
+        title: "IT Professional Staffing",
+        desc: "Connect with top-tier IT talent to power your digital transformation. Our staffing solutions provide skilled professionals across all technology domains, ensuring you have the expertise to drive innovation.",
+        services: [
+            {
+                id: "us-it-staffing",
+                title: "US IT Staffing",
+                desc: "Access elite US-based IT professionals to strengthen your team with top-tier talent for mission-critical projects.",
+                desc3: "Access elite US-based IT professionals to strengthen your team with top-tier talent for mission-critical projects.",
+                img4: "/images/service/us-it-staffing.png",
+                iconName: "tji-service-1",
+            },
+            {
+                id: "domestic-it-staffing",
+                title: "Domestic IT Staffing",
+                desc: "Connect with skilled domestic IT talent across various technologies to meet your local business requirements.",
+                desc3: "Connect with skilled domestic IT talent across various technologies to meet your local business requirements.",
+                img4: "/images/service/domestic-it-staffing.png",
+                iconName: "tji-service-2",
+            },
+            {
+                id: "offshore-dedicated-teams",
+                title: "Offshore Dedicated Teams",
+                desc: "Build dedicated offshore development teams that work as an extension of your organization, delivering quality at scale.",
+                desc3: "Build dedicated offshore development teams that work as an extension of your organization, delivering quality at scale.",
+                img4: "/images/service/offshore-dedicated-teams.png",
+                iconName: "tji-service-3",
             },
         ],
     },
