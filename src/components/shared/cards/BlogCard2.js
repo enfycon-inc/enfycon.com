@@ -1,15 +1,25 @@
 import makePath from "@/libs/makePath";
 import modifyNumber from "@/libs/modifyNumber";
+import sliceText from "@/libs/sliceText";
+import Image from "next/image";
 import Link from "next/link";
 import ButtonPrimary from "../buttons/ButtonPrimary";
 
 const BlogCard2 = ({ blog, idx }) => {
-	const { title, desc, id, img1, category, date, day, month } = blog || {};
+	const { title, featuredImage, id, category, author, day, month } = blog || {};
+
 	return (
 		<div className="blog-item style-2">
 			<div className="blog-thumb">
 				<Link href={`/blogs/${id}`}>
-					<img src={img1 ? img1 : "/images/blog/blog-4.webp"} alt="" />
+					<Image
+						src={featuredImage || "/images/blog/blogs-backdrop.jpg"}
+						alt={title || "Blog Image"}
+						width={870}
+						height={450}
+						unoptimized={true}
+						style={{ objectFit: "cover" }}
+					/>
 				</Link>
 				<div className="blog-date">
 					<span className="date">{modifyNumber(day)}</span>
@@ -25,11 +35,11 @@ const BlogCard2 = ({ blog, idx }) => {
 							</Link>
 						</span>
 						<span>
-							By <Link href={`/blogs/${id}`}>Ellinien Loma</Link>
+							By <Link href={`/blogs/${id}`}>{author || "enfycon"}</Link>
 						</span>
 					</div>
 					<h4 className="title">
-						<Link href={`/blogs/${id}`}>{title}.</Link>
+						<Link href={`/blogs/${id}`}>{sliceText(title, 45, true)}</Link>
 					</h4>
 				</div>
 				<ButtonPrimary
@@ -43,3 +53,4 @@ const BlogCard2 = ({ blog, idx }) => {
 };
 
 export default BlogCard2;
+

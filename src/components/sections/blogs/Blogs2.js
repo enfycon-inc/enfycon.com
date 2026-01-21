@@ -1,10 +1,36 @@
 "use client";
 import BlogCard2 from "@/components/shared/cards/BlogCard2";
-import getBlogs from "@/libs/getBlogs";
+import { getAllBlogs } from "@/libs/wpBlogs";
+import { useEffect, useState } from "react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 const Blogs2 = () => {
-	const blogs = getBlogs().slice(0, 4);
+	const [blogs, setBlogs] = useState([]);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		const fetchBlogs = async () => {
+			try {
+				const data = await getAllBlogs();
+				setBlogs(data.slice(0, 4));
+			} catch (error) {
+				console.error("Error fetching home blogs:", error);
+			} finally {
+				setLoading(false);
+			}
+		};
+		fetchBlogs();
+	}, []);
+
+	if (loading) {
+		return (
+			<div className="container section-gap text-center">
+				<h3>Loading Latest Blogs...</h3>
+			</div>
+		);
+	}
+
 	return (
 		<section className="tj-blog-section-2 section-gap">
 			<div className="container">
@@ -83,10 +109,10 @@ const Blogs2 = () => {
 							>
 								{blogs?.length
 									? blogs?.map((blog, idx) => (
-											<SwiperSlide key={idx}>
-												<BlogCard2 blog={blog} idx={idx} />
-											</SwiperSlide>
-									  ))
+										<SwiperSlide key={idx}>
+											<BlogCard2 blog={blog} idx={idx} />
+										</SwiperSlide>
+									))
 									: ""}
 								<div className="swiper-pagination-area"></div>
 							</Swiper>
@@ -99,3 +125,4 @@ const Blogs2 = () => {
 };
 
 export default Blogs2;
+
