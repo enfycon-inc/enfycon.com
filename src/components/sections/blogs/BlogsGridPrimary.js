@@ -5,24 +5,35 @@ import BlogSidebar from "@/components/shared/sidebar/BlogSidebar";
 import usePagination from "@/hooks/usePagination";
 import { getAllBlogs } from "@/libs/wpBlogs";
 import { useEffect, useState } from "react";
+import { useLoading } from "@/components/shared/others/LoadingProvider";
 
 const BlogsGridPrimary = ({ isSidebar = false }) => {
 	const [allItems, setAllItems] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const { isLoading, setLoading } = useLoading();
 	const limit = 6;
 
 	useEffect(() => {
+		let fetchTimer;
 		const fetchBlogs = async () => {
+			setLoading(true);
 			try {
 				const blogs = await getAllBlogs();
 				setAllItems(blogs);
 			} catch (error) {
 				console.error("Error fetching grid blogs:", error);
 			} finally {
-				setLoading(false);
+				// Prevent flickering by ensuring loader shows for at least 800ms
+				fetchTimer = setTimeout(() => {
+					setLoading(false);
+				}, 800);
 			}
 		};
 		fetchBlogs();
+
+		return () => {
+			if (fetchTimer) clearTimeout(fetchTimer);
+			setLoading(false);
+		};
 	}, []);
 
 	// get pagination details
@@ -45,12 +56,8 @@ const BlogsGridPrimary = ({ isSidebar = false }) => {
 		setCurrentpage(0);
 	}, [totalItems]);
 
-	if (loading) {
-		return (
-			<div className="container section-gap text-center">
-				<h3>Loading Blogs Grid...</h3>
-			</div>
-		);
+	if (isLoading) {
+		return null;
 	}
 
 	return (

@@ -5,27 +5,38 @@ import makeText from "@/libs/makeText";
 import { getAllBlogs } from "@/libs/wpBlogs";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useLoading } from "@/components/shared/others/LoadingProvider";
 
 const BlogMain = () => {
 	const [allItems, setAllItems] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const { isLoading, setLoading } = useLoading();
 	const category = useSearchParams()?.get("category");
 	const tag = useSearchParams()?.get("tag");
 	const author_role = useSearchParams()?.get("author_role");
 	const search = useSearchParams()?.get("search");
 
 	useEffect(() => {
+		let fetchTimer;
 		const fetchBlogs = async () => {
+			setLoading(true);
 			try {
 				const blogs = await getAllBlogs();
 				setAllItems(blogs);
 			} catch (error) {
 				console.error("Error fetching blogs:", error);
 			} finally {
-				setLoading(false);
+				// Prevent flickering by ensuring loader shows for at least 800ms
+				fetchTimer = setTimeout(() => {
+					setLoading(false);
+				}, 800);
 			}
 		};
 		fetchBlogs();
+
+		return () => {
+			if (fetchTimer) clearTimeout(fetchTimer);
+			setLoading(false); // Reset on unmount
+		};
 	}, []);
 
 	// Mapping and Filtering (Simplified for now, as we fetch all for static grid)
@@ -68,11 +79,7 @@ const BlogMain = () => {
 						: []
 				}
 			/>
-			{loading ? (
-				<div className="container section-gap text-center">
-					<h3>Loading Blogs...</h3>
-				</div>
-			) : (
+			{isLoading ? null : (
 				<BlogsPrimary filteredItems={filteredItems} />
 			)}
 		</div>

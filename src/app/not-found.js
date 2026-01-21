@@ -11,7 +11,6 @@ export default function NotFound() {
 		<div>
 			<BackToTop />
 			<Header />
-			<Header isStickyHeader={true} />
 			<div id="smooth-wrapper">
 				<div id="smooth-content">
 					<main>

@@ -38,11 +38,15 @@ export const metadata = {
 	description: "enfycon - empowering business with technology",
 };
 
+import { LoadingProvider } from "@/components/shared/others/LoadingProvider";
+
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" data-scroll-behavior="smooth" dir="ltr">
 			<body className={`${bodyFont.variable} ${headingFont.variable}`}>
-				{children}
+				<LoadingProvider>
+					{children}
+				</LoadingProvider>
 			</body>
 		</html>
 	);
