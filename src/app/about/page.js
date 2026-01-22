@@ -21,7 +21,7 @@ export default function About() {
 			<div id="smooth-wrapper">
 				<div id="smooth-content">
 					<main>
-						<HeaderSpace />
+						{/* <HeaderSpace /> */}
 						<HeroInner title={"About Us"} text={"About Us"} />
 						<Features type={2} />
 						<About3 type={2} />
