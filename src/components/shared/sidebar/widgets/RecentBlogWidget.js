@@ -30,7 +30,7 @@ const RecentBlogWidget = () => {
 			<h4 className="widget-title">Related post</h4>
 			<ul>
 				{recentBlogs?.length
-					? recentBlogs?.map(({ id, featuredImage, title, day, month }, idx) => (
+					? recentBlogs?.map(({ id, featuredImage, title, day, month, year }, idx) => (
 						<li key={idx}>
 							<div className="post-thumb">
 								<Link href={`/blogs/${id}`}>
@@ -55,7 +55,7 @@ const RecentBlogWidget = () => {
 								<div className="blog-meta">
 									<ul>
 										<li>
-											{day} {month}
+											{day} {month} {year}
 										</li>
 									</ul>
 								</div>
