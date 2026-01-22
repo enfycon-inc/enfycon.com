@@ -103,7 +103,7 @@ const Header = ({ isStickyHeader = false }) => {
 
 									{/* CTA Button */}
 									<div className="header-button">
-										<ButtonPrimary text={"Let's Talk"} url={"/contact"} />
+										<ButtonPrimary text={"Let's Talk"} url={"/contact-us"} />
 									</div>
 
 									{/* Offcanvas Menu Toggle */}
