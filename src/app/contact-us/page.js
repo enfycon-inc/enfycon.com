@@ -1,4 +1,4 @@
-import Footer from "@/components/layout/footer/Footer";
+import Footer2 from "@/components/layout/footer/Footer2";
 import Header from "@/components/layout/header/Header";
 import HeroInner from "@/components/sections/hero/HeroInner";
 import LocationSection from "@/components/sections/contacts/LocationSection";
@@ -26,7 +26,7 @@ export default function ContactUs() {
                         <LocationSection />
                         <ContactFormCustom />
                     </main>
-                    <Footer />
+                    <Footer2 />
                 </div>
             </div>
             <ClientWrapper />

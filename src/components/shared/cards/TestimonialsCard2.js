@@ -15,7 +15,7 @@ const TestimonialsCard2 = ({ testimonial }) => {
 				<div className="author-inner">
 					<div className="author-img">
 						<Image
-							src={img ? img : "/images/testimonial/client-1.webp"}
+							src={img ? img : "/images/testimonial/client-1.jpg"}
 							alt={authorName || "Client"}
 							width={89}
 							height={89}
