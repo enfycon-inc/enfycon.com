@@ -10,10 +10,10 @@ START: Working process CSS
 	z-index: 1;
 	border-radius: 12px;
 	.sec-heading-wrap {
+		background-color: var(--tj-color-grey-1);
+		// background-color:  red;
 		.sub-title {
 			color: var(--tj-color-theme-primary);
-			background-color: var(--tj-color-grey-1);
-			
 			border: 0;
 			padding: 7px 10px;
 		}
