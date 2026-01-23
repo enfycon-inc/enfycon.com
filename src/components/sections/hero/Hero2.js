@@ -23,7 +23,7 @@ const Hero2 = () => {
 				className="hero-slider"
 				style={{ height: "100%" }}
 			>
-				{heroSlides.map(({ img, title, desc }, idx) => (
+				{heroSlides.map(({ img, title, desc, slug }, idx) => (
 					<SwiperSlide
 						key={idx}
 						className="tj-slider-item"
@@ -42,7 +42,7 @@ const Hero2 = () => {
 									<h1 className="slider-title">{title}</h1>
 									<div className="slider-desc">{desc}</div>
 									<div className="slider-btn">
-										<ButtonPrimary text={"Get Started"} url={"/contact"} />
+										<ButtonPrimary text={"Learn More"} url={slug ? `/services/${slug}` : "/services"} />
 									</div>
 								</div>
 							</div>
