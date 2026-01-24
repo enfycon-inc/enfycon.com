@@ -5,6 +5,8 @@ import BootstrapWrapper from "@/components/shared/wrappers/BootstrapWrapper";
 import Link from "next/link";
 import { useState } from "react";
 import CtaSidebar from "../cta/CtaSidebar";
+import IconFeatureGrid from "@/components/shared/sections/IconFeatureGrid";
+import CheckListSection from "@/components/shared/sections/CheckListSection";
 
 const IndustryDetailsPrimary = ({ option }) => {
     const {
@@ -39,99 +41,41 @@ const IndustryDetailsPrimary = ({ option }) => {
 
 
                             {/* Challenges Section */}
-                            {currentItem.challenges && (
-                                <div className="industry-challenges-section mt-5 wow fadeInUp" data-wow-delay=".3s">
-                                    <h3 className="section-title text-primary mb-4">Common Challenges in {title}</h3>
-                                    <div className="industry-benefits-grid">
-                                        {currentItem.challenges.map((challenge, idx) => (
-                                            <div className="industry-benefit-card" key={idx}>
-                                                <div className="icon">
-                                                    <i className={challenge.icon}></i>
-                                                </div>
-                                                <div className="content">
-                                                    <h5 className="title">{challenge.title}</h5>
-                                                    <p>{challenge.desc}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
+                            <IconFeatureGrid
+                                title={`Common Challenges in ${title}`}
+                                items={currentItem.challenges}
+                                sectionClass="industry-challenges-section"
+                            />
 
                             {/* Key Benefits Section */}
-                            {currentItem.benefits && (
-                                <div className="industry-benefits-section mt-5 wow fadeInUp" data-wow-delay=".3s">
-                                    <h3 className="section-title text-primary mb-4">Key Benefits of AI in {title}</h3>
-                                    <div className="industry-benefits-grid">
-                                        {currentItem.benefits.map((benefit, idx) => (
-                                            <div className="industry-benefit-card" key={idx}>
-                                                <div className="icon">
-                                                    <i className={benefit.icon}></i>
-                                                </div>
-                                                <div className="content">
-                                                    <h5 className="title">{benefit.title}</h5>
-                                                    <p>{benefit.desc}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
+                            <IconFeatureGrid
+                                title={`Key Benefits of AI in ${title}`}
+                                items={currentItem.benefits}
+                                sectionClass="industry-benefits-section"
+                            />
 
                             {/* Use Cases Section */}
-                            {currentItem.useCases && (
-                                <div className="industry-use-cases-section mt-5 wow fadeInUp" data-wow-delay=".3s">
-                                    <h3 className="section-title text-primary mb-4">High-Impact AI Use Cases in {title}</h3>
-                                    <div className="industry-use-cases-grid">
-                                        {currentItem.useCases.map((useCase, idx) => (
-                                            <div className="industry-use-case-card" key={idx}>
-                                                <div className="icon">
-                                                    <i className={useCase.icon}></i>
-                                                </div>
-                                                <div className="content">
-                                                    <h5 className="title">{useCase.title}</h5>
-                                                    <p>{useCase.desc}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
+                            <IconFeatureGrid
+                                title={`High-Impact AI Use Cases in ${title}`}
+                                items={currentItem.useCases}
+                                sectionClass="industry-use-cases-section"
+                                gridClass="industry-use-cases-grid"
+                                cardClass="industry-use-case-card"
+                            />
 
                             {/* Process Section */}
-                            {currentItem.process && (
-                                <div className="industry-process-section mt-5 wow fadeInUp" data-wow-delay=".3s">
-                                    <h3 className="section-title text-primary mb-4">Our Process To Success</h3>
-                                    <div className="industry-benefits-grid">
-                                        {currentItem.process.map((step, idx) => (
-                                            <div className="industry-benefit-card" key={idx}>
-                                                <div className="icon">
-                                                    <i className={step.icon}></i>
-                                                </div>
-                                                <div className="content">
-                                                    <h5 className="title">{step.title}</h5>
-                                                    <p>{step.desc}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            )}
+                            <IconFeatureGrid
+                                title="Our Process To Success"
+                                items={currentItem.process}
+                                sectionClass="industry-process-section"
+                            />
 
                             {/* The Edge Section */}
-                            {currentItem.edge && (
-                                <div className="industry-edge-section mt-5 wow fadeInUp" data-wow-delay=".3s">
-                                    <h3 className="section-title text-primary mb-4">The enfycon Edge</h3>
-                                    <ul className="industry-edge-list">
-                                        {currentItem.edge.map((item, idx) => (
-                                            <li key={idx}>
-                                                <i className="tji-check"></i>
-                                                <span>{item}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            )}
+                            <CheckListSection
+                                title="The enfycon Edge"
+                                items={currentItem.edge}
+                                sectionClass="industry-edge-section"
+                            />
 
                             {/* CTA Section */}
                             {currentItem.cta && (
