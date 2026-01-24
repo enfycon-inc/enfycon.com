@@ -41,7 +41,7 @@ const Process = () => {
 									satisfaction and loyalty.
 								</p>
 								<div className="btn-wrap wow fadeInUp" data-wow-delay=".6s">
-									<ButtonPrimary text={"Request a Call"} url={"/contact"} />
+									<ButtonPrimary text={"Request a Call"} url={"/contact-us"} />
 								</div>
 							</div>
 						</div>
