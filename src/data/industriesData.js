@@ -5,6 +5,38 @@ export const industriesData = [
         desc: "Empowering banking institutions with secure digital solutions, modern core banking systems, and innovative fintech platforms for enhanced customer experiences.",
         image: "/images/industries/banking.jpg",
         icon: "fa-regular fa-building-columns",
+        challenges: [
+            {
+                title: "Legacy Infrastructure",
+                desc: "Aging core systems that are difficult to update and integrate with modern APIs.",
+                icon: "fa-regular fa-server"
+            },
+            {
+                title: "Data Fragmentation",
+                desc: "Customer data trapped in silos, preventing a unified 360-degree view.",
+                icon: "fa-regular fa-database"
+            },
+            {
+                title: "Cybersecurity Risks",
+                desc: "Sophisticated threats targeting sensitive financial data and transaction integrity.",
+                icon: "fa-regular fa-shield-slash"
+            },
+            {
+                title: "Regulatory Compliance",
+                desc: "Navigating a complex, ever-evolving landscape of global financial regulations.",
+                icon: "fa-regular fa-gavel"
+            },
+            {
+                title: "Fintech Competition",
+                desc: "Rising pressure from agile fintech startups offering user-friendly digital services.",
+                icon: "fa-regular fa-bolt"
+            },
+            {
+                title: "Customer Retention",
+                desc: "Meeting increasing customer expectations for personalized, seamless banking experiences.",
+                icon: "fa-regular fa-users-viewfinder"
+            }
+        ],
         benefits: [
             {
                 title: "Enhanced Fraud Detection",
@@ -69,6 +101,38 @@ export const industriesData = [
                 icon: "fa-regular fa-robot"
             }
         ],
+        process: [
+            {
+                title: "Discovery & Audit",
+                desc: "We analyze your current infrastructure and identify AI readiness gaps.",
+                icon: "fa-regular fa-magnifying-glass"
+            },
+            {
+                title: "Strategy Design",
+                desc: "Developing a tailored roadmap for AI integration aligned with business goals.",
+                icon: "fa-regular fa-compass-drafting"
+            },
+            {
+                title: "Agile Implementation",
+                desc: "Iterative development and deployment of AI solutions with minimal disruption.",
+                icon: "fa-regular fa-code-branch"
+            },
+            {
+                title: "Knowledge Transfer",
+                desc: "Empowering your team with the skills to manage and utilize new AI tools.",
+                icon: "fa-regular fa-chalkboard-user"
+            },
+            {
+                title: "Optimization & Scale",
+                desc: "Continuous monitoring and refining of models to ensure long-term value.",
+                icon: "fa-regular fa-chart-line-up"
+            },
+            {
+                title: "Future Roadmap",
+                desc: "Planning next-gen features to keep your institution ahead of the curve.",
+                icon: "fa-regular fa-map-location-dot"
+            }
+        ],
         edge: [
             "Secure and Compliant AI Models",
             "Real-time Data Processing Capabilities",
@@ -108,6 +172,38 @@ export const industriesData = [
         desc: "Revolutionizing healthcare delivery with digital health platforms, telemedicine solutions, and advanced patient management systems.",
         image: "/images/industries/health-care.jpg",
         icon: "fa-regular fa-heart-pulse",
+        challenges: [
+            {
+                title: "Data Privacy & Security",
+                desc: "Protecting patient records while enabling secure data sharing for research.",
+                icon: "fa-regular fa-user-lock"
+            },
+            {
+                title: "Interoperability",
+                desc: "Connecting disparate EHR systems to ensure seamless data flow across providers.",
+                icon: "fa-regular fa-network-wired"
+            },
+            {
+                title: "Resource Constraints",
+                desc: "Managing shortages of medical staff and increasing patient loads effectively.",
+                icon: "fa-regular fa-user-nurse"
+            },
+            {
+                title: "Diagnostic Accuracy",
+                desc: "Reducing human error in complex diagnostic procedures and treatment planning.",
+                icon: "fa-regular fa-triangle-exclamation"
+            },
+            {
+                title: "Rising Healthcare Costs",
+                desc: "Combating the increasing costs of treatments and operational inefficiencies.",
+                icon: "fa-regular fa-money-bill-trend-up"
+            },
+            {
+                title: "Patient Experience",
+                desc: "Meeting the demand for convenient, digital-first patient interactions.",
+                icon: "fa-regular fa-face-smile"
+            }
+        ],
         benefits: [
             {
                 title: "Accelerated and Accurate Diagnostics",
@@ -170,6 +266,38 @@ export const industriesData = [
                 title: "Hospital Operations Optimization",
                 desc: "Reinforcement learning-based simulators for optimizing bed occupancy and surgical schedules.",
                 icon: "fa-regular fa-bed-pulse"
+            }
+        ],
+        process: [
+            {
+                title: "Workflow Analysis",
+                desc: "Mapping clinical workflows to identify high-impact automation opportunities.",
+                icon: "fa-regular fa-clipboard-list-check"
+            },
+            {
+                title: "Data Harmonization",
+                desc: "Standardizing medical data for robust AI model training and interoperability.",
+                icon: "fa-regular fa-database"
+            },
+            {
+                title: "Clinical Integration",
+                desc: "Seamlessly embedding AI tools into existing hospital systems and EHRs.",
+                icon: "fa-regular fa-laptop-medical"
+            },
+            {
+                title: "Staff Training",
+                desc: "Ensuring medical staff are comfortable and proficient with new AI assistants.",
+                icon: "fa-regular fa-user-doctor"
+            },
+            {
+                title: "Outcome Monitoring",
+                desc: "Tracking clinical outcomes to validate and improve AI model performance.",
+                icon: "fa-regular fa-heart-circle-check"
+            },
+            {
+                title: "Compliance Review",
+                desc: "Regular audits to ensure ongoing adherence to HIPAA and other regulations.",
+                icon: "fa-regular fa-clipboard-check"
             }
         ],
         edge: [
