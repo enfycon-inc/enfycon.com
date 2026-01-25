@@ -2,6 +2,7 @@ import Footer from "@/components/layout/footer/Footer";
 import Header from "@/components/layout/header/Header";
 import About3 from "@/components/sections/about/About3";
 import Brands1 from "@/components/sections/brands/Brands1";
+import LocationSection from "@/components/sections/contacts/LocationSection";
 import Cta from "@/components/sections/cta/Cta";
 import Faq2 from "@/components/sections/faq/Faq2";
 import Features from "@/components/sections/features/Features";
@@ -31,11 +32,12 @@ export default function About() {
 					<main>
 						{/* <HeaderSpace /> */}
 						<HeroInner title={"About Us"} text={"About Us"} />
-						<Features type={2} />
-						<About3 type={2} />
-						<Brands1 type={2} />
+						<Features type={2} id="our-story" />
+						<About3 type={2} id="founders-story" />
+						<Brands1 type={2} id="partners" />
 						<Testimonials2 type={2} />
-						<Team1 type={3} />
+						<Team1 type={3} id="leadership" />
+						<LocationSection id="locations" />
 						<Faq2 type={3} />
 						<Cta />
 					</main>

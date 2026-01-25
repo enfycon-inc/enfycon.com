@@ -1,3 +1,5 @@
+import { ScrollSmoother } from "@/libs/gsap.config";
+import { usePathname, useRouter } from "next/navigation";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import useActiveLink from "@/hooks/useActiveLink";
 import getNavItems from "@/libs/getNavItems";
@@ -5,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = ({ headerType, isStickyHeader }) => {
+	const pathname = usePathname();
+	const router = useRouter();
 	const makeActiveLink = useActiveLink();
 	const navItems = getNavItems();
 	const homeNav = makeActiveLink(navItems[0]);
@@ -14,6 +18,21 @@ const Navbar = ({ headerType, isStickyHeader }) => {
 	const blogsNav = makeActiveLink(navItems[4]);
 	const aboutNav = makeActiveLink(navItems[5]);
 	const contactNav = makeActiveLink(navItems[6]);
+
+	const handleScroll = (e, href) => {
+		e.preventDefault();
+		const [path, hash] = href.split("#");
+
+		if (pathname === path) {
+			const target = document.getElementById(hash);
+			const smoother = ScrollSmoother.get();
+			if (smoother && target) {
+				smoother.scrollTo(target, true, "top 100");
+			}
+		} else {
+			router.push(href);
+		}
+	};
 
 	return (
 		<div className="menu-area d-none d-lg-inline-flex align-items-center">
@@ -191,10 +210,51 @@ const Navbar = ({ headerType, isStickyHeader }) => {
 							{blogsNav?.name}
 						</Link>
 					</li>
-					<li className={aboutNav?.isActive ? "current-menu-ancestor" : ""}>
+					<li
+						className={`has-dropdown ${aboutNav?.isActive ? "current-menu-ancestor" : ""
+							}`}
+					>
 						<Link href={aboutNav?.path ? aboutNav?.path : "#"}>
 							{aboutNav?.name ? aboutNav?.name : "About us"}
 						</Link>
+						<ul className="sub-menu mega-menu mega-menu-about mega-menu-pages">
+							<li>
+								<div className="mega-menu-wrapper">
+									{aboutNav?.submenu?.length
+										? aboutNav?.submenu?.map((section, idx) => (
+											<div key={idx} className="mega-menu-pages-single">
+												<div className="mega-menu-pages-single-inner">
+													<h6 className="mega-menu-title">
+														{section?.name}
+													</h6>
+													<div className="mega-menu-list">
+														{section?.items?.length
+															? section?.items?.map((item, idx2) => (
+																<Link
+																	key={100 + idx2}
+																	href={item?.path ? item?.path : "/"}
+																	className={`mega-menu-service-single ${item?.isActive ? "active" : ""}`}
+																	onClick={(e) => handleScroll(e, item?.path)}
+																>
+																	<span className="mega-menu-service-icon">
+																		<i
+																			className={item?.icon ? item?.icon : "tji-service-1"}
+																		></i>
+																	</span>
+																	<span className="mega-menu-service-title">
+																		{item?.name}
+																	</span>
+																</Link>
+															))
+															: ""}
+													</div>
+												</div>
+											</div>
+										))
+										: ""}
+								</div>
+							</li>
+						</ul>
 					</li>
 					<li className={contactNav?.isActive ? "current-menu-ancestor" : ""}>
 						<Link href={contactNav?.path ? contactNav?.path : "#"}>

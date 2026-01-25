@@ -1,11 +1,11 @@
 import BrandSlider1 from "@/components/shared/brands/BrandSlider1";
 
-const Brands1 = ({ type = 1 }) => {
+const Brands1 = ({ type = 1, id }) => {
 	return (
 		<section
-			className={`tj-client-section ${
-				type === 2 ? "client-section-gap-2" : "client-section-gap"
-			} wow fadeInUp`}
+			id={id}
+			className={`tj-client-section ${type === 2 ? "client-section-gap-2" : "client-section-gap"
+				} wow fadeInUp`}
 			data-wow-delay=".4s"
 		>
 			<div className="container-fluid client-container">

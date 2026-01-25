@@ -476,7 +476,81 @@
 	{
 		"id": 6,
 		"name": "About us",
-		"path": "/about"
+		"path": "/about",
+		"submenu": [
+			{
+				"id": 1,
+				"name": "Our Story",
+				"items": [
+					{
+						"id": 1,
+						"name": "Building Success Together",
+						"icon": "fa-light fa-handshake",
+						"path": "/about#our-story"
+					},
+					{
+						"id": 2,
+						"name": "Founder's Story",
+						"icon": "fa-light fa-user-tie",
+						"path": "/about#founders-story"
+					},
+					{
+						"id": 3,
+						"name": "Philosophy",
+						"icon": "fa-light fa-lightbulb",
+						"path": "/about#founders-story"
+					}
+				]
+			},
+			{
+				"id": 2,
+				"name": "Partners",
+				"items": [
+					{
+						"id": 1,
+						"name": "Partner Values",
+						"icon": "fa-light fa-hand-holding-heart",
+						"path": "/about#partners"
+					},
+					{
+						"id": 2,
+						"name": "Portfolio",
+						"icon": "fa-light fa-briefcase",
+						"path": "/about#partners"
+					}
+				]
+			},
+			{
+				"id": 3,
+				"name": "Our Leaders",
+				"items": [
+					{
+						"id": 1,
+						"name": "Global Leaders",
+						"icon": "fa-light fa-users",
+						"path": "/about#leadership"
+					}
+				]
+			},
+			{
+				"id": 4,
+				"name": "Locations",
+				"items": [
+					{
+						"id": 1,
+						"name": "USA",
+						"icon": "fa-light fa-flag-usa",
+						"path": "/about#locations"
+					},
+					{
+						"id": 2,
+						"name": "India",
+						"icon": "fa-light fa-globe-asia",
+						"path": "/about#locations"
+					}
+				]
+			}
+		]
 	},
 	{
 		"id": 7,

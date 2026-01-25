@@ -1,7 +1,7 @@
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import FeatureCard from "@/components/shared/cards/FeatureCard";
 
-const Features = ({ type }) => {
+const Features = ({ type, id }) => {
 	const features = [
 		{
 			title: "20+ Years of Excellence",
@@ -21,7 +21,7 @@ const Features = ({ type }) => {
 	];
 
 	return (
-		<section id="choose" className="tj-choose-section section-gap">
+		<section id={id ? id : "choose"} className="tj-choose-section section-gap">
 			<div className="container">
 				<div className="row">
 					<div className="col-12">

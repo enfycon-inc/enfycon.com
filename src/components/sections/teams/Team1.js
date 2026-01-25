@@ -5,7 +5,7 @@ import Paginations from "@/components/shared/others/Paginations";
 import usePagination from "@/hooks/usePagination";
 import getTeamMembers from "@/libs/getTeamMembers";
 
-const Team1 = ({ type }) => {
+const Team1 = ({ type, id }) => {
 	const items = getTeamMembers();
 	const limit = type === 2 ? 8 : 4;
 	// get pagination details
@@ -24,11 +24,12 @@ const Team1 = ({ type }) => {
 	const totalItemsToShow = currentItems?.length;
 	return (
 		<section
+			id={id}
 			className={` ${type === 2
-					? "tj-team-section section-gap"
-					: type === 3
-						? "tj-team-section-3 section-gap section-gap-x"
-						: "tj-team-section section-separator"
+				? "tj-team-section section-gap"
+				: type === 3
+					? "tj-team-section-3 section-gap section-gap-x"
+					: "tj-team-section section-separator"
 				}`}
 		>
 			<div className="container">

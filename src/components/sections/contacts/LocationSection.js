@@ -40,9 +40,9 @@ const locations = [
     },
 ];
 
-const LocationSection = () => {
+const LocationSection = ({ id }) => {
     return (
-        <section className="tj-location-section section-gap">
+        <section id={id} className="tj-location-section section-gap">
             <div className="container">
                 <div className="row">
                     <div className="col-12">
