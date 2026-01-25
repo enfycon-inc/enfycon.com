@@ -26,9 +26,29 @@ const CookieConsent = () => {
 
     const logoToUse = showCustomize ? "/images/logos/enfycon.png" : "/images/logos/enfycon-white.png";
 
+    const CONSENT_EXPIRY_DAYS = 30;
+
     useEffect(() => {
         const consent = localStorage.getItem("cookie_consent");
-        if (!consent) {
+        const storedTimestamp = localStorage.getItem("cookie_consent_timestamp");
+
+        let isExpired = false;
+        if (storedTimestamp) {
+            const now = Date.now();
+            const storedTime = parseInt(storedTimestamp, 10);
+            const daysDiff = (now - storedTime) / (1000 * 60 * 60 * 24);
+            if (daysDiff > CONSENT_EXPIRY_DAYS) {
+                isExpired = true;
+            }
+        }
+
+        if (!consent || isExpired) {
+            if (isExpired) {
+                localStorage.removeItem("cookie_consent");
+                localStorage.removeItem("cookie_preferences");
+                localStorage.removeItem("cookie_consent_timestamp");
+            }
+
             const timer = setTimeout(() => {
                 setIsVisible(true);
             }, 1000);
@@ -47,12 +67,14 @@ const CookieConsent = () => {
         };
         localStorage.setItem("cookie_consent", "accepted");
         localStorage.setItem("cookie_preferences", JSON.stringify(allAccepted));
+        localStorage.setItem("cookie_consent_timestamp", Date.now().toString());
         setIsVisible(false);
     };
 
     const handleSavePreferences = () => {
         localStorage.setItem("cookie_consent", "custom");
         localStorage.setItem("cookie_preferences", JSON.stringify(preferences));
+        localStorage.setItem("cookie_consent_timestamp", Date.now().toString());
         setIsVisible(false);
     };
 
