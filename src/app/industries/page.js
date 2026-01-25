@@ -8,6 +8,12 @@ import IndustriesPage from "@/components/sections/industries/IndustriesPage";
 import BackToTop from "@/components/shared/others/BackToTop";
 import ClientWrapper from "@/components/shared/wrappers/ClientWrapper";
 
+
+export const metadata = {
+    title: "Industries - enfycon",
+    description: "Explore the diverse industries Enfycon serves, from banking and finance to healthcare and human resources, delivering tailored technological solutions.",
+};
+
 export default function Industries() {
     return (
         <div>

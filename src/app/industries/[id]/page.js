@@ -9,6 +9,35 @@ import { notFound } from "next/navigation";
 
 const items = industriesData;
 
+export async function generateMetadata({ params }) {
+    const { id } = await params;
+    const item = items?.find(({ id: id1 }) => id1 === id);
+
+    if (!item) {
+        return {
+            title: "Industry Not Found - enfycon",
+            description: "The requested industry could not be found.",
+        };
+    }
+
+    return {
+        title: `${item.title} - enfycon`,
+        description: item.desc,
+        openGraph: {
+            title: `${item.title} - enfycon`,
+            description: item.desc,
+            images: [
+                {
+                    url: item.image,
+                    width: 800,
+                    height: 600,
+                    alt: item.title,
+                },
+            ],
+        },
+    };
+}
+
 export default async function IndustryDetails({ params }) {
     const { id } = await params;
 
