@@ -278,14 +278,14 @@ START: Industry Details New Sections CSS
         flex-wrap: wrap;
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        align-items: stretch; // Force equal height
+        // align-items: stretch; // Force equal height
         justify-content: space-between;
 
         .image-box {
             flex: 0 0 50%;
             position: relative;
             min-height: 400px; // Fixed height
-            background-color: #f8f9fa; // Fallback background for contained images
+            // background-color: #f8f9fa; // Fallback background for contained images
 
             @media #{$md, $sm, $xs} {
                 flex: 0 0 100%;
@@ -295,8 +295,8 @@ START: Industry Details New Sections CSS
 
             img {
                 width: 100%;
-                height: 100%;
-                object-fit: contain; // As requested
+                height: 400px;
+                object-fit: cover; // As requested
             }
         }
 

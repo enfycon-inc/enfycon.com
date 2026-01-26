@@ -15,7 +15,7 @@ const IndustrySplitSection = ({ item, sectionClass = "" }) => {
                             src={image}
                             alt={title}
                             fill
-                            style={{ objectFit: 'contain' }}
+                             style={{ objectFit: 'cover' }}
                         />}
                     </div>
                     <div className="content-box">
