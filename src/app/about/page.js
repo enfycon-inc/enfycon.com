@@ -37,7 +37,7 @@ export default function About() {
 			<div id="smooth-wrapper">
 				<div id="smooth-content">
 					<main>
-						{/* <HeaderSpace /> */}
+						<HeaderSpace />
 						<FullScreenHero
 							title={"Building Success Together"}
 							text={[

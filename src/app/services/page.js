@@ -6,6 +6,7 @@ import Cta from "@/components/sections/cta/Cta";
 import HeroInner from "@/components/sections/hero/HeroInner";
 import ServicesCategorized from "@/components/sections/services/ServicesCategorized";
 import BackToTop from "@/components/shared/others/BackToTop";
+import HeaderSpace from "@/components/shared/others/HeaderSpace";
 import ClientWrapper from "@/components/shared/wrappers/ClientWrapper";
 import { constructMetadata } from "@/libs/seo";
 
@@ -23,12 +24,12 @@ export default function Services() {
 			<div id="smooth-wrapper">
 				<div id="smooth-content">
 					<main>
-
+					
 						<HeroInner title={"Services"} text={"Services"} />
 						<ServicesCategorized />
 						<Contact2 />
 						<Brands2 />
-					
+
 					</main>
 					<Footer2 />
 				</div>

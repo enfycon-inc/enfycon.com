@@ -14,11 +14,11 @@ export default function Histor() {
 		<div>
 			<BackToTop />
 			<Header />
-			<Header isStickyHeader={true} />
+			
 			<div id="smooth-wrapper">
 				<div id="smooth-content">
 					<main>
-						<HeaderSpace />
+						
 						<HeroInner title={"Company History"} text={"Company History"} />
 						<About12 />
 						<History1 />

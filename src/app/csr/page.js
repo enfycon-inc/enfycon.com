@@ -8,6 +8,7 @@ import CsrProjects from "@/components/sections/csr/CsrProjects";
 import CsrFeatured from "@/components/sections/csr/CsrFeatured";
 
 import { csrData } from "@/data/csrData";
+import HeaderSpace from "@/components/shared/others/HeaderSpace";
 
 export const metadata = {
     title: "CSR - Corporate Social Responsibility | Enfycon",
@@ -24,6 +25,7 @@ export default function CsrPage() {
                 <div id="smooth-content">
                     <main>
                         {/* Hero */}
+                        <HeaderSpace/>
                         <FullScreenHero
                             title={csrData.hero.title}
                             text={csrData.hero.text}

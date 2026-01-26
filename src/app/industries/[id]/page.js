@@ -10,6 +10,7 @@ import { notFound } from "next/navigation";
 const items = industriesData;
 
 import { constructMetadata, generateDynamicMetadata } from "@/libs/seo";
+import HeaderSpace from "@/components/shared/others/HeaderSpace";
 
 export async function generateMetadata({ params }) {
     return generateDynamicMetadata({
@@ -43,6 +44,7 @@ export default async function IndustryDetails({ params }) {
 
             <div id="smooth-wrapper">
                 <div id="smooth-content">
+                    <HeaderSpace/>
                     <main>
                         <IndustryDetailsMain currentItemId={id} />
                      

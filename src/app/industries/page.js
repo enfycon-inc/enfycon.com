@@ -7,7 +7,7 @@ import HeroInner from "@/components/sections/hero/HeroInner";
 import IndustriesPage from "@/components/sections/industries/IndustriesPage";
 import BackToTop from "@/components/shared/others/BackToTop";
 import ClientWrapper from "@/components/shared/wrappers/ClientWrapper";
-
+import HeaderSpace from "@/components/shared/others/HeaderSpace";
 
 import { constructMetadata } from "@/libs/seo";
 
@@ -25,6 +25,7 @@ export default function Industries() {
             <div id="smooth-wrapper">
                 <div id="smooth-content">
                     <main>
+                       
                         <HeroInner title={"Industries"} text={"Industries"} />
                         <IndustriesPage />
                         <Contact2 />

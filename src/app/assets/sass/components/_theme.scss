@@ -495,10 +495,10 @@ img {
 }
 
 .space-for-header {
-	padding-top: 105px;
+	padding-top: 80px;
 
 	@media #{$md,$sm,$xs} {
-		padding-top: 95px;
+		padding-top: 70px;
 	}
 }
 

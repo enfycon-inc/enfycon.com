@@ -42,6 +42,9 @@ export default async function ServiceDetails({ params }) {
 			<div id="smooth-wrapper">
 				<div id="smooth-content">
 					<main>
+					
+
+					
 						<ServiceDetailsMain currentItemId={id} />
 						
 					</main>

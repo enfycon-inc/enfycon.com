@@ -9,7 +9,7 @@ START: Theme Footer CSS
 	z-index: 1;
 	padding-top: 50px;
 	border-radius: 12px;
-	overflow: hidden;
+	overflow: visible;
 
 	@media #{$xl} {
 		padding-top: 150px;
