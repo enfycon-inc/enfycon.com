@@ -20,6 +20,8 @@ const CsrProjects = ({ data }) => {
                             <p className="desc wow fadeInUp" data-wow-delay=".5s">
                                 {data.desc}
                             </p>
+                            <h2 className="sec-title uppercase">{data.title}</h2>
+                            <p className="desc">{data.subtitle}</p>
                         </div>
                     </div>
                 </div>

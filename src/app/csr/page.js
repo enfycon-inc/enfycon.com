@@ -15,6 +15,56 @@ export const metadata = {
     description: "Sustainable Impact, Transforming Lives through our CSR initiatives.",
 };
 
+import CsrProjects from "@/components/sections/csr/CsrProjects";
+import CsrImpact from "@/components/sections/csr/CsrImpact";
+import CsrApproach from "@/components/sections/csr/CsrApproach";
+
+const CsrFeatured = ({ data }) => {
+    return (
+        <section className="csr-featured-section section-gap">
+            <div className="container">
+                <div className="row justify-content-center">
+                    <div className="col-lg-8">
+                        <div className="sec-heading text-center">
+                            <h2 className="sec-title uppercase">{data.title}</h2>
+                            <p className="desc">{data.desc}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="row mt-5">
+                    {data.items.map((item, idx) => (
+                        <div className="col-lg-4 col-md-6 mb-4" key={idx}>
+                            <div className="csr-featured-item d-flex gap-4 p-4" style={{
+                                background: 'white',
+                                borderRadius: '8px',
+                                transition: 'all 0.3s ease'
+                            }}>
+                                <div className="icon-box" style={{
+                                    width: '60px',
+                                    height: '60px',
+                                    borderRadius: '50%',
+                                    background: 'var(--tj-color-theme-bg)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    flexShrink: 0,
+                                    color: item.color
+                                }}>
+                                    <i className={item.icon} style={{ fontSize: '24px' }}></i>
+                                </div>
+                                <div className="content">
+                                    <h5 className="title text-uppercase mb-2" style={{ fontSize: '14px', fontWeight: '700', color: '#333' }}>{item.title}</h5>
+                                    <p className="desc" style={{ fontSize: '14px', lineHeight: '1.6', margin: 0 }}>{item.desc}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
 export default function CsrPage() {
     return (
         <div>
@@ -33,27 +83,18 @@ export default function CsrPage() {
                             image={csrData.hero.image}
                         />
 
-                        {/* Projects - Gray BG */}
-                        <div className="bg-gray-1">
-                            <CsrProjects data={csrData.projects} />
-                        </div>
+                        {/* Our Approach - White BG */}
+                        <CsrApproach data={csrData.approach} />
 
-                        {/* Impact - White BG */}
-                        <div className="csr-impact">
-                            <IndustrySplitSection
-                                item={{
-                                    title: csrData.impact.title,
-                                    desc: csrData.impact.desc,
-                                    image: csrData.impact.image
-                                }}
-                                sectionClass="csr-impact-section"
-                            />
-                        </div>
+                        {/* Impact Stats - Blue BG */}
+                        <CsrImpact data={csrData.impactStats} />
 
-                        {/* Featured - Gray BG */}
-                        <div >
-                            <CsrFeatured data={csrData.featured} />
-                        </div>
+                        {/* Projects - White BG */}
+                        <CsrProjects data={csrData.projects} />
+
+                        {/* Impact - Gray BG */}
+                       
+
 
                     </main>
                     <Footer2 />
