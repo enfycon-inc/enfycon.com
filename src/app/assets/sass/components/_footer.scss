@@ -571,6 +571,8 @@ START: Theme Footer CSS
 		border-radius: 0;
 		color: var(--tj-color-common-white);
 		margin-bottom: 0;
+		overflow: visible; // Fix: Ensure content isn't clipped
+
 
 
 		.footer-top-bar {
