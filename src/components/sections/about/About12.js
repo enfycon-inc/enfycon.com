@@ -8,33 +8,29 @@ const About12 = () => {
 					<div className="col-xl-5">
 						<div className="sec-heading mb-0">
 							<span className="sub-title wow fadeInUp" data-wow-delay="0.1s">
-								<i className="tji-box"></i> Our background
+								<i className="tji-box"></i> Our Background
 							</span>
 							<h2 className="sec-title text-anim">
-								Discover How We Have Evolved Our Company’s on{" "}
-								<span>Legacy.</span>
+								Evolving Through Integrity &{" "}
+								<span>Innovation.</span>
 							</h2>
 						</div>
 					</div>
 					<div className="col-xl-5">
 						<div className="desc wow fadeInUp" data-wow-delay="0.3s">
 							<p>
-								Our mission is to empowers businesses off all size to thrive in
-								an businesses ever changing marketplace. We are committed to the
-								delivering exceptional in the value through our strategic inset,
-								innovative approaches. Our mission is to empower businesses of
-								all sizes to thrive.
+								Our mission is to empower businesses to thrive in an ever-changing marketplace.
+								We are committed to delivering exceptional value through integrity, trust, and AI-driven solutions.
 							</p>
 							<p>
-								Committed to the delivering exceptional in the value through our
-								strategic inset, innovative approaches empower.
+								From our inception, we have believed that long-term success comes from partnership, not just transactions.
 							</p>
 						</div>
 						<div
 							className="history-btn mt-30 wow fadeInUp"
 							data-wow-delay="0.5s"
 						>
-							<ButtonPrimary text={"Learn More"} url={"/about"} />
+							<ButtonPrimary text={"View Our Journey"} url={"#history"} />
 						</div>
 					</div>
 				</div>

@@ -494,8 +494,14 @@
 						"icon": "fa-light fa-user-tie",
 						"path": "/about#founders-story"
 					},
-					{
+						{
 						"id": 3,
+						"name": "Our Journey",
+						"icon": "fa-light fa-history",
+						"path": "/about#history"
+					},
+					{
+						"id": 4,
 						"name": "Why enfycon",
 						"icon": "fa-light fa-lightbulb",
 						"path": "/about#feature3"

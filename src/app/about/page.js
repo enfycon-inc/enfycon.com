@@ -1,4 +1,5 @@
 import Footer from "@/components/layout/footer/Footer";
+import Footer2 from "@/components/layout/footer/Footer2";
 import Header from "@/components/layout/header/Header";
 import About12 from "@/components/sections/about/About12";
 import FounderStory from "@/components/sections/about/FounderStory";
@@ -47,7 +48,7 @@ export default function About() {
 						/>
 						<FounderStory id="founders-story" />
 					
-						<About12/>
+						{/* <About12/> */}
 						<History1/>
 	<Features3 id="feature3" />
 						<Brands1 type={2} id="partners" />
@@ -57,7 +58,7 @@ export default function About() {
 						{/* <Faq2 type={3} /> */}
 						<Cta />
 					</main>
-					<Footer />
+					<Footer2/>
 				</div>
 			</div>
 
