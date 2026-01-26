@@ -1,5 +1,6 @@
 import Footer from "@/components/layout/footer/Footer";
 import Header from "@/components/layout/header/Header";
+import About12 from "@/components/sections/about/About12";
 import FounderStory from "@/components/sections/about/FounderStory";
 import Brands1 from "@/components/sections/brands/Brands1";
 import LocationSection from "@/components/sections/contacts/LocationSection";
@@ -46,6 +47,7 @@ export default function About() {
 						/>
 						<FounderStory id="founders-story" />
 						<Features3 id="feature3" />
+						<About12/>
 						<History1/>
 
 						<Brands1 type={2} id="partners" />
