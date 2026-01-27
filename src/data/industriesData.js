@@ -3,7 +3,7 @@ export const industriesData = [
         id: "banking",
         title: "Banking",
         desc: "Empowering banking institutions with secure digital solutions, modern core banking systems, and innovative fintech platforms for enhanced customer experiences.",
-        image: "/images/industries/banking.jpg",
+        image: "/images/industries/banking/digital-banking-transformation.jpg",
         overviewTitle: "Strategic Banking Transformation",
         longDesc: [
             "The banking sector is undergoing a profound transformation, driven by the dual forces of technological innovation and evolving customer expectations. Traditional institutions are no longer competing just with each other but with agile fintech startups and tech giants that have redefined the standard for digital experiences. To stay ahead, banks must modernize legacy systems, ensuring they are not only secure and compliant but also flexible enough to integrate with an ecosystem of modern financial applications.",
@@ -148,7 +148,7 @@ export const industriesData = [
         workingModule: {
             title: "Core Banking Modernization",
             desc: "Legacy systems constrain agility and innovation. We help banks modernize their core infrastructure with microservices-based architectures and cloud-native solutions, enabling rapid product launches and seamless third-party integrations.",
-            image: "/images/industries/banking/banking-1.jpg"
+            image: "/images/industries/banking/core-banking.jpg"
         },
         solutions: [
             {
@@ -160,13 +160,13 @@ export const industriesData = [
             {
                 title: "Digital Payments Hub",
                 desc: "A unified platform for processing real-time payments, cross-border transfers, and digital wallet transactions securely and instantly.",
-                image: "/images/industries/finance.jpg",
+                image: "/images/industries/banking/digital-payment-hub.jpg",
                 color: "#ff6b00" // Orange
             },
             {
                 title: "Regulatory Tech (RegTech)",
                 desc: "Advanced compliance tools that automate reporting and monitoring, ensuring adherence to global banking regulations with minimal manual effort.",
-                image: "/images/industries/healthcare.jpg",
+                image: "/images/industries/banking/banking-regtech-solutions.jpg",
                 longDesc: [
                     "Healthcare is experiencing a digital renaissance, moving away from reactive sick care to proactive, preventative wellness management. The integration of electronic health records, telemedicine, and wearable devices has created a connected health ecosystem, but it has also introduced significant interoperability and data privacy challenges. Providers need systems that communicate seamlessly to provide a holistic view of patient health without compromising the security of sensitive medical information.",
                     "Our digital healthcare solutions are designed to place the patient at the center of the care continuum. We build interoperable platforms that allow data to flow securely between providers, payers, and patients, ensuring that critical information is available exactly when it's needed. From AI-powered diagnostic tools that assist clinicians in early detection to remote monitoring apps that extend care into the home, we deliver technology that improves outcomes, reduces costs, and ultimately saves lives."
@@ -184,12 +184,12 @@ export const industriesData = [
             {
                 title: "AI-Powered Customer Insights",
                 desc: "Unlock the power of your data to understand customer behavior like never before. Our AI solutions analyze transaction history and interaction patterns to predict needs and personalize offers.",
-                image: "/images/industries/banking/banking-1.jpg"
+                image: "/images/industries/banking/core-banking.jpg"
             },
             {
                 title: "Seamless Digital Onboarding",
                 desc: "Reduce friction and abandonment rates with fully automated, secure digital verification processes. Enable customers to open accounts in minutes, not days, from anywhere in the world.",
-                image: "/images/industries/banking/banking-2.jpg"
+                image: "/images/industries/banking/digital-banking-transformation.jpg"
             }
         ]
     },
@@ -710,25 +710,25 @@ export const industriesData = [
         workingModule: {
             title: "Workforce Optimization",
             desc: "Enhancing the employee lifecycle from recruitment to retention through intelligent data analytics and automation, fostering a productive work culture. We help you build a workplace where talent thrives.",
-            image: "/images/industries/human-resource.jpg"
+            image: "/images/industries/human-resource/workforce-modernization.jpg"
         },
         solutions: [
             {
                 title: "Smart Recruiting",
                 desc: "AI-driven candidate screening to identify top talent faster and reduce hiring bias. Shorten your time-to-hire while improving the quality and diversity of your candidate pool.",
-                image: "/images/industries/human-resource.jpg",
+                image: "/images/industries/human-resource/ai-powered-recruitment-platform.jpg",
                 color: "#E91E63"
             },
             {
                 title: "Employee Engagement",
                 desc: "Tools to track sentiment and improve satisfaction through personalized feedback loops. Create a culture of listening and continuous improvement that retains your best people.",
-                image: "/images/industries/human-resource.jpg",
+                image: "/images/industries/human-resource/employee-engagement-portal.jpg",
                 color: "#FF9800"
             },
             {
                 title: "Performance Analytics",
                 desc: "Data-backed performance reviews to objectively measure contributions and identify growth areas. Move away from annual reviews to continuous, data-driven performance management.",
-                image: "/images/industries/human-resource.jpg",
+                image: "/images/industries/human-resource/hr-performance-analytics-dashboard.jpg",
                 color: "#9C27B0"
             }
         ],
@@ -1244,25 +1244,25 @@ export const industriesData = [
         workingModule: {
             title: "Smart Factory Operations",
             desc: "Connecting machines, data, and people to create highly efficient, automated production environments that adapt to market needs.",
-            image: "/images/industries/manufacturing.jpg"
+            image: "/images/industries/manufacturing/smart-factory-iot-production.jpg"
         },
         solutions: [
             {
                 title: "IoT Monitoring",
                 desc: "Real-time sensor data from machinery provides deep visibility into production health and efficiency.",
-                image: "/images/industries/manufacturing.jpg",
+                image: "/images/industries/manufacturing/industrial-iot-monitoring-dashboard.jpg",
                 color: "#795548"
             },
             {
                 title: "Quality Control Systems",
                 desc: "Automated visual inspection detects defects instantly, ensuring consistent product quality 24/7.",
-                image: "/images/industries/manufacturing.jpg",
+                image: "/images/industries/manufacturing/automated-quality-control-inspection.jpg",
                 color: "#4CAF50"
             },
             {
                 title: "Supply Integration",
                 desc: "Synchronizing production schedules with supply chain realities to minimize waste and delay.",
-                image: "/images/industries/manufacturing.jpg",
+                image: "/images/industries/manufacturing/manufacturing-supply-chain-integration.jpg",
                 color: "#607D8B"
             }
         ],
@@ -1606,19 +1606,19 @@ export const industriesData = [
             {
                 title: "Booking Engines",
                 desc: "Robust, user-friendly booking platforms that handle complex inventories and dynamic pricing models with ease. maximize direct bookings and reduce dependency on OTAs.",
-                image: "/images/industries/tourism.png",
+                image: "/images/industries/tourism/booking-engine.jpg",
                 color: "#03A9F4"
             },
             {
                 title: "Travel Apps",
                 desc: "Comprehensive mobile companions that manage itineraries, tickets, and bookings in one place. Keep your customers engaged and informed throughout their entire trip.",
-                image: "/images/industries/tourism.png", // Placeholder - check if specific image available or use generic
+                image: "/images/industries/tourism/travel-apps.jpg",
                 color: "#FF5722"
             },
             {
                 title: "Virtual Tours",
                 desc: "High-definition 360-degree virtual experiences that market destinations and properties effectively to remote audiences. Let guests experience the magic before they even book.",
-                image: "/images/industries/tourism.png",
+                image: "/images/industries/tourism/virtual-tour-experience.jpg",
                 color: "#8BC34A"
             }
         ],
