@@ -1,11 +1,69 @@
 "use client";
+import { useState } from "react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
-import ReactNiceSelect from "@/components/shared/Inputs/ReactNiceSelect";
+
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 const Contact2 = () => {
+	const [phone, setPhone] = useState("");
+	const [isSubmitting, setIsSubmitting] = useState(false);
+
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setIsSubmitting(true);
+
+		const formData = new FormData(e.target);
+		const data = {
+			firstName: formData.get("cfName2"),
+			lastName: "",
+			email: formData.get("cfEmail2"),
+			mobile: phone,
+			subject: formData.get("cfSubject2"),
+			message: formData.get("cfMessage2"),
+		};
+
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(data),
+			});
+
+			const result = await response.json();
+
+			if (result.success) {
+				Swal.fire({
+					icon: "success",
+					title: "Message Sent!",
+					text: result.message,
+					confirmButtonColor: "var(--tj-color-theme-primary)",
+				});
+				e.target.reset();
+				setPhone("");
+
+			} else {
+				throw new Error(result.error || "Something went wrong");
+			}
+		} catch (error) {
+			Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: error.message,
+				confirmButtonColor: "var(--tj-color-theme-primary)",
+			});
+		} finally {
+			setIsSubmitting(false);
+		}
+	};
+
 	return (
-		<section className="tj-contact-section section-gap section-gap-x">
+		<section className="tj-contact-section section-gap ">
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-6">
@@ -15,30 +73,51 @@ const Contact2 = () => {
 								<div className="location-indicator loc-1">
 									<div className="location-tooltip">
 										<span>Head office:</span>
-										<p>993 Renner Burg, West Rond, MT 94251-030, USA.</p>
-										<Link href="tel:10095447818">P: +1 (009) 544-7818</Link>
-										<Link href="mailto:support@enfycon.com">
-											M: support@enfycon.com
+										<p>3921 Long Prairie Road, Building 5, Flower Mound, TX 75028, USA.</p>
+										<Link href="tel:+12012017078">P: +1 (201) 201-7078</Link>
+										<Link href="mailto:office@enfycon.com">
+											M: office@enfycon.com
 										</Link>
 									</div>
+									<span className="hq-text">HQ</span>
 								</div>
 								<div className="location-indicator loc-2">
 									<div className="location-tooltip">
 										<span>Regional office:</span>
-										<p>Hessisch Lichtenau 37235, Kassel, Germany.</p>
-										<Link href="tel:10098801810">P: +1 (009) 880-1810</Link>
-										<Link href="mailto:support@enfycon.com">
-											M: support@enfycon.com
+										<p>N4/345, Block N4, IRC Village, Bhubaneswar, Odisha 751015, India.</p>
+										<Link href="tel:+916743513070">P: +91 674 351 3070</Link>
+										<Link href="mailto:odc@enfycon.com">
+											M: odc@enfycon.com
 										</Link>
 									</div>
+									<span className="odc-text">ODC</span>
 								</div>
 								<div className="location-indicator loc-3">
 									<div className="location-tooltip">
 										<span>Regional office:</span>
-										<p>32 Altamira, State of Pará, Brazil.</p>
-										<Link href="tel:10095447818">P: +1 (009) 544-7818</Link>
-										<Link href="mailto:support@enfycon.com">
-											M: support@enfycon.com
+										<p>6500 Emerald Parkway, Suite 100 Dublin, Ohio 43016, USA.</p>
+										<Link href="tel:+12168883007">P: +1 (216) 888-3007</Link>
+										<Link href="mailto:ohio@enfycon.com">
+											M: ohio@enfycon.com
+										</Link>
+									</div>
+								</div>
+								<div className="location-indicator loc-4">
+									<div className="location-tooltip">
+										<span>Regional office:</span>
+										<p>112 Capitol Trail, Suite A33, Newark DE 19711, USA.</p>
+										<Link href="tel:+13022731130">P: +1 (302) 273-1130</Link>
+										<Link href="mailto:delaware@enfycon.com">
+											M: delaware@enfycon.com
+										</Link>
+									</div>
+								</div>
+								<div className="location-indicator loc-5">
+									<div className="location-tooltip">
+										<span>Regional office:</span>
+										<p>Unit No. 308 & 309, Jains Sadguru Image's Capital Park, Madhapur, Hyderabad 500084, India.</p>
+										<Link href="mailto:hydrabad@enfycon.com">
+											M: hydrabad@enfycon.com
 										</Link>
 									</div>
 								</div>
@@ -58,7 +137,7 @@ const Contact2 = () => {
 									Drop Us a <span>Line.</span>
 								</h2>
 							</div>
-							<form id="contact-form-2">
+							<form id="contact-form-2" onSubmit={handleSubmit}>
 								<div className="row wow fadeInUp" data-wow-delay=".5s">
 									<div className="col-sm-6">
 										<div className="form-input">
@@ -66,6 +145,7 @@ const Contact2 = () => {
 												type="text"
 												name="cfName2"
 												placeholder="Full Name *"
+												required
 											/>
 										</div>
 									</div>
@@ -75,48 +155,38 @@ const Contact2 = () => {
 												type="email"
 												name="cfEmail2"
 												placeholder="Email Address *"
+												required
+											/>
+										</div>
+									</div>
+									<div className="col-sm-6">
+										<div className="form-input custom-phone-input contact2-phone">
+											<PhoneInput
+												country={"us"}
+												value={phone}
+												onChange={(phone) => setPhone(phone)}
+												enableSearch={true}
+												searchPlaceholder="Search country..."
+												searchNotFound="No country found"
+												inputProps={{
+													name: 'cfPhone2',
+													required: true,
+													autoFocus: false
+												}}
+												containerClass="phone-container"
+												inputClass="phone-input-field"
+												buttonClass="phone-dropdown-button"
 											/>
 										</div>
 									</div>
 									<div className="col-sm-6">
 										<div className="form-input">
 											<input
-												type="tel"
-												name="cfPhone2"
-												placeholder="Phone number *"
+												type="text"
+												name="cfSubject2"
+												placeholder="Subject *"
+												required
 											/>
-										</div>
-									</div>
-									<div className="col-sm-6">
-										<div className="form-input">
-											<div className="tj-nice-select-box">
-												<div className="tj-select">
-													<ReactNiceSelect
-														selectedIndex={0}
-														options={[
-															{ value: "0", optionName: "Chose a option" },
-															{ value: "1", optionName: "Business Strategy" },
-															{ value: "2", optionName: "Customer Experience" },
-															{
-																value: "3",
-																optionName: "Sustainability and ESG",
-															},
-															{
-																value: "4",
-																optionName: "Training and Development",
-															},
-															{
-																value: "5",
-																optionName: "IT Support & Maintenance",
-															},
-															{
-																value: "6",
-																optionName: "Marketing Strategy",
-															},
-														]}
-													/>
-												</div>
-											</div>
 										</div>
 									</div>
 									<div className="col-sm-12">
@@ -125,11 +195,16 @@ const Contact2 = () => {
 												name="cfMessage2"
 												id="message"
 												placeholder="Type message *"
+												required
 											></textarea>
 										</div>
 									</div>
 									<div className="submit-btn">
-										<ButtonPrimary text={"Send Message"} type={"submit"} />
+										<ButtonPrimary
+											text={isSubmitting ? "Sending..." : "Send Message"}
+											type={"submit"}
+											disabled={isSubmitting}
+										/>
 									</div>
 								</div>
 							</form>

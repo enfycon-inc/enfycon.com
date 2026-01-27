@@ -27,9 +27,10 @@ export default function ContactUs() {
                     <main>
                        
                         <HeroInner title={"Contact Us"} text={"Contact Us"} />
-                        <Contact2/>
+                     
                         <LocationSection />
-                        <ContactFormCustom />
+                           <Contact2/>
+                        {/* <ContactFormCustom /> */}
                     </main>
                     <Footer2 />
                 </div>
