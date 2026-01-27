@@ -47,7 +47,7 @@ export const footerData = {
         // { label: "Media Kit", link: "#" },
     ],
     contactInfo: {
-        description: "enfycon builds custom AI-driven software using modern, cutting-edge technologies.",
+        description: "Accelerating your digital future with AI-driven innovation and engineering excellence.",
         address: "3921 Long Prairie Road, Building 5, Flower Mound, TX 75028, United States",
         phone: "+1 201.201.7078",
         email: "office@enfycon.com"

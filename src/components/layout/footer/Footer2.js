@@ -155,10 +155,10 @@ const Footer2 = () => {
 								<div className="copyright-menu">
 									<ul className="d-flex list-unstyled m-0 gap-3 align-items-center">
 										<li>
-											<Link href="/privacy-policy" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Privacy Policy</Link>
+											<Link href="/privacy-policy" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', hover: 'rgba(29, 60, 235, 1)' }}>Privacy Policy</Link>
 										</li>
 										<li>
-											<Link href="/terms-and-conditions" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px' }}>Terms & Condition</Link>
+											<Link href="/terms-and-conditions" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '14px', hover: 'rgba(29, 60, 235, 1)' }}>Terms & Condition</Link>
 										</li>
 									</ul>
 								</div>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import MobileNavbar from "./MobileNavbar";
 import siteConfig from "@/config/siteConfig";
+import { footerData } from "@/data/footerData";
 
 const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 	const handleClick = () => {
@@ -48,45 +49,45 @@ const MobileMenu = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
 									<Link className="contact-link" href={`mailto:${siteConfig.email}`}>
 										{siteConfig.email}
 									</Link>
-							</div>
-							<div className="contact-item">
-								<span className="subtitle">Location</span>
-								<span className="contact-link">
-									993 Renner Burg, West Rond, MT 94251-030
-								</span>
+								</div>
+								<div className="contact-item">
+									<span className="subtitle">Location</span>
+									<span className="contact-link">
+										{footerData.contactInfo.address}
+									</span>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div className="hamburger-socials">
-					<h5 className="hamburger-title">Follow Us</h5>
-					<div className="social-links style-3">
-						<ul>
-							<li>
-								<Link href="https://www.facebook.com/" target="_blank">
-									<i className="fa-brands fa-facebook-f"></i>
-								</Link>
-							</li>
-							<li>
-								<Link href="https://www.instagram.com/" target="_blank">
-									<i className="fa-brands fa-instagram"></i>
-								</Link>
-							</li>
-							<li>
-								<Link href="https://x.com/" target="_blank">
-									<i className="fa-brands fa-x-twitter"></i>
-								</Link>
-							</li>
-							<li>
-								<Link href="https://www.linkedin.com/" target="_blank">
-									<i className="fa-brands fa-linkedin-in"></i>
-								</Link>
-							</li>
-						</ul>
+					<div className="hamburger-socials">
+						<h5 className="hamburger-title">Follow Us</h5>
+						<div className="social-links style-3">
+							<ul>
+								<li>
+									<Link href="https://www.facebook.com/" target="_blank">
+										<i className="fa-brands fa-facebook-f"></i>
+									</Link>
+								</li>
+								<li>
+									<Link href="https://www.instagram.com/" target="_blank">
+										<i className="fa-brands fa-instagram"></i>
+									</Link>
+								</li>
+								<li>
+									<Link href="https://x.com/" target="_blank">
+										<i className="fa-brands fa-x-twitter"></i>
+									</Link>
+								</li>
+								<li>
+									<Link href="https://www.linkedin.com/" target="_blank">
+										<i className="fa-brands fa-linkedin-in"></i>
+									</Link>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div >
+			</div >
 		</>
 	);
 };
