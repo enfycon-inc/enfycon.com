@@ -563,228 +563,295 @@ START: Theme Footer CSS
 	}
 }
 
-// footer 2
-.tj-footer-section {
-	&.footer-2 {
-		background-color: #050A1E; // Dark navy background
-		padding-top: 50px;
-		border-radius: 0;
-		color: var(--tj-color-common-white);
-		margin-bottom: 0;
-		overflow: visible; // Fix: Ensure content isn't clipped
+// Footer v2 Redesign (Mobile-First)
+.footer-2-v2 {
+	background-color: #050a1e;
+	color: #fff;
+	padding: 60px 0 30px;
+	font-family: var(--tj-ff-body);
 
+	@media (max-width: 991px) {
+		padding: 40px 0 20px;
+	}
 
+	.footer-brand {
+		margin-bottom: 40px;
 
-		.footer-top-bar {
+		@media (max-width: 991px) {
+			margin-bottom: 30px;
+			text-align: center;
+		}
+
+		.footer-logo {
+			display: inline-block;
+			max-width: 160px;
+			margin-bottom: 20px;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		.footer-tagline {
+			color: rgba(255, 255, 255, 0.7);
+			font-size: 15px;
+			line-height: 1.6;
+			max-width: 350px;
+
+			@media (max-width: 991px) {
+				margin: 0 auto;
+			}
+		}
+	}
+
+	// Unified Accordion / Widget Styles
+	.footer-widget-v2 {
+		margin-bottom: 10px;
+
+		.widget-header {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			padding: 20px 0;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			padding-bottom: 0;
 
-			@media #{$sm, $xs} {
-				flex-direction: column;
-				gap: 20px;
-				text-align: center;
+			&.clickable {
+				cursor: pointer;
+				padding: 15px 0;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+				min-height: 44px; // Mobile a11y
+				transition: background 0.2s ease;
 
-			}
-
-			.logo-area {
-				max-width: 180px;
-			}
-
-			.social-connect {
-				display: flex;
-				align-items: center;
-				gap: 20px;
-
-				@media #{$xs} {
-					flex-direction: column;
-					gap: 15px;
-				}
-
-				.connect-text {
-					color: var(--tj-color-common-white);
-					font-size: 18px;
-					font-weight: 500;
-				}
-
-				.social-icons {
-					display: flex;
-					gap: 15px;
-
-					a {
-						color: rgba(255, 255, 255, 0.7);
-						font-size: 18px;
-						transition: 0.3s;
-
-						&:hover {
-							color: var(--tj-color-theme-primary);
-							transform: translateY(-2px);
-						}
-					}
+				&:active {
+					background-color: rgba(255, 255, 255, 0.03);
 				}
 			}
-		}
 
-		.footer-widget {
-			margin-bottom: 10px;
-
-			.title {
-				color: rgba(255, 255, 255, 0.7);
+			.widget-title {
 				font-size: 15px;
+				padding-left: 10px;
+				padding-right: 10px;
 				font-weight: 600;
-				margin-bottom: 25px;
-				position: relative;
-				padding-bottom: 10px; // Space for the line
-				width: fit-content; // Ensure underline corresponds to text width
+				text-transform: capitalize;
+				letter-spacing: 0.5px;
+				color: rgba(255, 255, 255, 0.9);
+				margin: 0;
 
-				&::after {
-					content: "";
-					position: absolute;
-					left: 0;
-					bottom: 0;
-					width: 90%; // 90% of the heading text
-					height: 2px;
-					background: linear-gradient(to right, #0a3c79, #086b86);
-				}
-			}
-
-			// Specific styles for the logo/contact column
-			.logo-area {
-				max-width: 140px; // Reduced logo size
-				margin-bottom: 25px;
-
-				img {
-					width: 100%;
-				}
-			}
-
-			p.desc {
-				color: rgba(255, 255, 255, 0.7);
-				font-size: 15px;
-				line-height: 1.6;
-				margin-bottom: 20px;
-			}
-
-			.footer-contact-info {
-				.title {
-					margin-bottom: 15px;
-					font-size: 18px; // Slightly larger for "Contact Us" heading
-					color: var(--tj-color-common-white);
+				@media (min-width: 992px) {
+					margin-bottom: 25px;
+					font-size: 16px;
+					position: relative;
+					padding-bottom: 10px;
+					width: fit-content;
 
 					&::after {
-						display: none;
-					}
-
-					// Remove underline for this specific heading if desired, or keep it. User asked for "product heading separte", not this one. But standardizing text.
-					padding-bottom: 0;
-				}
-
-				p.address {
-					color: rgba(255, 255, 255, 0.7);
-					font-size: 15px;
-					line-height: 1.6;
-				}
-
-				ul {
-					li {
-						a {
-							display: flex;
-							align-items: center;
-							gap: 10px;
-							color: rgba(255, 255, 255, 0.7);
-							font-size: 15px;
-							transition: 0.3s;
-
-							i {
-								color: var(--tj-color-theme-primary);
-							}
-
-							&:hover {
-								color: var(--tj-color-theme-primary);
-							}
-						}
+						content: "";
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 100%;
+						height: 2px;
+						background: linear-gradient(to right, #0a3c79, #086b86);
 					}
 				}
 			}
 
-			ul {
-				padding: 0;
-				margin: 0;
+			.toggle-icon {
+				font-size: 16px;
+				color: rgba(255, 255, 255, 0.5);
+				transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+			}
+
+			&.is-open .toggle-icon {
+				transform: rotate(180deg);
+				color: var(--tj-color-theme-primary);
+			}
+		}
+
+		.widget-content {
+			@media (max-width: 991px) {
+				overflow: hidden;
+				transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+
+				&.collapsed {
+					max-height: 0;
+					opacity: 0;
+					padding-top: 0;
+				}
+
+				&.expanded {
+					max-height: 1000px;
+					opacity: 1;
+					padding: 10px 0 20px;
+				}
+			}
+
+			.footer-links {
 				list-style: none;
+				padding-left: 24px; // Indented for hierarchy
+				margin: 0;
 
 				li {
-					margin-bottom: 4px;
+					margin-bottom: 0;
+
+					@media (max-width: 991px) {
+						border-bottom: 1px solid rgba(255, 255, 255, 0.04); // subtle separator
+
+						&:last-child {
+							border-bottom: 0;
+						}
+					}
 
 					a {
-						color: rgba(255, 255, 255, 0.7);
-						font-size: 15px;
-						display: inline-block;
-						transition: 0.3s;
+						color: rgba(255, 255, 255, 0.6);
+						font-size: 14px; // Lightweight typography
+						line-height: 1.4;
+						padding: 12px 0; // thumb-friendly targets
+						transition: all 0.3s ease;
+						display: block;
 
-						&:hover {
-							color: var(--tj-color-theme-primary);
-							padding-left: 5px;
-						}
-
-						&:active,
+						&:hover,
 						&.active {
 							color: var(--tj-color-theme-primary);
-
-						}
-					}
-				}
-			}
-
-			&.widget-nav-menu {
-				padding-inline-start: 0; // Reset default padding
-			}
-		}
-
-		.tj-copyright-area-2 {
-			.copyright-content-area {
-				border-top: none;
-				padding: 25px 0;
-
-				.social-icons {
-					a {
-						color: rgba(255, 255, 255, 0.7);
-						font-size: 16px;
-						transition: all 0.3s ease;
-
-						&:hover {
-							color: var(--tj-color-theme-primary);
-							transform: translateY(-2px);
-						}
-					}
-				}
-
-				.copyright-text {
-					p {
-						color: rgba(255, 255, 255, 0.5);
-						font-size: 14px;
-
-						a {
-							color: var(--tj-color-common-white);
-
-							&:hover {
-								text-decoration: underline;
-							}
+							padding-left: 5px; // Smooth hover/tap feedback
 						}
 					}
 				}
 			}
 		}
+	}
 
-		// Hide the background shapes for clean look
-		.bg-shape-1,
-		.bg-shape-2 {
-			display: none;
+	// Contact Section
+	.footer-contact-v2 {
+		@media (min-width: 992px) {
+			display: flex;
+			gap: 40px;
+			margin-top: 40px;
+			padding-top: 30px;
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
 		}
 
-		@media #{$md, $sm, $xs} {
-			padding-top: 0;
+		.contact-item {
+			display: flex;
+			align-items: flex-start;
+			gap: 15px;
+			color: rgba(255, 255, 255, 0.7);
+			font-size: 15px;
+			margin-bottom: 15px;
+
+			@media (min-width: 992px) {
+				margin-bottom: 0;
+				flex: 1;
+			}
+
+			i {
+				color: var(--tj-color-theme-primary);
+				font-size: 18px;
+				margin-top: 3px;
+			}
+
+			a {
+				color: inherit;
+				transition: 0.3s;
+
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	// Social Block
+	.footer-social-v2 {
+		@media (min-width: 992px) {
+			text-align: right;
+			margin-top: 40px;
+			padding-top: 30px;
+		}
+
+		@media (max-width: 991px) {
+			text-align: center;
+			margin: 30px 0;
+		}
+
+		.social-title {
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: rgba(255, 255, 255, 0.4);
+			margin-bottom: 15px;
+		}
+
+		.social-icons-v2 {
+			display: inline-flex;
+			gap: 20px;
+
+			a {
+				width: 48px;
+				height: 48px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: rgba(255, 255, 255, 0.05);
+				border-radius: 12px;
+				color: #fff;
+				font-size: 20px;
+				transition: all 0.3s;
+
+				&:hover {
+					background: var(--tj-color-theme-primary);
+					transform: translateY(-3px);
+				}
+
+				@media (max-width: 991px) {
+					width: 54px; // Thumb friendly
+					height: 54px;
+					font-size: 22px;
+				}
+			}
+		}
+	}
+
+	// Bottom Bar
+	.footer-bottom-v2 {
+		margin-top: 50px;
+		padding-top: 25px;
+		border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+		@media (max-width: 991px) {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		.footer-legal-v2 {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: 20px;
+
+			@media (max-width: 991px) {
+				flex-direction: column;
+			}
+
+			.copyright {
+				margin: 0;
+				font-size: 14px;
+				color: rgba(255, 255, 255, 0.4);
+			}
+
+			.legal-links {
+				display: flex;
+				gap: 25px;
+
+				a {
+					font-size: 14px;
+					color: rgba(255, 255, 255, 0.5);
+
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
 		}
 	}
 }
