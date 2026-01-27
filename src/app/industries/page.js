@@ -25,7 +25,7 @@ export default function Industries() {
             <div id="smooth-wrapper">
                 <div id="smooth-content">
                     <main>
-                       
+                       <HeaderSpace/>
                         <HeroInner title={"Industries"} text={"Industries"} />
                         <IndustriesPage />
                         <Contact2 />

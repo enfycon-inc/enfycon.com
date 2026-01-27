@@ -44,7 +44,7 @@ export default async function ServiceDetails({ params }) {
 					<main>
 					
 
-					
+					<HeaderSpace/>
 						<ServiceDetailsMain currentItemId={id} />
 						
 					</main>
