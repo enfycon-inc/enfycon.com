@@ -34,7 +34,7 @@ const CsrImpact = ({ data }) => {
                                 <div style={{
                                     marginBottom: '40px'
                                 }}>
-                                    <i className="fa-light fa-graduation-cap" style={{
+                                    <i className={data.icon} style={{
                                         fontSize: '4rem',
                                         color: 'rgba(255, 255, 255, 0.9)',
                                         filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.2))'
@@ -53,7 +53,7 @@ const CsrImpact = ({ data }) => {
                                     letterSpacing: '0.3px',
                                     fontFamily: 'inherit'
                                 }}>
-                                    Small efforts in education create meaningful change
+                                    {data.title}
                                 </h3>
 
                                 {/* Decorative line */}

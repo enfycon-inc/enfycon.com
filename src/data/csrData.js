@@ -52,6 +52,8 @@ export const csrData = {
                 subtext: ""
             }
         ],
+        title: "Small efforts in education create meaningful change",
+        icon: "fa-light fa-graduation-cap",
         footerText: "*Data as of current financial year"
     },
     impact: {
