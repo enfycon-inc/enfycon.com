@@ -103,46 +103,30 @@ const CultureTestimonials = () => {
                     <div className="culture-testimonials__content-wrapper">
                         {/* Left: Testimonial Content */}
                         <div className="culture-testimonials__content">
-                            {/* Decorative hand-drawn scribble (Canva style) */}
-                            <div className="culture-testimonials__decoration">
-                                <svg className="culture-testimonials__scribble" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M10 30 Q 30 10, 50 25 T 90 30 Q 130 35, 150 25 T 190 30"
-                                        stroke="#EF4444"
-                                        strokeWidth="3"
-                                        strokeLinecap="round"
-                                        fill="none"
-                                        opacity="0.8"
-                                    />
-                                    <path
-                                        d="M15 35 Q 35 15, 55 30 T 95 35 Q 135 40, 155 30 T 185 35"
-                                        stroke="#EF4444"
-                                        strokeWidth="3"
-                                        strokeLinecap="round"
-                                        fill="none"
-                                        opacity="0.6"
-                                    />
-                                </svg>
-                            </div>
+
 
                             {/* Main quote */}
-                            <h3 className="culture-testimonials__quote">
-                                {currentTestimonial.quote}
-                            </h3>
-
-                            {/* Supporting paragraph */}
-                            <p className="culture-testimonials__text">
-                                {currentTestimonial.content}
-                            </p>
-
-                            {/* Author info */}
-                            <div className="culture-testimonials__author">
-                                <p className="culture-testimonials__author-name">
-                                    {currentTestimonial.name}
-                                </p>
-                                <p className="culture-testimonials__author-meta">
-                                    {currentTestimonial.role} • {currentTestimonial.team} • {currentTestimonial.location}
-                                </p>
+                            {/* Main quote */}
+                            <div className="d-flex">
+                                <div className="quote-icon me-3 mt-2">
+                                    <i className="tji-quote" style={{ fontSize: "40px", color: "var(--tj-color-theme-primary)", transform: "rotate(180deg)", display: "inline-block" }}></i>
+                                </div>
+                                <div className="testimonial-content-wrapper">
+                                    <h3 className="culture-testimonials__quote mb-3">
+                                        {currentTestimonial.quote}
+                                    </h3>
+                                    <p className="culture-testimonials__text mb-4">
+                                        {currentTestimonial.content}
+                                    </p>
+                                    <div className="culture-testimonials__author">
+                                        <p className="culture-testimonials__author-name">
+                                            {currentTestimonial.name}
+                                        </p>
+                                        <p className="culture-testimonials__author-meta">
+                                            {currentTestimonial.role} • {currentTestimonial.team} • {currentTestimonial.location}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
