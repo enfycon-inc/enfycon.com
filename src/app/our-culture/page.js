@@ -2,6 +2,7 @@ import Footer2 from "@/components/layout/footer/Footer2";
 import Header from "@/components/layout/header/Header";
 import EnfyconLife from "@/components/sections/culture/EnfyconLife";
 import ImpactSection from "@/components/sections/culture/ImpactSection";
+import CoreValues from "@/components/sections/culture/CoreValues";
 import CultureTestimonials from "@/components/sections/culture/CultureTestimonials";
 import BackToTop from "@/components/shared/others/BackToTop";
 import HeaderSpace from "@/components/shared/others/HeaderSpace";
@@ -24,11 +25,18 @@ export default function OurCulture() {
 				<div id="smooth-content">
 					<main>
 						<HeaderSpace />
-						<FullScreenHero title={"Our Culture"} text={"Our Culture"} breadcrums={[{ name: "Our Culture", path: "/our-culture" }]} image={"/images/culture/enfycon.jpg"} />
-						{/* Employee Testimonials */}
-						<CultureTestimonials />
+						<FullScreenHero
+							title={"A Culture of Innovation & Excellence"}
+							text={"At enfycon, we thrive on collaboration, diversity, and a shared passion for technology. We foster an environment where every idea matters, creativity knows no bounds, and our people are empowered to shape the future."}
+							breadcrums={[{ name: "Our Culture", path: "/our-culture" }]}
+							image={"/images/culture/enfycon.jpg"}
+						/>
+						{/* Core Values Section */}
+						<CoreValues />
+						
 						<SplitImageQuote data={{ image: "/images/culture/steptodown.com882339.jpg", title: "More than just work, we build meaningful connections", icon: "fa-light fa-users" }} />
-
+	{/* Enfycon Life Section */}
+						<EnfyconLife />
 						<ImpactSection
 							imageSrc="/images/csr/food-distribution-banner.jpg"
 							title="Driving Purposeful Impact"
@@ -40,11 +48,13 @@ export default function OurCulture() {
 							buttonText="Our CSR Initiatives"
 							buttonLink="/csr"
 							backgroundColor="linear-gradient(to right, #0c8b21ff, #797497ff)"
-							
 						/>
 
-						{/* Enfycon Life Section */}
-						<EnfyconLife />
+						
+
+					
+						{/* Employee Testimonials */}
+						<CultureTestimonials />
 
 
 
