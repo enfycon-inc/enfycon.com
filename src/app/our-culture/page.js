@@ -32,10 +32,23 @@ export default function OurCulture() {
 							image={"/images/culture/culture-banner.jpg"}
 						/>
 						{/* Core Values Section */}
-						<CoreValues />
-						
+						{/* <CoreValues /> */}
+						<ImpactSection
+							imageSrc="/images/csr/food-distribution-banner.jpg"
+							title="Driving Purposeful Impact"
+							texts={[
+								"At Enfycon, culture is something we build every day—not a policy, not a poster. It’s shaped by the people we work with, the way we collaborate, and the respect we show each other.",
+								"We believe great work happens in an environment where people feel trusted, heard, and supported. Ideas are welcomed openly, learning is continuous, and teamwork comes naturally. We move fast, adapt quickly, and grow together—while keeping things honest, inclusive, and human.",
+								"As we grow, we aim to create positive impact not just through our work, but through the way we treat people and contribute back to the communities around us."
+							]}
+							type="right-img"
+							buttonText="Our CSR Initiatives"
+							buttonLink="/csr"
+							backgroundColor="linear-gradient(to right, #0c8b21ff, #797497ff)"
+						/>
+
 						<SplitImageQuote data={{ image: "/images/culture/group.jpeg", title: "More than just work, we build meaningful connections", icon: "fa-light fa-users" }} />
-	{/* Enfycon Life Section */}
+						{/* Enfycon Life Section */}
 						<EnfyconLife />
 						<ImpactSection
 							imageSrc="/images/csr/food-distribution-banner.jpg"
@@ -50,9 +63,9 @@ export default function OurCulture() {
 							backgroundColor="linear-gradient(to right, #0c8b21ff, #797497ff)"
 						/>
 
-						
 
-					
+
+
 						{/* Employee Testimonials */}
 						<CultureTestimonials />
 
