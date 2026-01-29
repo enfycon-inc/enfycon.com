@@ -10,7 +10,7 @@ const ImpactSection = ({ imageSrc, title, texts, buttonText, buttonLink, backgro
                 <div className="row g-0">
                     {/* Image Column */}
                     <div className={`col-lg-6 order-2 ${type === 'right-img' ? 'order-lg-2 impact-col-right' : 'order-lg-1 impact-col-left'} d-flex align-items-center justify-content-center`} style={{ background: 'transparent' }}>
-                        <div className={`impact-image w-100 position-relative wow ${type === 'right-img' ? 'fadeInRight impact-image-right' : 'fadeInLeft'}`} data-wow-delay=".3s">
+                        <div className={`impact-image position-relative wow ${type === 'right-img' ? 'fadeInRight impact-image-right' : 'fadeInLeft'}`} data-wow-delay=".3s">
                             <Image
                                 src={imageSrc}
                                 alt="Impact and Culture"

@@ -1,9 +1,21 @@
+@use "../utilities" as *;
+
 .impact-section {
   .impact-image {
     height: 450px;
+    width: 100%;
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
     overflow: hidden;
+
+    @media #{$md, $sm, $xs} {
+
+   width: 100% !important;
+   border-radius: 10px !important;
+
+    
+    
+	}
 
     &.impact-image-right {
       border-top-right-radius: 0;
@@ -11,6 +23,12 @@
       border-top-left-radius: 24px;
       border-bottom-left-radius: 24px;
     }
+
+    // @media (max-width: 991px) {
+    //   border-radius: 24px !important;
+    //   margin: 0 auto 20px auto;
+    //   width: 90% !important;
+    // }
 
     img {
       object-fit: cover;
@@ -22,18 +40,36 @@
     padding-bottom: 3rem;
     padding-right: 3rem;
     padding-left: 0;
-  }
 
+    @media #{$md, $sm, $xs} {
+     padding: 20px;
+
+    
+    
+	}
+}
+
+ 
   .impact-col-right {
     padding-top: 3rem;
     padding-bottom: 3rem;
     padding-left: 3rem;
     padding-right: 0;
+
+    @media #{$md, $sm, $xs} {
+		padding: 20px;
+    
+    
+	}
   }
 
   .impact-content {
     padding: 80px 60px;
     color: white;
+
+    @media (max-width: 991px) {
+      padding: 40px 20px;
+    }
   }
 
   .content-wrapper {
@@ -46,6 +82,10 @@
     font-weight: 600;
     line-height: 1.2;
     color: white;
+
+    @media (max-width: 991px) {
+      font-size: 2.5rem;
+    }
   }
 
   p {
@@ -63,3 +103,5 @@
     }
   }
 }
+
+  
