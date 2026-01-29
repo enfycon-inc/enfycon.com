@@ -1,4 +1,4 @@
-import productCategries from "../../public/fakedata/product-categories";
+import productCategries from "../../public/data/product-categories";
 
 const getProductCategories = () => {
 	return productCategries;

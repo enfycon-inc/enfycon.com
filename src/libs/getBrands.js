@@ -1,4 +1,4 @@
-import brands from "../../public/fakedata/brands";
+import brands from "../../public/data/brands";
 
 const getBrands = () => {
   return brands;

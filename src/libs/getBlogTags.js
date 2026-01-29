@@ -1,4 +1,4 @@
-import blogsTags from "../../public/fakedata/blog-tags";
+import blogsTags from "../../public/data/blog-tags";
 
 const getBlogTags = () => {
   return blogsTags;

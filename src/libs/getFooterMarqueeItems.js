@@ -1,4 +1,4 @@
-import features from "../../public/fakedata/footer-marquee";
+import features from "../../public/data/footer-marquee";
 
 const getFooterMarqueeItems = () => {
 	return features;

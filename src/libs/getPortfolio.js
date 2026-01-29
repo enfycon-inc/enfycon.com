@@ -1,4 +1,4 @@
-import portfolio from "../../public/fakedata/portfolio";
+import portfolio from "../../public/data/portfolio";
 
 const getPortfolio = () => {
   return portfolio;

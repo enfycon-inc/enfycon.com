@@ -1,5 +1,5 @@
 
-import navItems from "../../public/fakedata/nav-items"
+import navItems from "../../public/data/nav-items"
 
 const getNavItems = () => {
 
