@@ -10,9 +10,10 @@ const MobileNavbar = () => {
 	const pagesNav = navItems[1];
 	const serviceNav = navItems[2];
 	const industriesNav = navItems[3];
-	const blogsNav = navItems[4];
-	const aboutNav = navItems[5];
+	const productsNav = navItems[4];
+	const companyNav = navItems[5];
 	const contactNav = navItems[6];
+	const blogsNav = navItems[7];
 	return (
 		<div className="hamburger_menu">
 			<div className="mobile_menu mean-container">
@@ -176,14 +177,73 @@ const MobileNavbar = () => {
 									))
 									: ""}
 							</MobileMenuItem>
+							<MobileMenuItem
+								text={productsNav?.name}
+								url={productsNav?.path ? productsNav?.path : "#"}
+								submenuClass={"mega-menu-service"}
+							>
+								{productsNav?.submenu?.length
+									? productsNav?.submenu?.map((item, idx) => (
+										<li key={idx}>
+											<Link
+												className="mega-menu-service-single"
+												href={item?.path ? item?.path : "/"}
+											>
+												{" "}
+												<span className="mega-menu-service-icon">
+													<i
+														className={
+															item?.icon ? item?.icon : "fa-regular fa-comments"
+														}
+													></i>
+												</span>{" "}
+												<span className="mega-menu-service-title">
+													{item?.name}
+												</span>{" "}
+												<span className="mega-menu-service-nav">
+													<i className="tji-arrow-right-long"></i>
+													<i className="tji-arrow-right-long"></i>
+												</span>
+											</Link>
+										</li>
+									))
+									: ""}
+							</MobileMenuItem>
+							<MobileMenuItem
+								text={companyNav?.name}
+								url={companyNav?.path ? companyNav?.path : "#"}
+								submenuClass={"mega-menu-service"}
+							>
+								{companyNav?.submenu?.length
+									? companyNav?.submenu?.map((item, idx) => (
+										<li key={idx}>
+											<Link
+												className="mega-menu-service-single"
+												href={item?.path ? item?.path : "/"}
+											>
+												{" "}
+												<span className="mega-menu-service-icon">
+													<i
+														className={
+															item?.icon ? item?.icon : "fa-light fa-users"
+														}
+													></i>
+												</span>{" "}
+												<span className="mega-menu-service-title">
+													{item?.name}
+												</span>{" "}
+												<span className="mega-menu-service-nav">
+													<i className="tji-arrow-right-long"></i>
+													<i className="tji-arrow-right-long"></i>
+												</span>
+											</Link>
+										</li>
+									))
+									: ""}
+							</MobileMenuItem>
 							<li>
 								<Link href={blogsNav?.path ? blogsNav?.path : "#"}>
 									{blogsNav?.name}
-								</Link>
-							</li>
-							<li>
-								<Link href={aboutNav?.path ? aboutNav?.path : "#"}>
-									{aboutNav?.name}
 								</Link>
 							</li>
 							<li className="mean-last">
