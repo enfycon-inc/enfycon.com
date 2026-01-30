@@ -1,61 +1,64 @@
-import Footer from "@/components/layout/footer/Footer";
 import Footer2 from "@/components/layout/footer/Footer2";
 import Header from "@/components/layout/header/Header";
-import ServiceDetailsMain from "@/components/layout/main/ServiceDetailsMain";
-import Cta from "@/components/sections/cta/Cta";
+import Contact2 from "@/components/sections/contacts/Contact2";
+import HeroInner from "@/components/sections/hero/HeroInner";
+import ServicesCategorized from "@/components/sections/services/ServicesCategorized";
 import BackToTop from "@/components/shared/others/BackToTop";
 import HeaderSpace from "@/components/shared/others/HeaderSpace";
 import ClientWrapper from "@/components/shared/wrappers/ClientWrapper";
-import getALlServices from "@/libs/getALlServices";
-import { notFound } from "next/navigation";
-const items = getALlServices();
-import { constructMetadata, generateDynamicMetadata } from "@/libs/seo";
+import { serviceCategories } from "@/data/servicesData";
+import { constructMetadata } from "@/libs/seo";
+
+export async function generateStaticParams() {
+    return serviceCategories.map((category) => ({
+        id: category.id,
+    }));
+}
 
 export async function generateMetadata({ params }) {
-	return generateDynamicMetadata({
-		params,
-		items,
-		resourceName: "Service",
-		keywordContext: (item) => {
-			const challenges = item.challenges?.map(c => `${c.title} ${c.desc}`).join(" ") || "";
-			const keyBenefits = item.keyBenefits?.map(b => `${b.title} ${b.desc}`).join(" ") || "";
-			const faqs = item.faqs?.map(f => `${f.question} ${f.answer}`).join(" ") || "";
-			const whyenfycon = item.whyenfycon?.join(" ") || "";
-			return `${item.title} ${item.desc} ${item.overview || ""} ${challenges} ${keyBenefits} ${faqs} ${whyenfycon}`;
-		}
-	});
+    const { id } = await params;
+    const category = serviceCategories.find(c => c.id === id);
+
+    if (!category) {
+        return constructMetadata({
+            title: "Service Category - enfycon",
+            description: "Discover our specialized services.",
+        });
+    }
+
+    return constructMetadata({
+        title: `${category.name} - Services - enfycon`,
+        description: category.desc || "Discover our specialized services.",
+        // You might want to map specific images if available in category data
+        // image: category.img4 
+    });
 }
 
-export default async function ServiceDetails({ params }) {
-	const { id } = await params;
+export default async function ServiceCategoryPage({ params }) {
+    const { id } = await params;
+    const category = serviceCategories.find(c => c.id === id);
 
-	// Check using string comparison (slugs)
-	const isExistItem = items?.find(({ id: id1 }) => id1 === id);
-	if (!isExistItem) {
-		notFound();
-	}
-	return (
-		<div>
-			<BackToTop />
-			<Header />
+    // Fallback title if category not found (though generateStaticParams handles valid paths)
+    const pageTitle = category ? category.name : "Services";
+    const pageText = category ? category.title : "Services";
 
-			<div id="smooth-wrapper">
-				<div id="smooth-content">
-					<main>
-					
+    return (
+        <div>
+            <BackToTop />
+            <Header />
+            <div id="smooth-wrapper">
+                <div id="smooth-content">
+                    <main>
+                        <HeaderSpace />
+                        <HeroInner title={pageTitle} text={pageText} />
+                        <ServicesCategorized activeCategoryId={id} />
+                        <Contact2 />
+                    </main>
+                    <Footer2 />
+                </div>
+            </div>
 
-					<HeaderSpace/>
-						<ServiceDetailsMain currentItemId={id} />
-						
-					</main>
-					<Footer2 />
-				</div>
-			</div>
-
-			<ClientWrapper />
-		</div>
-	);
-}
-export async function generateStaticParams() {
-	return items?.map(({ id }) => ({ id: id.toString() }));
+            <ClientWrapper />
+        </div>
+    );
 }

@@ -18,6 +18,10 @@ const ServicesDetailsPrimary = ({ option }) => {
 	} = option || {};
 	const { title, titleLarge, id, iconName, img } = currentItem || {};
 	const sidebarItems = items?.slice(0, 6);
+
+	const prevItem = isPrevItem ? items?.find(i => i.id === prevId) : null;
+	const nextItem = isNextItem ? items?.find(i => i.id === nextId) : null;
+
 	return (
 		<section className="tj-service-area section-gap">
 			<div className="container">
@@ -149,7 +153,7 @@ const ServicesDetailsPrimary = ({ option }) => {
 									style={{ visibility: isPrevItem ? "visible" : "hidden" }}
 								>
 									<div className="tj-nav-post__nav prev_post">
-										<Link href={isPrevItem ? `/services/${prevId}` : "#"}>
+										<Link href={isPrevItem && prevItem ? `/services/${prevItem.categoryId}/${prevId}` : "#"}>
 											<span>
 												<i className="tji-arrow-left"></i>
 											</span>
@@ -166,7 +170,7 @@ const ServicesDetailsPrimary = ({ option }) => {
 									style={{ visibility: isNextItem ? "visible" : "hidden" }}
 								>
 									<div className="tj-nav-post__nav next_post">
-										<Link href={isNextItem ? `/services/${nextId}` : "#"}>
+										<Link href={isNextItem && nextItem ? `/services/${nextItem.categoryId}/${nextId}` : "#"}>
 											Next
 											<span>
 												<i className="tji-arrow-right"></i>
@@ -200,11 +204,11 @@ const ServicesDetailsPrimary = ({ option }) => {
 										<>
 											<ul>
 												{currentItems.length > 0 ? (
-													currentItems.map(({ shortTitle, id }, idx) => (
+													currentItems.map(({ shortTitle, id, categoryId }, idx) => (
 														<li key={idx}>
 															<Link
 																className={`${currentId === id ? "active" : ""}`}
-																href={`/services/${id}`}
+																href={categoryId ? `/services/${categoryId}/${id}` : `/services/${id}`}
 															>
 																{shortTitle}
 																<span className="icon">
@@ -254,12 +258,12 @@ const ServicesDetailsPrimary = ({ option }) => {
 								<ul>
 									{serviceCategories?.map((category, idx) => (
 										<li key={idx}>
-											<a href="#" onClick={(e) => e.preventDefault()}>
+											<Link href={`/services/${category.id}`}>
 												{category.name}
 												<span className="icon">
 													<i className="tji-arrow-right"></i>
 												</span>
-											</a>
+											</Link>
 										</li>
 									))}
 								</ul>

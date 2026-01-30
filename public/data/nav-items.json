@@ -163,106 +163,106 @@
 			{
 				"id": 1,
 				"name": "IT Professional Staffing",
-				"path": "/services/category/it-professional-staffing",
+				"path": "/services/it-professional-staffing",
 				"items": [
 					{
 						"id": 1,
 						"name": "Technology Hiring Solutions",
 						"icon": "tji-service-1",
-						"path": "/services/us-it-staffing"
+						"path": "/services/it-professional-staffing/us-it-staffing"
 					},
 					{
 						"id": 2,
 						"name": "Domestic IT Staffing",
 						"icon": "tji-service-2",
-						"path": "/services/domestic-it-staffing"
+						"path": "/services/it-professional-staffing/domestic-it-staffing"
 					},
 					{
 						"id": 3,
 						"name": "Offshore Dedicated Teams",
 						"icon": "tji-service-3",
-						"path": "/services/offshore-dedicated-teams"
+						"path": "/services/it-professional-staffing/offshore-dedicated-teams"
 					}
 				]
 			},
 			{
 				"id": 2,
 				"name": "Custom Professional AI Services",
-				"path": "/services/category/ai-allied-services",
+				"path": "/services/ai-allied-services",
 				"items": [
 					{
 						"id": 4,
 						"name": "AI & Agentic Solutions Service",
 						"icon": "fa-light fa-robot",
-						"path": "/services/ai-agentic-solutions"
+						"path": "/services/ai-allied-services/ai-agentic-solutions"
 					},
 					{
 						"id": 5,
 						"name": "AI-First Platforms Engineering",
 						"icon": "fa-light fa-laptop-code",
-						"path": "/services/ai-first-platforms"
+						"path": "/services/ai-allied-services/ai-first-platforms"
 					},
 					{
 						"id": 6,
 						"name": "Personalized Customer Engagement",
 						"icon": "fa-light fa-users-gear",
-						"path": "/services/personalized-customer-engagement"
+						"path": "/services/ai-allied-services/personalized-customer-engagement"
 					}
 				]
 			},
 			{
 				"id": 3,
 				"name": "Data & Analytics",
-				"path": "/services/category/data-analytics",
+				"path": "/services/data-analytics",
 				"items": [
 					{
 						"id": 7,
 						"name": "Data, Cloud & Enterprise Modernization",
 						"icon": "fa-light fa-cloud-arrow-up",
-						"path": "/services/enterprise-modernization"
+						"path": "/services/data-analytics/enterprise-modernization"
 					},
 					{
 						"id": 8,
 						"name": "Advanced Analytics & Business Intelligence",
 						"icon": "tji-chart",
-						"path": "/services/advanced-analytics"
+						"path": "/services/data-analytics/advanced-analytics"
 					},
 					{
 						"id": 9,
 						"name": "Data Engineering & Pipeline Automation",
 						"icon": "fa-light fa-database",
-						"path": "/services/data-engineering"
+						"path": "/services/data-analytics/data-engineering"
 					}
 				]
 			},
 			{
 				"id": 4,
 				"name": "Cybersecurity Services",
-				"path": "/services/category/cybersecurity-services",
+				"path": "/services/cybersecurity-services",
 				"items": [
 					{
 						"id": 10,
 						"name": "Comprehensive Security Assessment",
 						"icon": "fa-light fa-file-shield",
-						"path": "/services/security-assessment"
+						"path": "/services/cybersecurity-services/security-assessment"
 					},
 					{
 						"id": 11,
 						"name": "Operational Security Guidelines",
 						"icon": "fa-light fa-shield-check",
-						"path": "/services/operational-security"
+						"path": "/services/cybersecurity-services/operational-security"
 					},
 					{
 						"id": 12,
 						"name": "Regulatory Compliance",
 						"icon": "fa-light fa-file-certificate",
-						"path": "/services/regulatory-compliance"
+						"path": "/services/cybersecurity-services/regulatory-compliance"
 					},
 					{
 						"id": 13,
 						"name": "GRC Consulting",
 						"icon": "fa-light fa-briefcase",
-						"path": "/services/grc-consulting"
+						"path": "/services/cybersecurity-services/grc-consulting"
 					}
 				]
 			}

@@ -71,7 +71,7 @@ const ServicesCategorized = ({ activeCategoryId }) => {
                                             {category.id === activeCategoryId ? (
                                                 category.title
                                             ) : (
-                                                <Link href={`/services/category/${category.id}`} className="text-decoration-none text-dark">
+                                                <Link href={`/services/${category.id}`} className="text-decoration-none text-dark">
                                                     {category.title}
                                                 </Link>
                                             )}
@@ -102,7 +102,7 @@ const ServicesCategorized = ({ activeCategoryId }) => {
                             <div className="row row-gap-4 mb-4">
                                 {currentServices.map((service, idx) => (
                                     <div key={service.id} className="col-lg-4 col-md-6">
-                                        <ServiceCard7 service={service} idx={idx} />
+                                        <ServiceCard7 service={service} idx={idx} categoryId={category.id} />
                                     </div>
                                 ))}
                             </div>

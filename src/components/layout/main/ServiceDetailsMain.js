@@ -8,13 +8,22 @@ const ServiceDetailsMain = ({ currentItemId }) => {
 	const currentId = currentItemId;
 	const { prevId, nextId, currentItem, isPrevItem, isNextItem } =
 		getPreviousNextItem(items, currentId);
-	const { title } = currentItem || {};
+	const { title, category, categoryId } = currentItem || {};
+
+	const breadcrums = [
+		{ name: "Services", path: "/services" },
+	];
+
+	if (category && categoryId) {
+		breadcrums.push({ name: category, path: `/services/${categoryId}` });
+	}
+
 	return (
 		<div>
 			<HeroInner
 				title={title ? title : "Service Details"}
 				text={title ? title : "Service Details"}
-				breadcrums={[{ name: "Services", path: "/services" }]}
+				breadcrums={breadcrums}
 			/>
 			<ServicesDetailsPrimary
 				option={{

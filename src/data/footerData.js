@@ -9,10 +9,10 @@ export const footerData = {
         { icon: "fa-brands fa-instagram", link: siteConfig.socialLinks.instagram },
     ],
     services: [
-        { label: "AI & Allied Services", link: "/services/category/ai-allied-services" },
-        { label: "IT Professional Staffing", link: "/services/category/it-professional-staffing" },
-        { label: "Data & Analytics", link: "/services/category/data-analytics" },
-        { label: "Cybersecurity Services", link: "/services/category/cybersecurity-services" },
+        { label: "AI & Allied Services", link: "/services/ai-allied-services" },
+        { label: "IT Professional Staffing", link: "/services/it-professional-staffing" },
+        { label: "Data & Analytics", link: "/services/data-analytics" },
+        { label: "Cybersecurity Services", link: "/services/cybersecurity-services" },
     ],
     about: [
         { label: "Overview", link: "/about" },

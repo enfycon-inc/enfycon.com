@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import modifyNumber from "@/libs/modifyNumber";
 
-const ServiceCard7 = ({ service, idx, lastItemIdx }) => {
+const ServiceCard7 = ({ service, idx, lastItemIdx, categoryId }) => {
 	const {
 		title,
 		desc3,
@@ -14,10 +14,12 @@ const ServiceCard7 = ({ service, idx, lastItemIdx }) => {
 		iconName,
 	} = service || {};
 
+	const href = categoryId ? `/services/${categoryId}/${id}` : `/services/${id}`;
+
 	return (
 		<div className="h6-service-item">
 			<div className="h6-service-thumb">
-				<Link href={`/services/${id}`}>
+				<Link href={href}>
 					<Image
 						src={img4}
 						alt={title || "Service image"}
@@ -34,9 +36,9 @@ const ServiceCard7 = ({ service, idx, lastItemIdx }) => {
 				{/* <h5 className="h6-service-index">{modifyNumber(id)}.</h5> */}
 				<div className="h6-service-title-wrap">
 					<h4 className="title">
-						<Link href={`/services/${id}`}>{title}</Link>
+						<Link href={href}>{title}</Link>
 					</h4>
-					<Link className="text-btn" href={`/services/${id}`}>
+					<Link className="text-btn" href={href}>
 						<span className="btn-icon">
 							<i className="tji-arrow-right-long"></i>
 						</span>
