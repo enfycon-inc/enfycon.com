@@ -84,7 +84,7 @@ const LatestBlogHero = ({ post }) => {
 
                     {/* Content Column */}
                     <div className="col-lg-6 ps-lg-5 text-white">
-                        <div className="d-flex align-items-center text-uppercase small mb-3 fw-bold" style={{ fontSize: "0.8rem", letterSpacing: "1px", opacity: 0.9 }}>
+                        <div className="d-flex align-items-center  small mb-3 fw-bold" style={{ fontSize: "0.8rem", letterSpacing: "1px", opacity: 0.9 }}>
                             <span>{categoryName}</span>
                             <span className="mx-2">•</span>
                             <span>{readTime}</span>
@@ -92,9 +92,9 @@ const LatestBlogHero = ({ post }) => {
                             <span>{formattedDate}</span>
                         </div>
 
-                        <h1 className="display-5 fw-semibold mb-3 text-white">
+                        <h1 className="h2 fw-bold mb-3 text-white">
                             <Link href={`/blogs/${slug}`} className="text-white text-decoration-none">
-                                {sliceText(title, 50, true)}
+                                {sliceText(title, 150, true)}
                             </Link>
                         </h1>
 
@@ -102,7 +102,7 @@ const LatestBlogHero = ({ post }) => {
                             Author: {authorName}
                         </div>
 
-                        <div className="mb-5 text-white lead" style={{ fontSize: "1.1rem", opacity: 0.9 }}>
+                        <div className="mb-5 text-white" style={{ fontSize: "1rem", opacity: 0.9 }}>
                             <div dangerouslySetInnerHTML={{ __html: formatExcerpt(excerpt) }} />
                         </div>
 
