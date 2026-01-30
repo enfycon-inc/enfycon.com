@@ -309,3 +309,26 @@ export async function getBlogPageData(category = null) {
     return null;
   }
 }
+
+export async function getCategoryCounts() {
+  try {
+    const data = await fetchAPI(
+      `
+      query CategoryCounts {
+        categories(first: 100, where: { orderby: COUNT, order: DESC, hideEmpty: true }) {
+          nodes {
+            name
+            slug
+            count
+          }
+        }
+      }
+    `
+    );
+
+    return data?.categories?.nodes || [];
+  } catch (error) {
+    console.error("Error fetching category counts:", error);
+    return [];
+  }
+}
