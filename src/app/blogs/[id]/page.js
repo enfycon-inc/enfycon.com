@@ -11,9 +11,12 @@ import { notFound } from "next/navigation";
 
 export default async function BlogDetails({ params }) {
 	const { id } = await params;
+	console.log("SERVER LOG: inner ID", id);
 	const post = await getBlogBySlug(id);
+	console.log("SERVER LOG: inner post found", !!post);
 
 	if (!post) {
+		console.log("SERVER LOG: inner post 404");
 		notFound();
 	}
 

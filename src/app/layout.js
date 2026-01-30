@@ -46,7 +46,7 @@ import CookieConsent from "@/components/shared/CookieConsent";
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" data-scroll-behavior="smooth" dir="ltr">
-			<body className={`${bodyFont.variable} ${headingFont.variable}`}>
+			<body className={`${bodyFont.variable} ${headingFont.variable}`} suppressHydrationWarning>
 				<LoadingProvider>
 					{children}
 					<CookieConsent />
