@@ -54,21 +54,8 @@ const Blogs2 = ({
 	};
 
 	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				if (entries[0].isIntersecting) {
-					fetchBlogs();
-					observer.disconnect();
-				}
-			},
-			{ rootMargin: "200px" }
-		);
-
-		if (sectionRef.current) {
-			observer.observe(sectionRef.current);
-		}
-
-		return () => observer.disconnect();
+		fetchBlogs();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [categoryName]);
 
 	if (hasLoaded && (!blogs || blogs.length === 0)) {
