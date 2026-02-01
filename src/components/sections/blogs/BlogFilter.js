@@ -15,11 +15,29 @@ const BlogFilter = ({ categories = [], authors = [], initialCategory = "", initi
         }
     };
 
+    // Compute Dynamic Title based on APPLIED filters (props), not pending selection
+    // Note: We check initialCategory/initialAuthor which come from the URL/Server
+    const categoryName = categories.find(c => c.slug === initialCategory)?.name;
+    const authorName = authors.find(a => a.slug === initialAuthor)?.name;
+
+    let dynamicTitle = "Latest Blog Post";
+    if (categoryName && authorName) {
+        dynamicTitle = `${categoryName} by ${authorName}`;
+    } else if (categoryName) {
+        dynamicTitle = categoryName;
+    } else if (authorName) {
+        dynamicTitle = `Posts by ${authorName}`;
+    }
+
     return (
         <>
             <div className="row mb-4 align-items-center mt-5">
                 <div className="col-lg-6 mb-3 mb-lg-0">
-                    <h3 className="section-title mb-0">Latest Blog Post</h3>
+                    {isParentLoading ? (
+                        <div className="skeleton light" style={{ width: 300, height: 32, borderRadius: 4 }}></div>
+                    ) : (
+                        <h3 className="section-title mb-0">{dynamicTitle}</h3>
+                    )}
                 </div>
                 <div className="col-lg-6">
                     <div className="d-flex gap-3 justify-content-lg-end align-items-center flex-wrap">

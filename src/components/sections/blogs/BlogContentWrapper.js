@@ -47,11 +47,7 @@ const BlogContentWrapper = ({
                 isParentLoading={isFiltering}
             />
 
-            <div className="row mb-5">
-                <div className="col-12">
-                    <hr className="light-separator" style={{ borderColor: 'rgba(0,0,0,0.1)', margin: 0 }} />
-                </div>
-            </div>
+
 
             {isFiltering ? (
                 <div className="row row-gap-4">
