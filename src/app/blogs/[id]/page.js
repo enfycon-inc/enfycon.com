@@ -1,5 +1,5 @@
 import BlogDetailsMain from "@/components/layout/main/BlogDetailsMain";
-import { getAllBlogs, getBlogBySlug } from "@/libs/wpBlogs";
+import { getAllBlogs, getBlogBySlug, getRelatedPosts } from "@/libs/wpBlogs";
 import { notFound } from "next/navigation";
 
 export default async function BlogDetails({ params }) {
@@ -10,8 +10,10 @@ export default async function BlogDetails({ params }) {
 		notFound();
 	}
 
+	const relatedPosts = await getRelatedPosts(post.categorySlug, post.id);
+
 	return (
-		<BlogDetailsMain post={post} />
+		<BlogDetailsMain post={post} relatedPosts={relatedPosts} />
 	);
 }
 

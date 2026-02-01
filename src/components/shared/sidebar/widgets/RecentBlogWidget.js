@@ -13,7 +13,7 @@ const RecentBlogWidget = () => {
 		const fetchRecent = async () => {
 			try {
 				const blogs = await getAllBlogs();
-				setRecentBlogs(blogs.slice(0, 3));
+				setRecentBlogs(blogs.slice(0, 5));
 			} catch (error) {
 				console.error("Error fetching recent blogs:", error);
 			} finally {
@@ -27,7 +27,7 @@ const RecentBlogWidget = () => {
 
 	return (
 		<div className="tj-sidebar-widget tj-recent-posts">
-			<h4 className="widget-title">Related post</h4>
+			<h4 className="widget-title">Recent Posts</h4>
 			<ul>
 				{recentBlogs?.length
 					? recentBlogs?.map(({ id, featuredImage, title, day, month, year }, idx) => (

@@ -1,8 +1,9 @@
 import BlogCategoriesWidget from "./widgets/BlogCategoriesWidget";
 import BlogTagsWidget from "./widgets/BlogTagsWidget";
 import RecentBlogWidget from "./widgets/RecentBlogWidget";
+import RelatedBlogWidget from "./widgets/RelatedBlogWidget";
 
-const BlogSidebar = ({ type }) => {
+const BlogSidebar = ({ type, relatedPosts }) => {
 	return (
 		<aside className={`tj-main-sidebar ${type == 2 ? "p-0" : ""}`}>
 			{/* <!-- search --> */}
@@ -22,6 +23,8 @@ const BlogSidebar = ({ type }) => {
 					</form>
 				</div>
 			</div>
+			{/* <!-- related blogs --> */}
+			{relatedPosts && <RelatedBlogWidget posts={relatedPosts} />}
 			{/* <!-- recent post --> */}
 			<RecentBlogWidget />
 			{/* <!-- category --> */}

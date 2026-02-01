@@ -2,7 +2,7 @@ import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import BlogSidebar from "@/components/shared/sidebar/BlogSidebar";
 import Image from "next/image";
 import Link from "next/link";
-const BlogDetailsPrimary = ({ post, option }) => {
+const BlogDetailsPrimary = ({ post, option, relatedPosts }) => {
 	const { prevId, nextId, isPrevItem, isNextItem } = option || {};
 	const { title, featuredImage, author, day, month, year, commentCount, avatar, content } = post || {};
 	return (
@@ -163,7 +163,7 @@ const BlogDetailsPrimary = ({ post, option }) => {
 						</div>
 					</div>
 					<div className="col-lg-4">
-						<BlogSidebar />
+						<BlogSidebar relatedPosts={relatedPosts} />
 					</div>
 				</div>
 			</div>

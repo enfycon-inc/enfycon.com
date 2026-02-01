@@ -465,3 +465,71 @@ export async function getCategoryCounts() {
     return [];
   }
 }
+
+export async function getRelatedPosts(category, currentSlug) {
+  try {
+    const data = await fetchAPI(
+      `
+      query RelatedPosts($categoryName: String, $notIn: [ID]) {
+        posts(first: 6, where: { orderby: { field: DATE, order: DESC }, categoryName: $categoryName, notIn: $notIn }) {
+          nodes {
+            id
+            title
+            slug
+            date
+            excerpt
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            author {
+              node {
+                name
+                slug
+              }
+            }
+            categories {
+              nodes {
+                name
+                slug
+              }
+            }
+          }
+        }
+      }
+    `,
+      {
+        variables: {
+          categoryName: category,
+          notIn: [currentSlug]
+        },
+      }
+    );
+
+    // If query fails or we decide to filter in JS:
+    const posts = data?.posts?.nodes || [];
+    const filtered = posts.filter(post => post.slug !== currentSlug).slice(0, 5);
+
+    return filtered.map((post) => {
+      const date = new Date(post.date);
+      return {
+        id: post.slug,
+        featuredImage: post.featuredImage?.node?.sourceUrl || null,
+        title: post.title || "",
+        desc: post.excerpt || "",
+        author: post.author?.node?.name || "enfycon",
+        authorSlug: post.author?.node?.slug || "enfycon",
+        day: date.getDate(),
+        month: date.toLocaleString("en-US", { month: "short" }),
+        year: date.getFullYear(),
+        category: post.categories?.nodes[0]?.name || "Technology",
+        categorySlug: post.categories?.nodes[0]?.slug || "technology",
+      };
+    });
+
+  } catch (error) {
+    console.error("Error fetching related posts:", error);
+    return [];
+  }
+}
