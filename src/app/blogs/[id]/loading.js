@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import BlogSidebar from "@/components/shared/sidebar/BlogSidebar";
+
 
 // Since we can't easily reuse the real BlogSidebar in a "loading" state without props, 
 // we'll build a visual approximation for the skeleton.
@@ -53,38 +53,38 @@ const Loading = () => {
                                 <div className="mb-5 p-4" style={{ backgroundColor: '#f9f9f9', borderRadius: 8 }}>
                                     {/* Header */}
                                     <div className="d-flex align-items-center gap-2 mb-4">
-                                        <div className="skeleton" style={{ width: 20, height: 20 }}></div>
-                                        <div className="skeleton" style={{ width: 140, height: 24 }}></div>
+                                        <div className="skeleton light" style={{ width: 20, height: 20 }}></div>
+                                        <div className="skeleton light" style={{ width: 140, height: 24 }}></div>
                                     </div>
                                     {/* List Items */}
                                     <div className="d-flex flex-column gap-3">
-                                        <div className="skeleton" style={{ width: '85%', height: 16 }}></div>
-                                        <div className="skeleton" style={{ width: '90%', height: 16, marginLeft: 20 }}></div>
-                                        <div className="skeleton" style={{ width: '80%', height: 16, marginLeft: 20 }}></div>
-                                        <div className="skeleton" style={{ width: '75%', height: 16 }}></div>
-                                        <div className="skeleton" style={{ width: '85%', height: 16, marginLeft: 20 }}></div>
+                                        <div className="skeleton light" style={{ width: '85%', height: 16 }}></div>
+                                        <div className="skeleton light" style={{ width: '90%', height: 16, marginLeft: 20 }}></div>
+                                        <div className="skeleton light" style={{ width: '80%', height: 16, marginLeft: 20 }}></div>
+                                        <div className="skeleton light" style={{ width: '75%', height: 16 }}></div>
+                                        <div className="skeleton light" style={{ width: '85%', height: 16, marginLeft: 20 }}></div>
                                     </div>
                                 </div>
 
                                 {/* Text Paragraph Skeletons */}
                                 {[1, 2, 3].map(i => (
                                     <div key={i} className="mb-4">
-                                        <div className="skeleton mb-2" style={{ width: '100%', height: 16 }}></div>
-                                        <div className="skeleton mb-2" style={{ width: '98%', height: 16 }}></div>
-                                        <div className="skeleton mb-2" style={{ width: '95%', height: 16 }}></div>
-                                        <div className="skeleton mb-2" style={{ width: '90%', height: 16 }}></div>
-                                        <div className="skeleton mb-2" style={{ width: '60%', height: 16 }}></div>
+                                        <div className="skeleton light mb-2" style={{ width: '100%', height: 16 }}></div>
+                                        <div className="skeleton light mb-2" style={{ width: '98%', height: 16 }}></div>
+                                        <div className="skeleton light mb-2" style={{ width: '95%', height: 16 }}></div>
+                                        <div className="skeleton light mb-2" style={{ width: '90%', height: 16 }}></div>
+                                        <div className="skeleton light mb-2" style={{ width: '60%', height: 16 }}></div>
                                     </div>
                                 ))}
 
                                 {/* Image Skeleton */}
-                                <div className="skeleton mb-4" style={{ width: '100%', height: 400, borderRadius: 8 }}></div>
+                                <div className="skeleton light mb-4" style={{ width: '100%', height: 400, borderRadius: 8 }}></div>
 
                                 {/* More Text */}
                                 <div className="mb-4">
-                                    <div className="skeleton mb-2" style={{ width: '100%', height: 16 }}></div>
-                                    <div className="skeleton mb-2" style={{ width: '96%', height: 16 }}></div>
-                                    <div className="skeleton mb-2" style={{ width: '92%', height: 16 }}></div>
+                                    <div className="skeleton light mb-2" style={{ width: '100%', height: 16 }}></div>
+                                    <div className="skeleton light mb-2" style={{ width: '96%', height: 16 }}></div>
+                                    <div className="skeleton light mb-2" style={{ width: '92%', height: 16 }}></div>
                                 </div>
                             </div>
                         </div>
@@ -94,35 +94,35 @@ const Loading = () => {
                             <aside className="tj-main-sidebar">
                                 {/* Search Skeleton */}
                                 <div className="tj-sidebar-widget widget-search mb-4">
-                                    <div className="skeleton mb-3" style={{ width: 100, height: 24 }}></div>
-                                    <div className="skeleton" style={{ width: '100%', height: 50, borderRadius: 4 }}></div>
+                                    <div className="skeleton light mb-3" style={{ width: 100, height: 24 }}></div>
+                                    <div className="skeleton light" style={{ width: '100%', height: 50, borderRadius: 4 }}></div>
                                 </div>
 
                                 {/* Recent Posts Skeleton */}
                                 <div className="tj-sidebar-widget mb-4">
-                                    <div className="skeleton mb-3" style={{ width: 150, height: 24 }}></div>
+                                    <div className="skeleton light mb-3" style={{ width: 150, height: 24 }}></div>
                                     <div className="d-flex gap-3 mb-3">
-                                        <div className="skeleton" style={{ minWidth: 80, height: 80, borderRadius: 4 }}></div>
+                                        <div className="skeleton light" style={{ minWidth: 80, height: 80, borderRadius: 4 }}></div>
                                         <div>
-                                            <div className="skeleton mb-2" style={{ width: 150, height: 14 }}></div>
-                                            <div className="skeleton" style={{ width: 100, height: 14 }}></div>
+                                            <div className="skeleton light mb-2" style={{ width: 150, height: 14 }}></div>
+                                            <div className="skeleton light" style={{ width: 100, height: 14 }}></div>
                                         </div>
                                     </div>
                                     <div className="d-flex gap-3 mb-3">
-                                        <div className="skeleton" style={{ minWidth: 80, height: 80, borderRadius: 4 }}></div>
+                                        <div className="skeleton light" style={{ minWidth: 80, height: 80, borderRadius: 4 }}></div>
                                         <div>
-                                            <div className="skeleton mb-2" style={{ width: 150, height: 14 }}></div>
-                                            <div className="skeleton" style={{ width: 100, height: 14 }}></div>
+                                            <div className="skeleton light mb-2" style={{ width: 150, height: 14 }}></div>
+                                            <div className="skeleton light" style={{ width: 100, height: 14 }}></div>
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* Categories Skeleton */}
                                 <div className="tj-sidebar-widget">
-                                    <div className="skeleton mb-3" style={{ width: 120, height: 24 }}></div>
-                                    <div className="skeleton mb-2" style={{ width: '100%', height: 40 }}></div>
-                                    <div className="skeleton mb-2" style={{ width: '100%', height: 40 }}></div>
-                                    <div className="skeleton mb-2" style={{ width: '100%', height: 40 }}></div>
+                                    <div className="skeleton light mb-3" style={{ width: 120, height: 24 }}></div>
+                                    <div className="skeleton light mb-2" style={{ width: '100%', height: 40 }}></div>
+                                    <div className="skeleton light mb-2" style={{ width: '100%', height: 40 }}></div>
+                                    <div className="skeleton light mb-2" style={{ width: '100%', height: 40 }}></div>
                                 </div>
                             </aside>
                         </div>

@@ -32,14 +32,14 @@ const BlogFilter = ({ categories = [], authors = [], initialCategory = "", initi
     return (
         <>
             <div className="row mb-4 align-items-center mt-5">
-                <div className="col-lg-6 mb-3 mb-lg-0">
+                <div className="col-lg-4 mb-3 mb-lg-0">
                     {isParentLoading ? (
                         <div className="skeleton light" style={{ width: 300, height: 32, borderRadius: 4 }}></div>
                     ) : (
                         <h3 className="section-title mb-0">{dynamicTitle}</h3>
                     )}
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-8">
                     <div className="d-flex gap-3 justify-content-lg-end align-items-center flex-wrap">
                         {/* Category Filter */}
                         <div className="position-relative" style={{ minWidth: "200px" }}>
@@ -80,7 +80,7 @@ const BlogFilter = ({ categories = [], authors = [], initialCategory = "", initi
                             className="btn btn-dark rounded-1 px-4 d-flex align-items-center gap-2"
                             onClick={handleFilter}
                             disabled={isParentLoading}
-                            style={{ backgroundColor: "#555" }}
+                            style={{ backgroundColor: "#555", minWidth: "160px", justifyContent: "center" }}
                         >
                             <i className="flaticon-filter"></i>
                             {isParentLoading ? "Filtering..." : "Filter by"}

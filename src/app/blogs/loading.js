@@ -86,17 +86,21 @@ const Loading = () => {
                 <div className="container">
                     {/* 2. Filter Skeleton : Matches BlogFilter.js */}
                     <div className="row mb-4 align-items-center mt-5">
-                        <div className="col-lg-6 mb-3 mb-lg-0">
+                        <div className="col-lg-4 mb-3 mb-lg-0">
                             <div className="skeleton" style={{ width: 200, height: 32 }}></div>
                         </div>
-                        <div className="col-lg-6">
+                        <div className="col-lg-8">
                             <div className="d-flex gap-3 justify-content-lg-end align-items-center flex-wrap">
                                 {/* Category Select Skeleton */}
-                                <div className="skeleton" style={{ width: 200, height: 40 }}></div>
+                                <div className="position-relative" style={{ minWidth: "200px" }}>
+                                    <div className="skeleton" style={{ width: "100%", height: 40 }}></div>
+                                </div>
                                 {/* Author Select Skeleton */}
-                                <div className="skeleton" style={{ width: 150, height: 40 }}></div>
+                                <div className="position-relative" style={{ minWidth: "150px" }}>
+                                    <div className="skeleton" style={{ width: "100%", height: 40 }}></div>
+                                </div>
                                 {/* Button Skeleton */}
-                                <div className="skeleton" style={{ width: 120, height: 40, borderRadius: 4 }}></div>
+                                <div className="skeleton" style={{ width: 160, height: 40, borderRadius: 4 }}></div>
                             </div>
                         </div>
                     </div>
