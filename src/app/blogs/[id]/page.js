@@ -15,6 +15,28 @@ export default async function BlogDetails({ params }) {
 	);
 }
 
+export async function generateMetadata({ params }) {
+	const { id } = await params;
+	const post = await getBlogBySlug(id);
+
+	if (!post) {
+		return {
+			title: "Blog Not Found | enfycon",
+			description: "The requested blog post could not be found.",
+		};
+	}
+
+	return {
+		title: `${post.title} | enfycon`,
+		description: post.desc || post.title,
+		openGraph: {
+			title: post.title,
+			description: post.desc,
+			images: post.featuredImage ? [post.featuredImage] : [],
+		},
+	};
+}
+
 export async function generateStaticParams() {
 	try {
 		const items = await getAllBlogs();
