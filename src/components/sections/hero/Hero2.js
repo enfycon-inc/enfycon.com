@@ -29,13 +29,16 @@ const Hero2 = () => {
 						className="tj-slider-item"
 						style={{ height: "auto" }}
 					>
-						<div
-							className="slider-bg-image"
-							style={{
-								backgroundImage: `url('${img ? img : "/images/hero/slider-1.jpg"
-									}')`,
-							}}
-						></div>
+						<div className="slider-bg-image">
+							<Image
+								src={img ? img : "/images/hero/slider-1.jpg"}
+								alt={title}
+								fill
+								priority={idx === 0}
+								quality={90}
+								style={{ objectFit: "cover", zIndex: -1 }}
+							/>
+						</div>
 						<div className="container">
 							<div className="slider-wrapper">
 								<div className="slider-content">

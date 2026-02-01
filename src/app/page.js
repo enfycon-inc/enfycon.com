@@ -1,17 +1,17 @@
 import Footer2 from "@/components/layout/footer/Footer2";
 import Header from "@/components/layout/header/Header";
 import About3 from "@/components/sections/about/About3";
-import Blogs2 from "@/components/sections/blogs/Blogs2";
 import Brands2 from "@/components/sections/brands/Brands2";
 import Hero2 from "@/components/sections/hero/Hero2";
-import Products2 from "@/components/sections/products/Products2";
-import Process from "@/components/sections/process/Process";
-import Services2 from "@/components/sections/services/Services2";
-import Faq2 from "@/components/sections/faq/Faq2";
-import Services6 from "@/components/sections/services/Services6";
-import Services9 from "@/components/sections/services/Services9";
-import Testimonials2 from "@/components/sections/testimonials/Testimonials2";
-import Industries1 from "@/components/sections/industries/Industries1";
+import dynamic from "next/dynamic";
+
+const Blogs2 = dynamic(() => import("@/components/sections/blogs/Blogs2"));
+const Products2 = dynamic(() => import("@/components/sections/products/Products2"));
+const Process = dynamic(() => import("@/components/sections/process/Process"));
+const Services6 = dynamic(() => import("@/components/sections/services/Services6"));
+const Testimonials2 = dynamic(() => import("@/components/sections/testimonials/Testimonials2"));
+const Industries1 = dynamic(() => import("@/components/sections/industries/Industries1"));
+const Faq2 = dynamic(() => import("@/components/sections/faq/Faq2"));
 import BackToTop from "@/components/shared/others/BackToTop";
 import ClientWrapper from "@/components/shared/wrappers/ClientWrapper";
 import { getAllBlogs } from "@/libs/wpBlogs";
