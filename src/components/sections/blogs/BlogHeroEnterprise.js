@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./blog-hero-enterprise.module.scss";
+import calculateReadTime from "@/libs/calculateReadTime";
 
 const BlogHeroEnterprise = ({ post, customTitle, breadcrumbOverride, backgroundOverride }) => {
     // If post is provided, extract data from it.
     // If not, we expect customTitle/breadcrumbOverride for the "listing" mode.
-    const { title: postTitle, date, day, month, year, readTime, author, authorSlug, category, categorySlug, featuredImage, avatar } = post || {};
+    const { title: postTitle, date, day, month, year, readTime, author, authorSlug, category, categorySlug, featuredImage, avatar, content } = post || {};
 
     const isListingMode = !post;
     const title = customTitle || postTitle;
@@ -97,7 +98,7 @@ const BlogHeroEnterprise = ({ post, customTitle, breadcrumbOverride, backgroundO
                         {/* Read Time */}
                         <div className={styles.metaItem}>
                             <i className="flaticon-clock"></i>
-                            <span>{readTime || "4 mins"} Read</span>
+                            <span>{readTime || (content ? `${calculateReadTime(content)} mins` : "4 mins")} Read</span>
                         </div>
                     </div>
                 )}

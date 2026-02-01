@@ -221,6 +221,7 @@ export async function getBlogPageData(category = null, author = null) {
               title
               slug
               date
+              content
               excerpt
               featuredImage {
                 node {
@@ -283,6 +284,7 @@ export async function getBlogPageData(category = null, author = null) {
               title
               slug
               date
+              content
               excerpt
               featuredImage {
                 node {
@@ -345,6 +347,7 @@ export async function getBlogPageData(category = null, author = null) {
               title
               slug
               date
+              content
               excerpt
               featuredImage {
                 node {

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import sliceText from "@/libs/sliceText";
 import modifyNumber from "@/libs/modifyNumber";
+import calculateReadTime from "@/libs/calculateReadTime";
 const formatExcerpt = (text) => {
     if (!text) return "";
     // Remove bracketed ellipsis
@@ -41,14 +42,15 @@ const LatestBlogHero = ({ post }) => {
         featuredImage,
         categories,
         author,
+        content,
     } = post;
 
     const postDate = new Date(date);
-    const formattedDate = `${modifyNumber(postDate.getDate())} ${postDate.toLocaleString("en-US", { month: "short" })}, ${postDate.getFullYear()}`;
+    const formattedDate = `${modifyNumber(postDate.getDate())} ${postDate.toLocaleString("en-US", { month: "short" })} ${postDate.getFullYear()}`;
     const categoryName = categories?.nodes[0]?.name || "Uncategorized";
     const authorName = author?.node?.name || "Enfycon";
-    // Hardcoded read time for now as API doesn't support it yet
-    const readTime = "4 Mins Read";
+    // Dynamic read time
+    const readTime = content ? `${calculateReadTime(content)} Mins Read` : "4 Mins Read";
 
     return (
         <section className="position-relative overflow-hidden w-100" style={{ backgroundColor: "#009ca6", padding: "80px 0" }}>
