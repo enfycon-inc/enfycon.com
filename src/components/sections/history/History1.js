@@ -72,7 +72,7 @@ const History1 = () => {
 												<h4 className="title">{title}</h4>
 												<p>{desc}</p>
 											</div>
-											<div className="bottom">
+											{/* <div className="bottom">
 												{images?.length
 													? images?.map((img, idx) => (
 														<Image
@@ -87,7 +87,7 @@ const History1 = () => {
 														/>
 													))
 													: ""}
-											</div>
+											</div> */}
 										</div>
 									</div>
 								))

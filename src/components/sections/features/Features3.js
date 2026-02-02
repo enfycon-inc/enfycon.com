@@ -35,7 +35,7 @@ const Features3 = ({ id }) => {
 		}
 	];
 	return (
-		<section id={id ? id : "choose"} className="tj-choose-section section-gap ">
+		<section id={id ? id : "choose"} className="tj-choose-section section-gap bg-white">
 			<div className="container">
 				<div className="row row-gap-4">
 					<div
