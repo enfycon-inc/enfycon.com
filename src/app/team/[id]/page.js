@@ -28,7 +28,7 @@ export default async function TeamDetails({ params }) {
 						<HeaderSpace />
 						<HeroInner title={"Team details"} text={"Team details"} />
 						<TeamDetails1 currentItemId={parseInt(id)} />
-						<Cta />
+						
 					</main>
 					<Footer2 />
 				</div>
