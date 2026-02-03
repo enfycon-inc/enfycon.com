@@ -7,7 +7,7 @@ import useDebounce from '@/hooks/useDebounce';
 import { SEARCH_POSTS_QUERY } from './searchQuery';
 import './search.scss';
 
-const Search = () => {
+const Search = ({ active }) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -23,9 +23,20 @@ const Search = () => {
     // AbortController to cancel outdated requests
     const abortController = useRef(null);
     const wrapperRef = useRef(null);
+    const inputRef = useRef(null);
 
     // API URL
     const API_URL = `${siteConfig.blogApiUrl}/graphql`;
+
+    // Focus input when active becomes true
+    useEffect(() => {
+        if (active && inputRef.current) {
+            // Small timeout to allow transition/animation to start
+            setTimeout(() => {
+                inputRef.current.focus();
+            }, 100);
+        }
+    }, [active]);
 
     // Handle input change
     const handleChange = (e) => {
@@ -129,6 +140,7 @@ const Search = () => {
         <div className="search-component" ref={wrapperRef}>
             <div className="search-input-wrapper">
                 <input
+                    ref={inputRef}
                     type="text"
                     className="form-control"
                     placeholder="Search posts..."
@@ -164,9 +176,12 @@ const Search = () => {
                                             />
                                         )}
                                         {!post.featuredImage?.node?.sourceUrl && (
-                                            <div className="w-100 h-100 bg-secondary d-flex align-items-center justify-content-center text-white small">
-                                                No Img
-                                            </div>
+                                            <img
+                                                src="/images/logos/enfycon.png"
+                                                alt="Enfycon Logo"
+                                                className="img-fluid p-2" // Add padding to make it look like a contained logo
+                                                style={{ objectFit: "contain" }}
+                                            />
                                         )}
                                     </div>
                                     <div className="card-body p-0 text-center text-sm-start">

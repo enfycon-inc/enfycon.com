@@ -17,22 +17,28 @@ START: Theme Search CSS
 		transition-delay: 0.2s;
 		z-index: 10;
 		border-radius: 12px;
+
 		.search_close {
 			position: absolute;
 			top: 36px;
 			inset-inline-end: 36px;
+
 			.search_close_btn {
 				font-size: 24px;
 				color: var(--tj-color-theme-dark);
+
 				svg {
 					width: 24px;
 					height: 24px;
 					@include transition(all 0.4s ease-in-out 0s);
+
 					path {
 						fill: var(--tj-color-theme-dark);
 					}
+
 					&:hover {
 						transform: rotate(90deg);
+
 						path {
 							fill: var(--tj-color-theme-primary);
 						}
@@ -40,14 +46,19 @@ START: Theme Search CSS
 				}
 			}
 		}
+
 		&.search-opened {
-			@include transform(translateY(0%));
+			opacity: 1;
+			visibility: visible;
+			@include transform(translateY(0));
 			transition-delay: 0s;
+
 			.search_form {
 				.search_input {
 					@include transform(translateY(0px));
 					opacity: 1;
 					transition-delay: 0.3s;
+
 					&::after {
 						width: 100%;
 						transition-delay: 0.5s;
@@ -55,6 +66,7 @@ START: Theme Search CSS
 				}
 			}
 		}
+
 		.logo {
 			max-width: 150px;
 			width: 100%;
@@ -73,18 +85,20 @@ START: Theme Search CSS
 	min-height: 100px;
 	display: flex;
 	align-items: center;
+
 	.search_form {
 		width: 100%;
+
 		form {
 			.search_input {
 				position: relative;
 				z-index: 1;
+
 				.search-box {
 					position: relative;
 					z-index: 1;
-					input:not([type="submit"]):not([type="radio"]):not(
-							[type="checkbox"]
-						):not([type="search"]),
+
+					input:not([type="submit"]):not([type="radio"]):not([type="checkbox"]):not([type="search"]),
 					input[type="text"] {
 						width: 100%;
 						height: 65px;
@@ -95,24 +109,30 @@ START: Theme Search CSS
 						background: transparent;
 						padding: 16px 90px 16px 24px;
 						border-radius: 10px;
+
 						&::placeholder {
 							transition: all 0.3s;
 							font-size: 20px;
 							color: var(--tj-color-text-body);
+
 							@media #{$lg} {
 								font-size: 20px;
 							}
 						}
+
 						&:focus {
 							border-color: var(--tj-color-theme-primary);
-							+ button {
+
+							+button {
 								border-color: var(--tj-color-theme-primary);
 							}
 						}
+
 						@media #{$lg} {
 							font-size: 20px;
 						}
 					}
+
 					button {
 						display: inline-flex;
 						align-items: center;
@@ -126,6 +146,7 @@ START: Theme Search CSS
 						color: var(--tj-color-theme-primary);
 						width: 100%;
 						height: 100%;
+
 						&::before {
 							content: "";
 							position: absolute;
@@ -152,8 +173,10 @@ START: Theme Search CSS
 	@include transform(translateY(calc(-100% - 80px)));
 	transition: all 0.3s ease-in-out 0s;
 	transition-delay: 0.1s;
+
 	&.search-popup-overlay-open {
 		@include transform(translateY(0));
 	}
 }
+
 /* !END: Theme Search CSS */

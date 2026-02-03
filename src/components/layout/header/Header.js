@@ -137,10 +137,10 @@ const Header = ({ isStickyHeader = false }) => {
 				<div className={`search_popup ${isSearchOpen ? "search-opened" : ""}`}>
 					<div className="container">
 						<div className="row justify-content-center">
-							<div className="col-8">
+							<div className="col-12 col-lg-10">
 								<div className="tj_search_wrapper">
 									<div className="search_form">
-										<Search />
+										<Search active={isSearchOpen} />
 									</div>
 								</div>
 							</div>
