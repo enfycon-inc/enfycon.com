@@ -2,73 +2,7 @@
 	{
 		"id": 1,
 		"name": "Home",
-		"path": "/",
-		"submenu": [
-			{
-				"id": 1,
-				"name": "Home - 01",
-				"img": "/images/header/demo/home-1.webp",
-				"path": "/"
-			},
-			{
-				"id": 2,
-				"name": "Home - 02",
-				"img": "/images/header/demo/home-2.webp",
-				"path": "/home-02"
-			},
-			{
-				"id": 3,
-				"name": "Home - 03",
-				"img": "/images/header/demo/home-3.webp",
-				"path": "/home-03"
-			},
-			{
-				"id": 4,
-				"name": "Home - 04",
-				"img": "/images/header/demo/home-4.webp",
-				"path": "/home-04"
-			},
-			{
-				"id": 5,
-				"name": "Home - 05",
-				"img": "/images/header/demo/home-5.webp",
-				"path": "/home-05"
-			},
-			{
-				"id": 6,
-				"name": "Home - 06",
-				"img": "/images/header/demo/home-6.webp",
-				"path": "/home-06"
-			},
-			{
-				"id": 7,
-				"name": "Home - 07",
-				"img": "/images/header/demo/home-7.webp",
-				"path": "/home-07",
-				"badge": "New"
-			},
-			{
-				"id": 8,
-				"name": "Home - 08",
-				"img": "/images/header/demo/home-8.webp",
-				"path": "/home-08",
-				"badge": "New"
-			},
-			{
-				"id": 9,
-				"name": "Home - 09",
-				"img": "/images/header/demo/home-9.webp",
-				"path": "/home-09",
-				"badge": "New"
-			},
-			{
-				"id": 10,
-				"name": "Home - 10",
-				"img": "/images/header/demo/home-10.webp",
-				"path": "/home-10",
-				"badge": "New"
-			}
-		]
+		"path": "/"
 	},
 	{
 		"id": 2,
@@ -378,12 +312,6 @@
 		"path": "#",
 		"submenu": [
 			{
-				"id": 1,
-				"name": "About Us",
-				"icon": "fa-light fa-address-card",
-				"path": "/about"
-			},
-			{
 				"id": 2,
 				"name": "Our Culture",
 				"icon": "fa-light fa-users",
@@ -405,32 +333,6 @@
 	{
 		"id": 8,
 		"name": "Blogs",
-		"path": "/blogs",
-		"submenu": [
-			{
-				"id": 1,
-				"name": "Blogs-Standard",
-				"path": "/blogs-standard",
-				"badge": "NEW"
-			},
-			{
-				"id": 2,
-				"name": "Blogs",
-				"path": "/blogs",
-				"badge": null
-			},
-			{
-				"id": 3,
-				"name": "Blog with sidebar",
-				"path": "/blog-sidebar",
-				"badge": null
-			},
-			{
-				"id": 4,
-				"name": "Blog details",
-				"path": "/blogs/1",
-				"badge": null
-			}
-		]
+		"path": "/blogs"
 	}
 ]

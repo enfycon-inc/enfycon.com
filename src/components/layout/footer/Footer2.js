@@ -168,6 +168,10 @@ const Footer2 = () => {
 										<li>
 											<Link href="/terms-and-conditions">Terms & Condition</Link>
 										</li>
+										
+										<li>
+											<Link href="/sitemap">Site Map</Link>
+										</li>
 									</ul>
 								</div>
 							</div>
