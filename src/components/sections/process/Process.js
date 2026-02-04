@@ -1,6 +1,8 @@
 "use client";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import ProcessCard from "@/components/shared/cards/ProcessCard";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Process = () => {
 	const process = [
@@ -49,7 +51,7 @@ const Process = () => {
 				</div>
 				<div className="row">
 					<div className="col-12">
-						<div className="working-process-area">
+						<div className="working-process-area working-process-area--desktop">
 							{process?.length
 								? process?.map((processSingle, idx) => (
 										<ProcessCard
@@ -59,6 +61,43 @@ const Process = () => {
 										/>
 								  ))
 								: ""}
+						</div>
+						<div className="working-process-swiper">
+							<Swiper
+								slidesPerView={1.15}
+								spaceBetween={16}
+								centeredSlides={true}
+								loop={true}
+								speed={600}
+								pagination={{
+									el: ".process-pagination",
+									clickable: true,
+								}}
+								breakpoints={{
+									576: {
+										slidesPerView: 1.25,
+										spaceBetween: 18,
+									},
+									768: {
+										slidesPerView: 2,
+										spaceBetween: 20,
+									},
+								}}
+								modules={[Pagination]}
+								className="process-slider"
+							>
+								{process?.length
+									? process?.map((processSingle, idx) => (
+											<SwiperSlide key={idx}>
+												<ProcessCard
+													processSingle={processSingle}
+													idx={idx}
+												/>
+											</SwiperSlide>
+									  ))
+									: ""}
+								<div className="process-pagination swiper-pagination-area"></div>
+							</Swiper>
 						</div>
 					</div>
 				</div>

@@ -3,7 +3,8 @@
 /**----------------------------------------
 START: Working process CSS
 ----------------------------------------*/
-.tj-working-process {
+.tj-working-process,
+.tj-working-proces {
 	
 	background-color: var(--tj-color-grey-1);
 	position: relative;
@@ -20,6 +21,25 @@ START: Working process CSS
 	}
 	.content-wrap {
 		margin-bottom: 45px;
+	}
+
+	.working-process-swiper {
+		display: none;
+	}
+
+	@media #{$md, $sm, $xs} {
+		.working-process-area {
+			display: none;
+		}
+		.working-process-swiper {
+			display: block;
+		}
+		.working-process-swiper .process-item::after {
+			display: none;
+		}
+		.working-process-swiper .swiper-slide {
+			height: auto;
+		}
 	}
 }
 .working-process-area {

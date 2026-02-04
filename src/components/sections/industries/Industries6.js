@@ -3,13 +3,37 @@
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import IndustryCard6 from "@/components/shared/cards/IndustryCard6";
 import { industriesData } from "@/data/industriesData";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Industries6 = () => {
 	const industries = industriesData || [];
-	const [currentIndex, setCurrentIndex] = useState(2);
+	const initialDesktopIndex = 0;
+	const initialMobileSlide = 0;
+	const [currentIndex, setCurrentIndex] = useState(initialDesktopIndex);
+	const [isMobile, setIsMobile] = useState(false);
 	const handleCurrentIndex = useCallback(idx => {
 		setCurrentIndex(idx);
+	}, []);
+
+	useEffect(() => {
+		if (typeof window === "undefined") return;
+		const media = window.matchMedia("(max-width: 767px)");
+		const update = () => {
+			const nextIsMobile = media.matches;
+			setIsMobile(nextIsMobile);
+			if (!nextIsMobile) {
+				setCurrentIndex(initialDesktopIndex);
+			}
+		};
+		update();
+		if (media.addEventListener) {
+			media.addEventListener("change", update);
+			return () => media.removeEventListener("change", update);
+		}
+		media.addListener(update);
+		return () => media.removeListener(update);
 	}, []);
 
 	return (
@@ -37,7 +61,7 @@ const Industries6 = () => {
 				<div className="row">
 					<div className="col-12">
 						<div
-							className="h6-project-inner wow fadeInUp"
+							className="h6-project-inner h6-project-inner--desktop wow fadeInUp"
 							data-wow-delay="0.6s"
 						>
 							{industries.map((industry, idx) => (
@@ -49,6 +73,42 @@ const Industries6 = () => {
 									handleCurrentIndex={handleCurrentIndex}
 								/>
 							))}
+						</div>
+						<div
+							className="h6-project-swiper wow fadeInUp"
+							data-wow-delay="0.6s"
+						>
+							<Swiper
+								slidesPerView={1.15}
+								spaceBetween={14}
+								centeredSlides={true}
+								speed={600}
+								initialSlide={initialMobileSlide}
+								pagination={{ clickable: true }}
+								onSlideChange={swiper => {
+									if (!isMobile) return;
+									handleCurrentIndex(swiper.activeIndex);
+								}}
+								breakpoints={{
+									576: {
+										slidesPerView: 1.25,
+										spaceBetween: 16,
+									},
+								}}
+								modules={[Pagination]}
+								className="h6-project-swiper__container"
+							>
+								{industries.map((industry, idx) => (
+									<SwiperSlide key={industry.id || idx}>
+										<IndustryCard6
+											industry={industry}
+											idx={idx}
+											currentIndex={currentIndex}
+											handleCurrentIndex={handleCurrentIndex}
+										/>
+									</SwiperSlide>
+								))}
+							</Swiper>
 						</div>
 					</div>
 				</div>
