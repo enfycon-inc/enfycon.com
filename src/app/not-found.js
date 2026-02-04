@@ -17,7 +17,7 @@ export default function NotFound() {
 						<HeaderSpace />
 						<HeroInner title={"Error 404"} text={"Error 404"} />
 						<ErrorPrimary />
-						<Cta />
+						
 					</main>
 					<Footer2 />
 				</div>
