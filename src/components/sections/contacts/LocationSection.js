@@ -36,7 +36,7 @@ const locations = [
         address: "Unit No. 308 & 309, Jains Sadguru Image's Capital Park, Image Gardens Road, Madhapur, Hyderabad 500084.",
         phone: "", // Screenshot says email only for hyd? No, it has email.
         email: "hydrabad@enfycon.com",
-        image: "/images/locations/hyderabad.png",
+        image: "/images/locations/hyderabad.jpg",
     },
 ];
 
