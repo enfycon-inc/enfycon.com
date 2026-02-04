@@ -29,7 +29,7 @@ const locations = [
         address: "N4/345, Block N4, IRC Village, Bhubaneswar, Odisha 751015",
         phone: "+91 6743513070",
         email: "odc@enfycon.com",
-        image: "/images/locations/bhubaneswar.png",
+        image: "/images/locations/bhubaneswar.jpg",
     },
     {
         title: "Hyderabad, India",
