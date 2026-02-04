@@ -81,7 +81,7 @@ const MobileNavbar = () => {
 												</div>
 											))
 											: ""}
-										<div className="col-12 col-lg-3 mega-menu-pages-single">
+										{/* <div className="col-12 col-lg-3 mega-menu-pages-single">
 											<div className="mega-menu-pages-single-inner">
 												<div className="feature-box">
 													<div className="feature-content">
@@ -105,7 +105,7 @@ const MobileNavbar = () => {
 													</div>
 												</div>
 											</div>
-										</div>
+										</div> */}
 									</div>
 								</li>
 							</MobileMenuItem>
