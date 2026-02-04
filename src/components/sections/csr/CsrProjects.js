@@ -67,9 +67,9 @@ const CsrProjects = ({ data }) => {
                                             <Link href={item.link}>{item.title}</Link>
                                         </h4>
                                         <p className="desc">{item.desc}</p>
-                                        <Link href={item.link} className="btn-text">
+                                        {/* <Link href={item.link} className="btn-text">
                                             Read More <i className="fa-regular fa-arrow-right ms-1"></i>
-                                        </Link>
+                                        </Link> */}
                                     </div>
                                 </div>
                             </SwiperSlide>
