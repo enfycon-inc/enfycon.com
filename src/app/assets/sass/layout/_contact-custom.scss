@@ -407,3 +407,62 @@
         }
     }
 }
+
+/* Contact2 Blue Tone */
+.tj-contact-section.contact-blue {
+    background:
+        radial-gradient(1200px 600px at 10% 12%, rgba(67, 97, 238, 0.24), rgba(2, 8, 40, 0) 60%),
+        radial-gradient(900px 500px at 85% 18%, rgba(99, 140, 255, 0.18), rgba(2, 8, 40, 0) 55%),
+        linear-gradient(135deg, #0a1633 0%, var(--tj-color-theme-deep-blue) 55%, #060c1d 100%);
+
+    .contact-form.style-2 {
+        background-color: rgba(7, 16, 34, 0.78);
+        border: 1px solid rgba(67, 97, 238, 0.25);
+        box-shadow: 0 25px 60px rgba(2, 8, 40, 0.45);
+    }
+
+    .contact-form.style-2 .form-input textarea,
+    .contact-form.style-2 .form-input input[type="tel"],
+    .contact-form.style-2 .form-input input[type="text"],
+    .contact-form.style-2 .form-input input[type="email"] {
+        color: #e8efff;
+        border-bottom-color: rgba(67, 97, 238, 0.35);
+    }
+
+    .contact-form.style-2 .form-input textarea::placeholder,
+    .contact-form.style-2 .form-input input[type="tel"]::placeholder,
+    .contact-form.style-2 .form-input input[type="text"]::placeholder,
+    .contact-form.style-2 .form-input input[type="email"]::placeholder {
+        color: #b7c6ff;
+    }
+
+    .contact-form.style-2 .form-input textarea:focus,
+    .contact-form.style-2 .form-input input[type="tel"]:focus,
+    .contact-form.style-2 .form-input input[type="text"]:focus,
+    .contact-form.style-2 .form-input input[type="email"]:focus {
+        border-bottom-color: var(--tj-color-theme-primary);
+    }
+
+    .contact-form.style-2 .nice-select {
+        border-bottom-color: rgba(67, 97, 238, 0.35);
+
+        &.open {
+            border-color: var(--tj-color-theme-primary);
+        }
+    }
+
+    .contact2-phone {
+        .phone-input-field {
+            color: #e8efff !important;
+            border-bottom-color: rgba(67, 97, 238, 0.35) !important;
+
+            &::placeholder {
+                color: #b7c6ff !important;
+            }
+
+            &:focus {
+                border-bottom-color: var(--tj-color-theme-primary) !important;
+            }
+        }
+    }
+}

@@ -63,7 +63,7 @@ const Contact2 = () => {
 	};
 
 	return (
-		<section className="tj-contact-section section-gap ">
+		<section className="tj-contact-section section-gap contact-blue">
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-6">
