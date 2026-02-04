@@ -110,12 +110,12 @@ const BlogDetailsPrimary = ({ post, option, relatedPosts }) => {
 														<i className="fa-brands fa-x-twitter"></i>
 													</a>
 													<a
-														href={`https://www.instagram.com/`}
+														href={`https://wa.me/?text=${encodeURIComponent(`${title || ""} ${shareUrl}`.trim())}`}
 														target="_blank"
 														rel="noopener noreferrer"
-														className="instagram"
+														className="whatsapp"
 													>
-														<i className="fa-brands fa-instagram"></i>
+														<i className="fa-brands fa-whatsapp"></i>
 													</a>
 													<a
 														href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
