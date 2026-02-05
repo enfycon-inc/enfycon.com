@@ -43,6 +43,7 @@ export const metadata = constructMetadata({
 
 import { LoadingProvider } from "@/components/shared/others/LoadingProvider";
 import CookieConsent from "@/components/shared/CookieConsent";
+import FloatingSocialShare from "@/components/shared/others/FloatingSocialShare";
 
 export default function RootLayout({ children }) {
 	return (
@@ -50,6 +51,7 @@ export default function RootLayout({ children }) {
 			<body className={`${bodyFont.variable} ${headingFont.variable}`} suppressHydrationWarning>
 				<LoadingProvider>
 					{children}
+					<FloatingSocialShare />
 					<CookieConsent />
 					<SpeedInsights />
 					<Analytics />
