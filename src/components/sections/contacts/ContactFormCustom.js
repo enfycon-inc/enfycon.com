@@ -9,37 +9,7 @@ import Swal from "sweetalert2";
 const ContactFormCustom = () => {
     const [phone, setPhone] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-    const recaptchaAction = "contact_form";
-
-    const getRecaptchaToken = async () => {
-        if (!recaptchaSiteKey) {
-            throw new Error("reCAPTCHA is not configured.");
-        }
-
-        if (typeof window === "undefined" || !window.grecaptcha?.execute) {
-            throw new Error("reCAPTCHA is not ready. Please try again.");
-        }
-
-        return new Promise((resolve, reject) => {
-            window.grecaptcha.ready(async () => {
-                try {
-                    const token = await window.grecaptcha.execute(recaptchaSiteKey, {
-                        action: recaptchaAction,
-                    });
-
-                    if (!token) {
-                        reject(new Error("Failed to generate reCAPTCHA token."));
-                        return;
-                    }
-
-                    resolve(token);
-                } catch (error) {
-                    reject(error);
-                }
-            });
-        });
-    };
+    const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,7 +17,16 @@ const ContactFormCustom = () => {
 
         try {
             const formData = new FormData(e.target);
-            const recaptchaToken = await getRecaptchaToken();
+            const turnstileToken = formData.get("cf-turnstile-response");
+
+            if (!turnstileSiteKey) {
+                throw new Error("Turnstile is not configured.");
+            }
+
+            if (!turnstileToken) {
+                throw new Error("Please complete the verification.");
+            }
+
             const data = {
                 firstName: formData.get("firstName"),
                 lastName: formData.get("lastName"),
@@ -55,8 +34,7 @@ const ContactFormCustom = () => {
                 mobile: phone,
                 subject: formData.get("subject"),
                 message: formData.get("message"),
-                recaptchaToken,
-                recaptchaAction,
+                turnstileToken,
             };
 
             const response = await fetch("/api/contact", {
@@ -95,10 +73,10 @@ const ContactFormCustom = () => {
 
     return (
         <section className="tj-contact-form-section section-gap-bottom">
-            {recaptchaSiteKey ? (
+            {turnstileSiteKey ? (
                 <Script
-                    id="recaptcha-v3"
-                    src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
+                    id="turnstile-script"
+                    src="https://challenges.cloudflare.com/turnstile/v0/api.js"
                     strategy="afterInteractive"
                 />
             ) : null}
@@ -179,6 +157,15 @@ const ContactFormCustom = () => {
                                             ></textarea>
                                         </div>
                                     </div>
+                                    {turnstileSiteKey ? (
+                                        <div className="col-12 text-center mb-3">
+                                            <div
+                                                className="cf-turnstile"
+                                                data-sitekey={turnstileSiteKey}
+                                                data-theme="light"
+                                            ></div>
+                                        </div>
+                                    ) : null}
                                     <div className="col-12 text-center">
                                         <ButtonPrimary
                                             type={"submit"}
@@ -188,7 +175,7 @@ const ContactFormCustom = () => {
                                     </div>
                                     <div className="col-12 text-center mt-3">
                                         <p className="recaptcha-note">
-                                            This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+                                            This site is protected by Cloudflare Turnstile.
                                         </p>
                                     </div>
                                 </div>

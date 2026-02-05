@@ -11,37 +11,7 @@ import Swal from "sweetalert2";
 const Contact2 = () => {
 	const [phone, setPhone] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
-	const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
-	const recaptchaAction = "contact_form";
-
-	const getRecaptchaToken = async () => {
-		if (!recaptchaSiteKey) {
-			throw new Error("reCAPTCHA is not configured.");
-		}
-
-		if (typeof window === "undefined" || !window.grecaptcha?.execute) {
-			throw new Error("reCAPTCHA is not ready. Please try again.");
-		}
-
-		return new Promise((resolve, reject) => {
-			window.grecaptcha.ready(async () => {
-				try {
-					const token = await window.grecaptcha.execute(recaptchaSiteKey, {
-						action: recaptchaAction,
-					});
-
-					if (!token) {
-						reject(new Error("Failed to generate reCAPTCHA token."));
-						return;
-					}
-
-					resolve(token);
-				} catch (error) {
-					reject(error);
-				}
-			});
-		});
-	};
+	const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 
 	const handleSubmit = async (e) => {
@@ -50,7 +20,16 @@ const Contact2 = () => {
 
 		try {
 			const formData = new FormData(e.target);
-			const recaptchaToken = await getRecaptchaToken();
+			const turnstileToken = formData.get("cf-turnstile-response");
+
+			if (!turnstileSiteKey) {
+				throw new Error("Turnstile is not configured.");
+			}
+
+			if (!turnstileToken) {
+				throw new Error("Please complete the verification.");
+			}
+
 			const data = {
 				firstName: formData.get("cfName2"),
 				lastName: "",
@@ -58,8 +37,7 @@ const Contact2 = () => {
 				mobile: phone,
 				subject: formData.get("cfSubject2"),
 				message: formData.get("cfMessage2"),
-				recaptchaToken,
-				recaptchaAction,
+				turnstileToken,
 			};
 
 			const response = await fetch("/api/contact", {
@@ -99,10 +77,10 @@ const Contact2 = () => {
 
 	return (
 		<section className="tj-contact-section section-gap contact-blue">
-			{recaptchaSiteKey ? (
+			{turnstileSiteKey ? (
 				<Script
-					id="recaptcha-v3"
-					src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
+					id="turnstile-script"
+					src="https://challenges.cloudflare.com/turnstile/v0/api.js"
 					strategy="afterInteractive"
 				/>
 			) : null}
@@ -241,6 +219,15 @@ const Contact2 = () => {
 											></textarea>
 										</div>
 									</div>
+									{turnstileSiteKey ? (
+										<div className="col-sm-12">
+											<div
+												className="cf-turnstile"
+												data-sitekey={turnstileSiteKey}
+												data-theme="dark"
+											></div>
+										</div>
+									) : null}
 									<div className="submit-btn">
 										<ButtonPrimary
 											text={isSubmitting ? "Sending..." : "Send Message"}
@@ -249,7 +236,7 @@ const Contact2 = () => {
 										/>
 									</div>
 									<p className="recaptcha-note text-white mt-3">
-										This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+										This site is protected by Cloudflare Turnstile.
 									</p>
 								</div>
 							</form>

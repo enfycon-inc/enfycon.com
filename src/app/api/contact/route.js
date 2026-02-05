@@ -1,22 +1,22 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const RECAPTCHA_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
+const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
-const verifyRecaptcha = async ({ token, action }) => {
-    const secret = process.env.RECAPTCHA_SECRET_KEY;
+const verifyTurnstile = async ({ token, ip }) => {
+    const secret = process.env.TURNSTILE_SECRET_KEY;
 
     if (!secret) {
         if (process.env.NODE_ENV === "production") {
-            return "reCAPTCHA is not configured.";
+            return "Turnstile is not configured.";
         }
 
-        console.warn("RECAPTCHA_SECRET_KEY is missing. Skipping reCAPTCHA verification in non-production.");
+        console.warn("TURNSTILE_SECRET_KEY is missing. Skipping Turnstile verification in non-production.");
         return null;
     }
 
     if (!token) {
-        return "Missing reCAPTCHA token.";
+        return "Missing Turnstile token.";
     }
 
     const body = new URLSearchParams({
@@ -24,7 +24,11 @@ const verifyRecaptcha = async ({ token, action }) => {
         response: token,
     });
 
-    const verifyResponse = await fetch(RECAPTCHA_VERIFY_URL, {
+    if (ip) {
+        body.set("remoteip", ip);
+    }
+
+    const verifyResponse = await fetch(TURNSTILE_VERIFY_URL, {
         method: "POST",
         headers: {
             "Content-Type": "application/x-www-form-urlencoded",
@@ -35,25 +39,8 @@ const verifyRecaptcha = async ({ token, action }) => {
     const verification = await verifyResponse.json();
 
     if (!verification.success) {
-        console.warn("reCAPTCHA verification failed:", verification);
-        return "reCAPTCHA verification failed.";
-    }
-
-    if (action) {
-        if (!verification.action) {
-            return "reCAPTCHA action missing.";
-        }
-
-        if (verification.action !== action) {
-            return "reCAPTCHA action mismatch.";
-        }
-    }
-
-    const scoreThreshold = parseFloat(process.env.RECAPTCHA_SCORE_THRESHOLD || "0.5");
-    const score = typeof verification.score === "number" ? verification.score : 0;
-
-    if (score < scoreThreshold) {
-        return "reCAPTCHA score too low.";
+        console.warn("Turnstile verification failed:", verification);
+        return "Turnstile verification failed.";
     }
 
     return null;
@@ -68,17 +55,17 @@ export async function POST(request) {
             mobile,
             subject,
             message,
-            recaptchaToken,
-            recaptchaAction,
+            turnstileToken,
         } = await request.json();
 
-        const recaptchaError = await verifyRecaptcha({
-            token: recaptchaToken,
-            action: recaptchaAction,
+        const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+        const turnstileError = await verifyTurnstile({
+            token: turnstileToken,
+            ip,
         });
 
-        if (recaptchaError) {
-            return NextResponse.json({ success: false, error: recaptchaError }, { status: 400 });
+        if (turnstileError) {
+            return NextResponse.json({ success: false, error: turnstileError }, { status: 400 });
         }
 
         // Create a transporter using custom SMTP settings
