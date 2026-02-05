@@ -1,9 +1,85 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+const RECAPTCHA_VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
+
+const verifyRecaptcha = async ({ token, action }) => {
+    const secret = process.env.RECAPTCHA_SECRET_KEY;
+
+    if (!secret) {
+        if (process.env.NODE_ENV === "production") {
+            return "reCAPTCHA is not configured.";
+        }
+
+        console.warn("RECAPTCHA_SECRET_KEY is missing. Skipping reCAPTCHA verification in non-production.");
+        return null;
+    }
+
+    if (!token) {
+        return "Missing reCAPTCHA token.";
+    }
+
+    const body = new URLSearchParams({
+        secret,
+        response: token,
+    });
+
+    const verifyResponse = await fetch(RECAPTCHA_VERIFY_URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body,
+    });
+
+    const verification = await verifyResponse.json();
+
+    if (!verification.success) {
+        console.warn("reCAPTCHA verification failed:", verification);
+        return "reCAPTCHA verification failed.";
+    }
+
+    if (action) {
+        if (!verification.action) {
+            return "reCAPTCHA action missing.";
+        }
+
+        if (verification.action !== action) {
+            return "reCAPTCHA action mismatch.";
+        }
+    }
+
+    const scoreThreshold = parseFloat(process.env.RECAPTCHA_SCORE_THRESHOLD || "0.5");
+    const score = typeof verification.score === "number" ? verification.score : 0;
+
+    if (score < scoreThreshold) {
+        return "reCAPTCHA score too low.";
+    }
+
+    return null;
+};
+
 export async function POST(request) {
     try {
-        const { firstName, lastName, email, mobile, subject, message } = await request.json();
+        const {
+            firstName,
+            lastName,
+            email,
+            mobile,
+            subject,
+            message,
+            recaptchaToken,
+            recaptchaAction,
+        } = await request.json();
+
+        const recaptchaError = await verifyRecaptcha({
+            token: recaptchaToken,
+            action: recaptchaAction,
+        });
+
+        if (recaptchaError) {
+            return NextResponse.json({ success: false, error: recaptchaError }, { status: 400 });
+        }
 
         // Create a transporter using custom SMTP settings
         const transporter = nodemailer.createTransport({

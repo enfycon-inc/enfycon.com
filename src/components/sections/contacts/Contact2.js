@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Script from "next/script";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
@@ -10,23 +11,57 @@ import Swal from "sweetalert2";
 const Contact2 = () => {
 	const [phone, setPhone] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
+	const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+	const recaptchaAction = "contact_form";
+
+	const getRecaptchaToken = async () => {
+		if (!recaptchaSiteKey) {
+			throw new Error("reCAPTCHA is not configured.");
+		}
+
+		if (typeof window === "undefined" || !window.grecaptcha?.execute) {
+			throw new Error("reCAPTCHA is not ready. Please try again.");
+		}
+
+		return new Promise((resolve, reject) => {
+			window.grecaptcha.ready(async () => {
+				try {
+					const token = await window.grecaptcha.execute(recaptchaSiteKey, {
+						action: recaptchaAction,
+					});
+
+					if (!token) {
+						reject(new Error("Failed to generate reCAPTCHA token."));
+						return;
+					}
+
+					resolve(token);
+				} catch (error) {
+					reject(error);
+				}
+			});
+		});
+	};
 
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		setIsSubmitting(true);
 
-		const formData = new FormData(e.target);
-		const data = {
-			firstName: formData.get("cfName2"),
-			lastName: "",
-			email: formData.get("cfEmail2"),
-			mobile: phone,
-			subject: formData.get("cfSubject2"),
-			message: formData.get("cfMessage2"),
-		};
-
 		try {
+			const formData = new FormData(e.target);
+			const recaptchaToken = await getRecaptchaToken();
+			const data = {
+				firstName: formData.get("cfName2"),
+				lastName: "",
+				email: formData.get("cfEmail2"),
+				mobile: phone,
+				subject: formData.get("cfSubject2"),
+				message: formData.get("cfMessage2"),
+				recaptchaToken,
+				recaptchaAction,
+			};
+
 			const response = await fetch("/api/contact", {
 				method: "POST",
 				headers: {
@@ -64,6 +99,13 @@ const Contact2 = () => {
 
 	return (
 		<section className="tj-contact-section section-gap contact-blue">
+			{recaptchaSiteKey ? (
+				<Script
+					id="recaptcha-v3"
+					src={`https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`}
+					strategy="afterInteractive"
+				/>
+			) : null}
 			<div className="container">
 				<div className="row">
 					<div className="col-lg-6">
@@ -206,6 +248,9 @@ const Contact2 = () => {
 											disabled={isSubmitting}
 										/>
 									</div>
+									<p className="recaptcha-note text-white mt-3">
+										This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+									</p>
 								</div>
 							</form>
 						</div>
