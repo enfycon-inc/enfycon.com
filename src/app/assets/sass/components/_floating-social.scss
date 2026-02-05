@@ -105,4 +105,8 @@
 			font-size: 14px;
 		}
 	}
+
+	@media #{$sm, $xs} {
+		display: none;
+	}
 }
