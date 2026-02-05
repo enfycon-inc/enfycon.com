@@ -9,6 +9,9 @@
 	border-radius: 16px;
 	background: transparent;
 	border: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	// box-shadow: 0 16px 40px rgba(12, 30, 33, 0.18);
 	// backdrop-filter: blur(8px);
 
@@ -55,6 +58,33 @@
 		}
 	}
 
+	&__toggle {
+		display: none;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: #565656;
+		border: 1px solid #565656;
+		color: var(--tj-color-common-white);
+		font-size: 16px;
+		cursor: pointer;
+		margin-top: 28px;
+		transition: transform 0.2s ease, background-color 0.2s ease,
+			border-color 0.2s ease;
+
+		i {
+			color: var(--tj-color-common-white);
+		}
+
+		&:hover {
+			background-color: var(--tj-color-theme-primary);
+			border-color: var(--tj-color-theme-primary);
+			transform: translateY(-2px);
+		}
+	}
+
 	.social-links.style-3 {
 		ul li a,
 		ul li button {
@@ -77,13 +107,28 @@
 
 	@media #{$md} {
 		left: 14px;
-		bottom: 96px;
+		bottom: 20px;
 	}
 
 	@media #{$sm} {
 		left: 12px;
-		bottom: 86px;
+		bottom: 20px;
 		padding: 8px 6px;
+
+		&__toggle {
+			display: inline-flex;
+			width: 36px;
+			height: 36px;
+			font-size: 15px;
+		}
+
+		&.is-collapsed .social-links {
+			display: none;
+		}
+
+		&.is-open .social-links {
+			display: block;
+		}
 
 		.social-links li a,
 		.social-links li button {
@@ -95,8 +140,23 @@
 
 	@media #{$xs} {
 		left: 10px;
-		bottom: 76px;
+		bottom: 20px;
 		padding: 8px 6px;
+
+		&__toggle {
+			display: inline-flex;
+			width: 34px;
+			height: 34px;
+			font-size: 14px;
+		}
+
+		&.is-collapsed .social-links {
+			display: none;
+		}
+
+		&.is-open .social-links {
+			display: block;
+		}
 
 		.social-links li a,
 		.social-links li button {
@@ -104,9 +164,5 @@
 			height: 32px;
 			font-size: 14px;
 		}
-	}
-
-	@media #{$sm, $xs} {
-		display: none;
 	}
 }

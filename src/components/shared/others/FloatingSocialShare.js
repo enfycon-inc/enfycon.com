@@ -34,6 +34,7 @@ const buildShareItems = (pageUrl, pageTitle) => {
 
 const FloatingSocialShare = () => {
 	const [shareItems, setShareItems] = useState([]);
+	const [isExpanded, setIsExpanded] = useState(false);
 	const pathname = usePathname();
 
 	useEffect(() => {
@@ -72,7 +73,10 @@ const FloatingSocialShare = () => {
 	}
 
 	return (
-		<div className="floating-social-share" aria-label="Social links">
+		<div
+			className={`floating-social-share ${isExpanded ? "is-open" : "is-collapsed"}`}
+			aria-label="Social links"
+		>
 			<div className="social-links style-3">
 				<ul>
 					{items.map((item) => {
@@ -102,6 +106,15 @@ const FloatingSocialShare = () => {
 					})}
 				</ul>
 			</div>
+			<button
+				type="button"
+				className="floating-social-share__toggle"
+				onClick={() => setIsExpanded((prev) => !prev)}
+				aria-label={isExpanded ? "Hide share options" : "Show share options"}
+				title={isExpanded ? "Hide share options" : "Show share options"}
+			>
+				<i className={isExpanded ? "fa-solid fa-xmark" : "fa-solid fa-share-nodes"}></i>
+			</button>
 		</div>
 	);
 };
