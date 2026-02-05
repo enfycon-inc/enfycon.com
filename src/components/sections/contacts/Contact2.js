@@ -8,7 +8,7 @@ import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import Link from "next/link";
 import Swal from "sweetalert2";
 
-const Contact2 = ({ compact = false }) => {
+const Contact2 = () => {
 	const [phone, setPhone] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -76,11 +76,7 @@ const Contact2 = ({ compact = false }) => {
 	};
 
 	return (
-		<section
-			className={`tj-contact-section section-gap contact-blue${
-				compact ? " contact-compact" : ""
-			}`}
-		>
+		<section className="tj-contact-section section-gap contact-blue">
 			{turnstileSiteKey ? (
 				<Script
 					id="turnstile-script"
@@ -90,67 +86,65 @@ const Contact2 = ({ compact = false }) => {
 			) : null}
 			<div className="container">
 				<div className="row">
-					{compact ? null : (
-						<div className="col-lg-6">
-							<div className="global-map wow fadeInUp" data-wow-delay=".3s">
-								<div className="global-map-img">
-									<img src="/images/bg/map.svg" alt="Image" />
-									<div className="location-indicator loc-1">
-										<div className="location-tooltip">
-											<span>Head office:</span>
-											<p>3921 Long Prairie Road, Building 5, Flower Mound, TX 75028, USA.</p>
-											<Link href="tel:+12012017078">P: +1 (201) 201-7078</Link>
-											<Link href="mailto:office@enfycon.com">
-												M: office@enfycon.com
-											</Link>
-										</div>
-										<span className="hq-text">HQ</span>
+					<div className="col-lg-6">
+						<div className="global-map wow fadeInUp" data-wow-delay=".3s">
+							<div className="global-map-img">
+								<img src="/images/bg/map.svg" alt="Image" />
+								<div className="location-indicator loc-1">
+									<div className="location-tooltip">
+										<span>Head office:</span>
+										<p>3921 Long Prairie Road, Building 5, Flower Mound, TX 75028, USA.</p>
+										<Link href="tel:+12012017078">P: +1 (201) 201-7078</Link>
+										<Link href="mailto:office@enfycon.com">
+											M: office@enfycon.com
+										</Link>
 									</div>
-									<div className="location-indicator loc-2">
-										<div className="location-tooltip">
-											<span>Regional office:</span>
-											<p>N4/345, Block N4, IRC Village, Bhubaneswar, Odisha 751015, India.</p>
-											<Link href="tel:+916743513070">P: +91 674 351 3070</Link>
-											<Link href="mailto:odc@enfycon.com">
-												M: odc@enfycon.com
-											</Link>
-										</div>
-										<span className="odc-text">ODC</span>
+									<span className="hq-text">HQ</span>
+								</div>
+								<div className="location-indicator loc-2">
+									<div className="location-tooltip">
+										<span>Regional office:</span>
+										<p>N4/345, Block N4, IRC Village, Bhubaneswar, Odisha 751015, India.</p>
+										<Link href="tel:+916743513070">P: +91 674 351 3070</Link>
+										<Link href="mailto:odc@enfycon.com">
+											M: odc@enfycon.com
+										</Link>
 									</div>
-									<div className="location-indicator loc-3">
-										<div className="location-tooltip">
-											<span>Regional office:</span>
-											<p>6500 Emerald Parkway, Suite 100 Dublin, Ohio 43016, USA.</p>
-											<Link href="tel:+12168883007">P: +1 (216) 888-3007</Link>
-											<Link href="mailto:ohio@enfycon.com">
-												M: ohio@enfycon.com
-											</Link>
-										</div>
+									<span className="odc-text">ODC</span>
+								</div>
+								<div className="location-indicator loc-3">
+									<div className="location-tooltip">
+										<span>Regional office:</span>
+										<p>6500 Emerald Parkway, Suite 100 Dublin, Ohio 43016, USA.</p>
+										<Link href="tel:+12168883007">P: +1 (216) 888-3007</Link>
+										<Link href="mailto:ohio@enfycon.com">
+											M: ohio@enfycon.com
+										</Link>
 									</div>
-									<div className="location-indicator loc-4">
-										<div className="location-tooltip">
-											<span>Regional office:</span>
-											<p>112 Capitol Trail, Suite A33, Newark DE 19711, USA.</p>
-											<Link href="tel:+13022731130">P: +1 (302) 273-1130</Link>
-											<Link href="mailto:delaware@enfycon.com">
-												M: delaware@enfycon.com
-											</Link>
-										</div>
+								</div>
+								<div className="location-indicator loc-4">
+									<div className="location-tooltip">
+										<span>Regional office:</span>
+										<p>112 Capitol Trail, Suite A33, Newark DE 19711, USA.</p>
+										<Link href="tel:+13022731130">P: +1 (302) 273-1130</Link>
+										<Link href="mailto:delaware@enfycon.com">
+											M: delaware@enfycon.com
+										</Link>
 									</div>
-									<div className="location-indicator loc-5">
-										<div className="location-tooltip">
-											<span>Regional office:</span>
-											<p>Unit No. 308 & 309, Jains Sadguru Image's Capital Park, Madhapur, Hyderabad 500084, India.</p>
-											<Link href="mailto:hydrabad@enfycon.com">
-												M: hydrabad@enfycon.com
-											</Link>
-										</div>
+								</div>
+								<div className="location-indicator loc-5">
+									<div className="location-tooltip">
+										<span>Regional office:</span>
+										<p>Unit No. 308 & 309, Jains Sadguru Image's Capital Park, Madhapur, Hyderabad 500084, India.</p>
+										<Link href="mailto:hydrabad@enfycon.com">
+											M: hydrabad@enfycon.com
+										</Link>
 									</div>
 								</div>
 							</div>
 						</div>
-					)}
-					<div className={compact ? "col-12" : "col-lg-6"}>
+					</div>
+					<div className="col-lg-6">
 						<div
 							className="contact-form style-2 wow fadeInUp"
 							data-wow-delay=".4s"
