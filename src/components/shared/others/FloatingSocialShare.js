@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation";
 import siteConfig from "@/config/siteConfig";
 
 const buildShareItems = (pageUrl, pageTitle) => {
@@ -35,17 +35,24 @@ const buildShareItems = (pageUrl, pageTitle) => {
 const FloatingSocialShare = () => {
 	const [shareItems, setShareItems] = useState([]);
 	const pathname = usePathname();
-	const searchParams = useSearchParams();
-	const search = searchParams?.toString() || "";
 
 	useEffect(() => {
-		if (typeof window === "undefined") return;
-		const pageUrl = `${window.location.origin}${pathname || ""}${
-			search ? `?${search}` : ""
-		}`;
-		const pageTitle = document.title;
-		setShareItems(buildShareItems(pageUrl, pageTitle));
-	}, [pathname, search]);
+		const updateShareItems = () => {
+			if (typeof window === "undefined") return;
+			const pageUrl = window.location.href;
+			const pageTitle = document.title;
+			setShareItems(buildShareItems(pageUrl, pageTitle));
+		};
+
+		updateShareItems();
+		window.addEventListener("popstate", updateShareItems);
+		window.addEventListener("hashchange", updateShareItems);
+
+		return () => {
+			window.removeEventListener("popstate", updateShareItems);
+			window.removeEventListener("hashchange", updateShareItems);
+		};
+	}, [pathname]);
 
 	const items = [
 		{
