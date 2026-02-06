@@ -86,6 +86,7 @@ export async function POST(request) {
         // Helper to capitalize first letter
         const capitalize = (str) => str ? str.charAt(0).toUpperCase() + str.slice(1).toLowerCase() : "";
         const capitalizedFirstName = capitalize(firstName);
+        const capitalizedLastName = capitalize(lastName);
 
         // Helper for email template
         const getEmailTemplate = (content, previewText) => `
@@ -187,7 +188,7 @@ export async function POST(request) {
         `;
 
         const userBody = `
-            <p style="font-size: 16px; color: #111827; margin-bottom: 24px;">Hello <strong>${capitalizedFirstName} ${lastName}</strong>,</p>
+            <p style="font-size: 16px; color: #111827; margin-bottom: 24px;">Hello <strong>${capitalizedFirstName} ${capitalizedLastName}</strong>,</p>
             
             <p style="font-size: 15px; line-height: 1.7; margin-bottom: 16px; color: #374151;">
                 Thank you for reaching out to enfycon. We’ve received your inquiry regarding our services.
