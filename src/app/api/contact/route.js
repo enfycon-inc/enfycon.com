@@ -160,6 +160,39 @@ export async function POST(request) {
         const adminContent = getEmailTemplate(adminBody, `New Inquiry: ${subject}`);
 
         // User Confirmation Email Content
+        const signatureHTML = `
+            <div style="font-family: Arial, Helvetica, sans-serif; color: #333333; margin-top: 40px;">
+                <p style="margin-bottom: 15px; font-weight: 400; font-size: 14px; color: #333333;">With Warm Regards,</p>
+                <h4 style="font-size: 16px; font-weight: 400; margin-bottom: 5px; color: #1a2b4b; margin-top: 5px;">
+                    <span style="font-weight: 400; color: #0056b3;">enfycon Team</span>
+                    <span style="color: #333333;"> | </span>
+                    <span style="color: #0056b3;">enfycon Inc.</span>
+                </h4>
+                <div style="font-size: 16px; line-height: 1.5; margin-bottom: 20px; font-weight: 400;">
+                    <p style="margin-bottom: 0;">USA | INDIA | UAE</p>
+                </div>
+
+                <div style="margin-bottom: 20px; font-size: 16px; line-height: 1.5;">
+                     <p style="margin-bottom: 5px;">
+                        <span style="font-weight: 700; margin-right: 5px;">A:</span> 3921 Long Prairie Road, Building 5<br>Flower Mound, TX – 75028
+                    </p>
+                    <p style="margin-bottom: 5px;">
+                        <span style="font-weight: 700; margin-right: 5px;">D:</span> <a href="tel:+12012017878" style="color: #333333; text-decoration: none;">+1 201-201-7878</a>
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 25px; font-size: 16px;">
+                    <a href="mailto:info@enfycon.com" style="color: #0056b3; text-decoration: underline;">info@enfycon.com</a>
+                    <span style="color: #333333; margin: 0 5px;"> | </span>
+                    <a href="https://www.enfycon.com" style="color: #0056b3; text-decoration: underline;">www.enfycon.com</a>
+                </div>
+
+                <div style="width: 100%;">
+                    <img src="https://enfycon.com/images/email-banner.png" alt="Empowering Business with Technology" style="width: 100%; height: auto; display: block;">
+                </div>
+            </div>
+        `;
+
         const userBody = `
             <h2 style="color: #0f172a; margin-top: 0; font-size: 24px; font-weight: 700;">Hello ${firstName},</h2>
             <p style="color: #475569; font-size: 16px; line-height: 1.6; margin-bottom: 20px;">
@@ -174,6 +207,7 @@ export async function POST(request) {
             <div style="margin-top: 30px;">
                 <a href="https://enfycon.com/services" style="display: inline-block; background-color: #1e293b; color: #ffffff; padding: 12px 25px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 14px;">Explore Services</a>
             </div>
+            ${signatureHTML}
         `;
 
         const userContent = getEmailTemplate(userBody, "Thank you for contacting enfycon");
