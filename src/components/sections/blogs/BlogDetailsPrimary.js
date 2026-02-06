@@ -2,9 +2,10 @@ import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
 import BlogSidebar from "@/components/shared/sidebar/BlogSidebar";
 import Image from "next/image";
 import Link from "next/link";
+import AuthorCard from "./AuthorCard";
 const BlogDetailsPrimary = ({ post, option, relatedPosts }) => {
 	const { prevId, nextId, isPrevItem, isNextItem } = option || {};
-	const { title, featuredImage, author, day, month, year, commentCount, avatar, content } = post || {};
+	const { title, featuredImage, author, day, month, year, commentCount, avatar, content, authorDesc } = post || {};
 	return (
 		<section className="tj-blog-section section-gap slidebar-stickiy-container">
 			<div className="container">
@@ -65,6 +66,11 @@ const BlogDetailsPrimary = ({ post, option, relatedPosts }) => {
 												dangerouslySetInnerHTML={{ __html: processedContent }}
 											/>
 										</div>
+										<AuthorCard
+											author={author}
+											avatar={avatar}
+											role={authorDesc}
+										/>
 									</>
 								);
 							})()}

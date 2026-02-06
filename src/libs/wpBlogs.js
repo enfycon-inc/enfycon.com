@@ -159,6 +159,7 @@ export async function getBlogBySlug(slug) {
               avatar {
                 url
               }
+              description
             }
           }
           categories {
@@ -201,6 +202,7 @@ export async function getBlogBySlug(slug) {
       tags: post.tags?.nodes?.map(tag => tag.name) || [],
       commentCount: post.commentCount || 0,
       avatar: post.author?.node?.avatar?.url || null,
+      authorDesc: post.author?.node?.description || "",
     };
   } catch (error) {
     console.error("Error fetching blog by slug:", error);
