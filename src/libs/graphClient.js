@@ -49,6 +49,12 @@ export async function sendMail({ subject, content, toRecipients }) {
             contentType: "HTML",
             content: content,
         },
+        from: {
+            emailAddress: {
+                address: userId,
+                name: "enfycon Support"
+            }
+        },
         toRecipients: toRecipients.map((email) => ({
             emailAddress: {
                 address: email,
