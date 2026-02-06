@@ -4,12 +4,14 @@ import Script from "next/script";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import ButtonPrimary from "@/components/shared/buttons/ButtonPrimary";
+import EmailAutocomplete from "@/components/shared/form/EmailAutocomplete";
 
 import Link from "next/link";
 import Swal from "sweetalert2";
 
 const Contact2 = () => {
 	const [phone, setPhone] = useState("");
+	const [email, setEmail] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
@@ -33,7 +35,7 @@ const Contact2 = () => {
 			const data = {
 				firstName: formData.get("cfName2"),
 				lastName: "",
-				email: formData.get("cfEmail2"),
+				email: email,
 				mobile: phone,
 				subject: formData.get("cfSubject2"),
 				message: formData.get("cfMessage2"),
@@ -59,6 +61,7 @@ const Contact2 = () => {
 				});
 				e.target.reset();
 				setPhone("");
+				setEmail("");
 
 			} else {
 				throw new Error(result.error || "Something went wrong");
@@ -171,11 +174,12 @@ const Contact2 = () => {
 									</div>
 									<div className="col-sm-6">
 										<div className="form-input">
-											<input
-												type="email"
+											<EmailAutocomplete
 												name="cfEmail2"
 												placeholder="Email Address *"
-												required
+												required={true}
+												value={email}
+												onChange={(e) => setEmail(e.target.value)}
 											/>
 										</div>
 									</div>

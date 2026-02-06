@@ -1,0 +1,73 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    // Inherit styles from parent context
+    background-color: transparent;
+}
+
+.suggestionsList {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    // Blue blur transparent gradient as requested
+    // Using a gradient that adds a subtle blue tint while maintaining transparency
+    // and a strong blur for the glass effect.
+    background: linear-gradient(180deg, rgba(30, 35, 60, 0.9) 0%, rgba(30, 35, 60, 0.7) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    z-index: 1000;
+    max-height: 200px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.suggestionItem {
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #cecece; // Light grey for text
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+
+    // Remove border for a cleaner look or use very subtle one
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+
+    &:hover,
+    &.selected {
+        // Highlight with a brighter transparent blue/white mix
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+        color: #ffffff;
+        padding-left: 25px; // Subtle movement on hover
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+// Ensure theme compatibility if specific contexts are used
+:global(.contact-blue) .suggestionsList {
+    // Ensuring the gradient overrides any solid colors
+    background: linear-gradient(180deg, rgba(13, 18, 50, 0.85) 0%, rgba(13, 18, 50, 0.65) 100%);
+}
