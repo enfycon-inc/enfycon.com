@@ -26,11 +26,11 @@ export default function ContactUs() {
                 <div id="smooth-content">
                     <main>
                         <HeaderSpace />
-                           <Contact2 />
+                        <Contact2 />
                         {/* <HeroInner title={"Contact Us"} text={"Contact Us"} /> */}
 
                         <LocationSection />
-                     
+
                         {/* <ContactFormCustom /> */}
                     </main>
                     <Footer2 />

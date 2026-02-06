@@ -1,0 +1,108 @@
+.contact-signature-wrapper {
+  padding: 60px 0;
+  background-color: var(--tj-color-common-white);
+
+  .contact-signature {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif !important;
+    color: #333333; // Dark gray text
+
+    .signature-info {
+      margin-bottom: 20px;
+
+      .regards {
+        margin-bottom: 15px;
+        font-weight: 400;
+        font-size: 14px;
+        color: #333333;
+      }
+    }
+
+    .name-title {
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 5px;
+      color: #1a2b4b;
+
+      .name {
+        font-weight: 400; // Normal weight to match company
+        color: #0056b3;
+      }
+
+      .separator {
+        color: #333333;
+      }
+
+      .company {
+        color: #0056b3; // Link blue
+      }
+    }
+
+    .company-info {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      font-weight: 400;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .contact-details {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.5;
+
+      p {
+        margin-bottom: 5px;
+      }
+
+      .label {
+        font-weight: 700;
+        margin-right: 5px;
+      }
+
+      a {
+        color: #333333;
+        text-decoration: none;
+
+        &:hover {
+          color: #0056b3;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .online-presence {
+      margin-bottom: 25px;
+      font-size: 16px;
+
+      .email {
+        color: #0056b3; // Link blue
+        text-decoration: underline;
+      }
+
+      .separator {
+        color: #333333;
+        margin: 0 5px;
+      }
+
+      .website {
+        color: #0056b3; // Link blue
+        text-decoration: underline;
+      }
+    }
+
+    .signature-banner {
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}

@@ -11,6 +11,7 @@ import Swal from "sweetalert2";
 
 const Contact2 = () => {
 	const [phone, setPhone] = useState("");
+	const [formattedPhone, setFormattedPhone] = useState("");
 	const [email, setEmail] = useState("");
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -36,7 +37,7 @@ const Contact2 = () => {
 				firstName: formData.get("cfName2"),
 				lastName: "",
 				email: email,
-				mobile: phone,
+				mobile: formattedPhone || phone, // Fallback to raw if formatted is empty
 				subject: formData.get("cfSubject2"),
 				message: formData.get("cfMessage2"),
 				turnstileToken,
@@ -61,6 +62,7 @@ const Contact2 = () => {
 				});
 				e.target.reset();
 				setPhone("");
+				setFormattedPhone("");
 				setEmail("");
 
 			} else {
@@ -188,7 +190,10 @@ const Contact2 = () => {
 											<PhoneInput
 												country={"us"}
 												value={phone}
-												onChange={(phone) => setPhone(phone)}
+												onChange={(phone, country, e, formattedValue) => {
+													setPhone(phone);
+													setFormattedPhone(formattedValue);
+												}}
 												enableSearch={true}
 												searchPlaceholder="Search country..."
 												searchNotFound="No country found"
