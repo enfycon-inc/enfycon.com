@@ -227,6 +227,30 @@
 	}
 }
 
+/* Mobile menu: bluish tone */
+.hamburger-area {
+	.hamburger_bg {
+		background: linear-gradient(160deg, #0b1f3f 0%, #071632 55%, #020828 100%);
+	}
+
+	.hamburger_wrapper {
+		&::before {
+			background: rgba(67, 97, 238, 0.45);
+		}
+	}
+
+	.mean-nav {
+		ul {
+			li {
+				a,
+				button {
+					border-bottom-color: rgba(67, 97, 238, 0.18);
+				}
+			}
+		}
+	}
+}
+
 .tj-offcanvas-area {
 	position: fixed;
 	inset-inline-end: -490px;
