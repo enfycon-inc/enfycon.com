@@ -67,7 +67,7 @@ export default function OurCulture() {
 
 
 						{/* Employee Testimonials */}
-						<CultureTestimonials />
+						{/* <CultureTestimonials /> */}
 
 
 
