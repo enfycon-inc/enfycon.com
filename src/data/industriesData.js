@@ -199,13 +199,14 @@ export const industriesData = [
         id: "government",
         title: "Government & Civic Services",
         desc: "Modernizing public sector operations with secure, citizen-centric digital solutions that enhance transparency, efficiency, and accessibility.",
-        image: "/images/industries/government.jpg",
+        image: "/images/industries/government/govt.jpeg",
         metaTitle: "Government Technology Solutions & E-Governance | enfycon",
         metaDescription: "Empower public sector transformation with enfycon. We provide e-governance platforms, smart city solutions, and secure digital records management.",
-        overviewTitle: "Building the Next-Generation Public Sector",
+        overviewTitle: "Future-ready government, built with purpose",
         longDesc: [
-            "Governments worldwide are facing increasing pressure to modernize their operations and deliver services that match the efficiency and convenience of the private sector. Citizens today expect seamless digital interactions, transparency, and rapid responsiveness from their public institutions. To meet these demands, government agencies must embrace digital transformation, moving away from paper-based legacy systems to agile, cloud-native platforms that foster trust and engagement.",
-            "enfycon partners with public sector organizations to build secure, scalable, and citizen-centric digital ecosystems. Our solutions range from integrated e-governance portals that simplify access to public services to smart city initiatives that leverage IoT and data analytics for better urban management. By prioritizing security, interoperability, and user experience, we help governments operate more efficiently, make data-driven decisions, and ultimately serve their communities better."
+            "As technology reshapes how people live and work, expectations from the public sector are rising just as fast. Citizens now look for the same speed, transparency, and ease from governments that they experience with modern digital services.",
+            "At enfycon, we partner with governments to design and deliver future-ready public services. Our focus is clear: helping institutions adopt the right technology, modernize systems, and stay ahead of evolving public needs.",
+            "We bring technology and strategy together to enable governments to innovate with confidence and tackle complex challenges—whether it’s climate resilience, public health, education, or national security—while keeping people at the center of every solution."
         ],
         icon: "fa-regular fa-landmark",
         challenges: [
@@ -346,26 +347,44 @@ export const industriesData = [
         workingModule: {
             title: "E-Governance Transformation",
             desc: "Replacing paper-based bureaucracy with streamlined digital workflows. We assist governments in creating unified portals where citizens can access services, pay fees, and track applications in real-time.",
-            image: "/images/industries/government/e-governance.jpg"
+            image: "/images/industries/government/egovernace.jpeg"
         },
         solutions: [
             {
                 title: "Smart City Platform",
                 desc: "A centralized command center for monitoring and managing urban infrastructure, from streetlights to waste collection.",
-                image: "/images/industries/government/smart-city.jpg",
+                image: "/images/industries/government/smartcity2.jpg",
                 color: "#00dcd3"
             },
             {
                 title: "Public Safety Cloud",
                 desc: "Integrated solutions for law enforcement and emergency services to share data and coordinate responses effectively.",
-                image: "/images/industries/government/public-safety.jpg",
+                image: "/images/industries/government/sefty.jpg",
                 color: "#ff6b00"
             },
             {
                 title: "Digital Records System",
                 desc: "Secure digitization and management of public records, ensuring longevity, accessibility, and compliance with archival laws.",
-                image: "/images/industries/government/digital-records.jpg",
+                image: "/images/industries/government/digilocker.jpeg",
                 color: "#7462e1"
+            },
+            {
+                title: "E-Governance & Citizen Portals",
+                desc: "Unified platforms for seamless access to government services, payments, and grievance redressal, improving citizen satisfaction.",
+                image: "/images/industries/government/egovernace.jpeg",
+                color: "#F59E0B"
+            },
+            {
+                title: "Public Finance Hub",
+                desc: "Integrated financial management systems for transparent budgeting, treasury operations, and revenue collection.",
+                image: "/images/industries/government/finance.jpg",
+                color: "#10B981"
+            },
+            {
+                title: "Social Welfare Management",
+                desc: "Efficient distribution of benefits and subsidies with biometric authentication to ensure they reach the intended beneficiaries.",
+                image: "/images/industries/government/social-walefare.jpg",
+                color: "#EC4899"
             }
         ],
         cta: {
