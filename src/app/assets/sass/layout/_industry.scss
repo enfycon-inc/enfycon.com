@@ -358,13 +358,13 @@ START: Industry Details New Sections CSS
     }
 
     .section-title {
-        font-size: 30px; // Match standard H3 size usually
+        font-size: 32px; // Match standard H3 size usually
         margin-bottom: 40px;
         color: var(--tj-color-heading-primary);
         text-align: left; // Left align as requested
 
         @media #{$sm, $xs} {
-            font-size: 24px;
+            font-size: 20px;
         }
     }
 }
@@ -426,7 +426,7 @@ START: Industry Details New Sections CSS
             flex-direction: column;
 
             .title {
-                font-size: 24px;
+                font-size: 20px;
                 font-weight: 600;
                 margin-bottom: 15px;
                 color: var(--tj-color-heading-primary);
