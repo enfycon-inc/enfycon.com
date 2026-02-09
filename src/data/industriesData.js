@@ -1120,182 +1120,196 @@ export const industriesData = [
         }
     },
     {
-        id: "logistics",
-        title: "Logistics & Distribution",
-        desc: "Optimizing logistics operations with real-time tracking, route optimization, and intelligent fleet management solutions.",
-        image: "/images/industries/logistic.jpg",
-        overviewTitle: "Optimizing Global Motion",
+        id: "supply-chain-logistics",
+        title: "Logistics & Supply Chain",
+        desc: "Optimizing global supply chains and logistics operations with real-time tracking, intelligent procurement, and end-to-end visibility.",
+        image: "/images/industries/supply-chain.jpg",
+        metaTitle: "Logistics & Supply Chain Solutions | enfycon",
+        metaDescription: "Transform your supply chain with enfycon. We offer end-to-end visibility, smart logistics, and automated procurement solutions.",
+        overviewTitle: "End-to-End Global Operations",
         longDesc: [
-            "Logistics is the backbone of the global economy, but it is currently strained by unprecedented volatility and customer demand for instant gratification. The era of static trade routes is over; today's supply chains must be dynamic, responsive networks capable of adapting to weather events, border delays, and demand spikes in real-time. Visibility alone is no longer enough—companies need the predictive intelligence to act on information before it impacts the bottom line.",
-            "We deliver logistics solutions that turn supply chains into competitive advantages. utilizing IoT sensors and real-time tracking, our platforms provide end-to-end visibility from the warehouse floor to the customer's doorstep. Our route optimization algorithms consider traffic, fuel costs, and delivery windows to ensure maximum efficiency. By digitizing fleet management and inventory flows, we help you deliver on time, every time, while minimizing your environmental footprint and operational costs."
+            "In a globally connected world, the supply chain is the backbone of the economy. Recent global disruptions have exposed the fragility of lean supply chains, highlighting the urgent need for resilience, agility, and visibility. Leaders are now prioritizing resilient networks that can withstand shocks and adapt to volatile demand in real-time.",
+            "We deliver comprehensive solutions that unify supply chain and logistics operations. By integrating IoT sensors for real-time tracking with advanced analytics for demand sensing, we provide a single source of truth from the warehouse floor to the customer's doorstep. Our platforms optimize routes, automate procurement, and predict maintenance needs, helping you deliver on time, every time, while minimizing specific environmental impact and operational costs."
         ],
         icon: "fa-regular fa-truck-fast",
         challenges: [
             {
-                title: "Supply Chain Disruptions",
-                desc: "Unpredictable events, from pandemics to natural disasters, causing delays and forcing the search for reliable alternatives. Building resilience against these shocks is now a top priority for logistics leaders.",
-                icon: "fa-regular fa-link-slash"
+                title: "Global Volatility",
+                desc: "Geopolitical events, trade wars, and pandemics disrupting the flow of goods globally. Building resilience against these shocks is a top priority.",
+                icon: "fa-regular fa-earth-americas"
+            },
+            {
+                title: "Inventory Visibility",
+                desc: "Lack of real-time insights into stock levels across multiple locations results in lost sales and tied-up capital. Blind spots create uncertainty and risk.",
+                icon: "fa-regular fa-eye-slash"
             },
             {
                 title: "Rising Fuel Costs",
-                desc: "Fluctuating energy prices impact operational margins significantly, making cost control a constant struggle. Efficient route planning and fleet management are essential to mitigate these volatile expenses.",
+                desc: "Fluctuating energy prices impact operational margins significantly. Efficient route planning and fleet management are essential to mitigate these expenses.",
                 icon: "fa-regular fa-gas-pump"
             },
             {
                 title: "Last-Mile Inefficiency",
-                desc: "High costs and complexity associated with the final step of delivery, which can account for over 50% of total shipping costs. Solving the last-mile puzzle is key to customer satisfaction and profitability.",
+                desc: "High costs and complexity associated with the final step of delivery. Solving the last-mile puzzle is key to customer satisfaction and profitability.",
                 icon: "fa-regular fa-box-open"
             },
             {
                 title: "Demand Unpredictability",
-                desc: "Difficulty in accurately forecasting customer needs and peaks leads to underutilized assets or missed opportunities. Agile operations are required to respond to sudden shifts in market demand.",
+                desc: "Rapid shifts in consumer demand lead to stockouts or waste. Agile operations are required to respond to sudden market changes effectively.",
                 icon: "fa-regular fa-arrow-trend-up"
             },
             {
-                title: "Labor Shortages",
-                desc: "Lack of qualified drivers and warehouse personnel is a global crisis slowing down supply chains. Recruiting, retaining, and upskilling staff is becoming increasingly difficult and expensive.",
-                icon: "fa-regular fa-user-slash"
-            },
-            {
-                title: "Tracking Visibility",
-                desc: "Customers and stakeholders are demanding real-time transparency into shipment status. Lack of visibility leads to anxiety, increased support calls, and a lack of trust in the logistics provider.",
-                icon: "fa-regular fa-eye"
+                title: "Sustainable Sourcing",
+                desc: "Growing pressure to ensure ethical and environmentally friendly supply chains. Auditing suppliers and optimizing routes for green practices is resource-intensive.",
+                icon: "fa-regular fa-leaf"
             }
         ],
         benefits: [
             {
+                title: "End-to-End Visibility",
+                desc: "Track products from raw material extraction to final delivery in real-time. Know exactly where everything is at any moment to make proactive decisions.",
+                icon: "fa-regular fa-binoculars"
+            },
+            {
                 title: "Route Optimization",
-                desc: "AI calculates the most efficient paths to save time and fuel, considering traffic, weather, and delivery windows. This significantly cuts mileage and reduces the carbon footprint of the fleet.",
+                desc: "AI calculates the most efficient paths to save time and fuel, considering traffic and weather. This cuts mileage and reduces the carbon footprint.",
                 icon: "fa-regular fa-route"
             },
             {
-                title: "Real-Time Tracking",
-                desc: "End-to-end visibility for shipments enhances customer trust and allows for proactive exception management. Stakeholders can see exactly where their goods are at any moment.",
-                icon: "fa-regular fa-location-dot"
-            },
-            {
-                title: "Cost Reduction",
-                desc: "Optimized load planning, fleet usage, and fuel management drastically reduce overall operational expenses. Maximizing the value of every mile driven improves the bottom line.",
-                icon: "fa-regular fa-wallet"
-            },
-            {
-                title: "Improved Delivery Speed",
-                desc: "Streamlined operations and automated decision-making lead to faster turnaround times. Meeting tight delivery windows becomes the norm rather than the exception.",
-                icon: "fa-regular fa-stopwatch"
-            },
-            {
-                title: "Asset Utilization",
-                desc: "Maximize the use of vehicles and warehouse space effectively through intelligent scheduling and slotting. Reducing idle time and empty space increases return on asset investment.",
+                title: "Optimized Inventory",
+                desc: "Maintain ideal stock levels to free up working capital. Smart algorithms predict exactly what you need, where, and when.",
                 icon: "fa-regular fa-warehouse"
             },
             {
-                title: "Sustainability",
-                desc: "Reduced mileage, optimized loads, and eco-friendly driving behaviors lower the carbon footprint. Green logistics is becoming a competitive advantage and a regulatory requirement.",
-                icon: "fa-regular fa-leaf"
+                title: "Cost Reduction",
+                desc: "Optimized load planning, fleet usage, and automated procurement reduce overall operational expenses and improve profit margins.",
+                icon: "fa-regular fa-wallet"
+            },
+            {
+                title: "Resilient Operations",
+                desc: "Quickly adapt to disruptions by identifying alternative suppliers or routes instantly. Resilience turns potential crises into manageable events.",
+                icon: "fa-regular fa-shield-halved"
+            },
+            {
+                title: "Improved Speed",
+                desc: "Streamlined operations and automated decision-making lead to faster turnaround times. Meeting tight delivery windows becomes the norm.",
+                icon: "fa-regular fa-stopwatch"
             }
         ],
         useCases: [
             {
                 title: "Dynamic Route Planning",
-                desc: "Adjusting routes in real-time based on traffic accidents, weather conditions, and new pickup requests. Dynamic routing ensures drivers are always on the optimal path, no matter what happens.",
+                desc: "Adjusting routes in real-time based on traffic and weather. Ensures drivers are always on the optimal path.",
                 icon: "fa-regular fa-map-location"
             },
             {
-                title: "Demand Forecasting",
-                desc: "Predicting future shipping volumes to allocate resources efficiently during peak and off-peak seasons. Accurate forecasts prevent capacity bottlenecks and wasted resources.",
-                icon: "fa-regular fa-chart-area"
+                title: "Demand Sensing",
+                desc: "Using AI to detect demand signals from various sources to adjust plans early. allows reaction to trends before they become obvious.",
+                icon: "fa-regular fa-satellite-dish"
             },
             {
                 title: "Predictive Maintenance",
-                desc: "Anticipating vehicle breakdowns before they occur by analyzing sensor data and usage patterns. This prevents costly roadside failures and ensures fleet availability.",
+                desc: "Anticipating vehicle breakdowns before they occur by analyzing sensor data. Prevents costly roadside failures.",
                 icon: "fa-regular fa-screwdriver-wrench"
             },
             {
                 title: "Warehouse Automation",
-                desc: "Robots and AI managing inventory, sorting, and order picking to speed up fulfillment. Automation works alongside humans to increase throughput and accuracy in distribution centers.",
+                desc: "Robots and AI managing inventory, sorting, and picking. Increases throughput and accuracy in distribution centers.",
                 icon: "fa-regular fa-robot"
             },
             {
-                title: "Load Optimization",
-                desc: "Algorithms ensuring containers and trucks are packed efficiently to maximize space utilization (3D Tetris). Fewer trips with fuller loads mean lower costs and emissions.",
-                icon: "fa-regular fa-cubes-stacked"
+                title: "Supplier Risk Management",
+                desc: "Monitoring data to predict potential supplier issues. Get alerted to risks before they impact your supply.",
+                icon: "fa-regular fa-triangle-exclamation"
             },
             {
-                title: "Smart Inventory",
-                desc: "Real-time stock level monitoring and automated reordering prevent stockouts and overstocking. Tracking inventory with RFID and IoT gives absolute certainty of what is on hand.",
-                icon: "fa-regular fa-boxes-stacked"
+                title: "Blockchain Tracking",
+                desc: "Immutable ledgers for proving provenance and authenticity. Consumers can verify product origin with certainty.",
+                icon: "fa-regular fa-link"
             }
         ],
         process: [
             {
                 title: "Network Analysis",
-                desc: "We start by mapping your entire supply chain network to find inefficiencies and structural weaknesses. This high-level view helps us identify where changes will yield the biggest impact.",
+                desc: "We map your entire supply chain and logistics network to find inefficiencies. This high-level view identifies where changes yield the biggest impact.",
                 icon: "fa-regular fa-globe"
             },
             {
                 title: "Data Integration",
-                desc: "Connecting GPS, warehouse management systems (WMS), and ERPs for unified data visibility. We break down silos to create a single source of truth for your logistics operations.",
+                desc: "Connecting GPS, WMS, ERPs, and partners for unified visibility. We break down silos to create a single source of truth.",
                 icon: "fa-regular fa-database"
             },
             {
-                title: "Pilot Implementation",
-                desc: "Testing solutions on specific routes or regions before full rollout to validate results and gather user feedback. This risk-averse approach ensures the solution fits your specific needs.",
-                icon: "fa-regular fa-flask"
+                title: "Risk Analysis",
+                desc: "Identifying vulnerabilities to create contingency plans. We stress-test your supply chain against various disruption scenarios.",
+                icon: "fa-regular fa-magnifying-glass-chart"
+            },
+            {
+                title: "Solution Design",
+                desc: "Architecting secure and scalable solutions for procurement, fleet management, and tracking. Our designs prioritize resilience and efficiency.",
+                icon: "fa-regular fa-pen-ruler"
             },
             {
                 title: "Full Deployment",
-                desc: "Scaling solutions across the entire fleet and warehouse network once the pilot is proven successful. We manage the rollout to minimize disruption to ongoing operations.",
+                desc: "Rolling out solutions across the fleet and warehouse network. We manage the rollout to minimize disruption to operations.",
                 icon: "fa-regular fa-truck-plane"
             },
             {
-                title: "Training",
-                desc: "Upskilling staff to use handhelds, dashboards, and new logistical software effectively. Drivers and warehouse staff are key to data accuracy, so their engagement is critical.",
-                icon: "fa-regular fa-chalkboard"
-            },
-            {
-                title: "Performance Review",
-                desc: "Monitoring key KPIs like on-time delivery (OTD) and cost-per-mile to ensure continuous improvement. We help you stay on track to meet your operational and financial goals.",
-                icon: "fa-regular fa-clipboard-list"
+                title: "Continuous Optimization",
+                desc: "Monitoring KPIs like On-Time Delivery and cost-per-mile. We help you stay on track to meet operational goals.",
+                icon: "fa-regular fa-chart-line"
             }
         ],
         edge: [
-            "Real-Time Visibility Platform",
+            "End-to-End Visibility",
             "Advanced Route Algorithms",
-            "IoT Integration Capabilities",
+            "Predictive Risk Analytics",
             "Sustainable Logistics Focus",
-            "Scalable for Global Operations"
+            "Scalable Global Operations"
         ],
         workingModule: {
-            title: "Fleet & Route Management",
-            desc: "Maximizing fleet efficiency and timely deliveries with dynamic routing and real-time asset tracking to navigate complex logistics networks. We put you in the driver's seat of your operations.",
-            image: "/images/industries/logistic.jpg"
+            title: "Supply Chain Resilience",
+            desc: "Building robust supply networks that can withstand disruptions and adapt to changing global demands through data-driven strategies and real-time logistics management.",
+            image: "/images/industries/supply-chain.jpg"
         },
         solutions: [
             {
                 title: "Route Optimization",
-                desc: "AI calculates the fastest and most fuel-efficient paths, adapting to real-time traffic. Save on fuel and improve on-time delivery rates with ease.",
+                desc: "AI calculates the fastest and most fuel-efficient paths, adapting to real-time traffic.",
                 image: "/images/industries/logistic.jpg",
                 color: "#FF5722"
             },
             {
-                title: "Asset Tracking",
-                desc: "Real-time location monitoring of vehicles and cargo for complete transparency. never lose track of a shipment again with our advanced telematics.",
-                image: "/images/industries/logistic.jpg",
-                color: "#03A9F4"
+                title: "Inventory Optimization",
+                desc: "Balancing stock levels automatically to free up working capital and prevent stockouts.",
+                image: "/images/industries/supply-chain.jpg",
+                color: "#009688"
             },
             {
-                title: "Predictive Maintenance",
-                desc: "Prevent vehicle breakdowns before they happen by analyzing engine data trends. Keep your fleet on the road and out of the shop.",
+                title: "Asset Tracking",
+                desc: "Real-time location monitoring of vehicles and cargo for complete transparency.",
                 image: "/images/industries/logistic.jpg",
-                color: "#F44336"
+                color: "#03A9F4"
             }
         ],
         cta: {
-            title: "Optimize Your Logistics Chain",
-            desc: "Drive efficiency and sustainability in your logistics operations with our smart solutions.",
+            title: "Optimize Your Global Operations",
+            desc: "Drive efficiency, sustainability, and resilience in your supply chain and logistics with our smart solutions.",
             buttonText: "Contact Us",
             buttonLink: "/contact-us"
-        }
+        },
+        details: [
+            {
+                title: "Integrated Logistics",
+                desc: "Seamlessly connect your procurement, warehousing, and transportation strategies. Our holistic approach eliminates friction between different stages of the supply chain.",
+                image: "/images/industries/logistic.jpg"
+            },
+            {
+                title: "Smart Procurement",
+                desc: "Automate and optimize your sourcing processes. Use data to evaluate supplier performance and negotiate better terms.",
+                image: "/images/industries/supply-chain.jpg"
+            }
+        ]
     },
     {
         id: "manufacturing",
@@ -1471,184 +1485,6 @@ export const industriesData = [
         cta: {
             title: "Build the Factory of the Future",
             desc: "Transform your manufacturing operations with intelligent automation and data-driven insights.",
-            buttonText: "Contact Us",
-            buttonLink: "/contact-us"
-        }
-    },
-    {
-        id: "supply-chain",
-        title: "Supply Chain & Procurement",
-        desc: "Enhancing supply chain efficiency with end-to-end visibility, predictive analytics, and automated procurement solutions.",
-        image: "/images/industries/supply-chain.jpg",
-        overviewTitle: "End-to-End Supply Chain Visibility",
-        longDesc: [
-            "In a globally connected world, the supply chain is more than just a logistical function; it is a critical business driver that can make or break profitability. Recent global disruptions have exposed the fragility of lean supply chains, highlighting the urgent need for resilience and redundancy. Leaders are now prioritizing visibility and risk management, seeking to understand not just their immediate suppliers, but the entire multi-tier network.",
-            "We architect resilient supply chain ecosystems that withstand the shocks of a volatile market. Our solutions integrate disparate data sources—from procurement and inventory to shipping and sales—into a single source of truth. Advanced analytics enable demand sensing that looks beyond historical sales to predict future needs, while automated procurement ensures you are never caught short. By building transparency and intelligence into every link of the chain, we help you navigate uncertainty with confidence."
-        ],
-        icon: "fa-regular fa-boxes-packing",
-        challenges: [
-            {
-                title: "Global Volatility",
-                desc: "Geopolitical events, trade wars, and pandemics disrupting the flow of goods globally. Companies need agility to navigate these rapid changes without stalling operations.",
-                icon: "fa-regular fa-earth-americas"
-            },
-            {
-                title: "Inventory Visibility",
-                desc: "Lack of real-time insights into stock levels across multiple locations results in lost sales and tied-up capital. Blind spots in the chain of custody create uncertainty and risk.",
-                icon: "fa-regular fa-eye-slash"
-            },
-            {
-                title: "Supplier Reliability",
-                desc: "Risks associated with supplier insolvency, quality issues, or failure to deliver on time. Relying on single-source suppliers without monitoring their health is a dangerous gamble.",
-                icon: "fa-regular fa-handshake-slash"
-            },
-            {
-                title: "Demand Fluctuations",
-                desc: "Rapid, unpredictable shifts in consumer demand leading to expensive stockouts or wasteful overstock. Traditional forecasting methods struggle to keep up with viral trends.",
-                icon: "fa-regular fa-chart-line-down"
-            },
-            {
-                title: "Sustainable Sourcing",
-                desc: "Growing pressure from consumers and regulators to ensure ethical and environmentally friendly supply chains. Auditing suppliers for green practices is resource-intensive.",
-                icon: "fa-regular fa-leaf"
-            },
-            {
-                title: "Cost Management",
-                desc: "Balancing speed and service quality with rising logistical and raw material costs. Every delay or inefficiency compounds to erode profit margins.",
-                icon: "fa-regular fa-sack-dollar"
-            }
-        ],
-        benefits: [
-            {
-                title: "End-to-End Visibility",
-                desc: "Track products from raw material extraction to final delivery in real-time. Know exactly where everything is at any moment to make proactive decisions.",
-                icon: "fa-regular fa-binoculars"
-            },
-            {
-                title: "Optimized Inventory",
-                desc: "Maintain ideal stock levels to free up working capital and reduce warehousing fees. Smart algorithms predict exactly what you need, where, and when.",
-                icon: "fa-regular fa-warehouse"
-            },
-            {
-                title: "Resilient Operations",
-                desc: "Quickly adapt to disruptions by identifying alternative suppliers or routes instantly. Resilience turns potential crises into manageable manageable events.",
-                icon: "fa-regular fa-shield-halved"
-            },
-            {
-                title: "Strategic Sourcing",
-                desc: "Data-driven supplier selection improves quality, reliability, and reduces risk profiles. Scorecards and automated audits ensure your partners meet your standards.",
-                icon: "fa-regular fa-handshake"
-            },
-            {
-                title: "Reduced Waste",
-                desc: "Better forecasting means less expired, obsolete, or discounted inventory. Sustainable practices also reduce packaging waste and optimized routing cuts emissions.",
-                icon: "fa-regular fa-trash-arrow-up"
-            },
-            {
-                title: "Customer Satisfaction",
-                desc: "Reliable delivery times and product availability boost customer loyalty and LTV. When you deliver on promises consistently, customers stick around.",
-                icon: "fa-regular fa-face-smile-beam"
-            }
-        ],
-        useCases: [
-            {
-                title: "Demand Sensing",
-                desc: "Using AI to detect demand signals from social media and news to adjust plans early. This allows for reaction to trends before they become obvious sales spikes.",
-                icon: "fa-regular fa-satellite-dish"
-            },
-            {
-                title: "Supplier Risk Management",
-                desc: "Monitoring news, financial data, and weather to predict potential supplier issues. Get alerted to a supplier's factory fire before they even call you.",
-                icon: "fa-regular fa-triangle-exclamation"
-            },
-            {
-                title: "Inventory Optimization",
-                desc: "Algorithms balancing service level targets with inventory holding costs to find the sweet spot. Ensure you have stock for orders without overflowing the warehouse.",
-                icon: "fa-regular fa-scale-balanced"
-            },
-            {
-                title: "Procurement Automation",
-                desc: "Automating purchase orders, invoice processing, and vendor onboarding. Frees up procurement teams to focus on strategic negotiation and relationships.",
-                icon: "fa-regular fa-file-invoice"
-            },
-            {
-                title: "Blockchain Tracking",
-                desc: "Immutable ledgers for proving provenance, authenticity, and ethical labor practices. Consumers can verify the origin of their products with certainty.",
-                icon: "fa-regular fa-link"
-            },
-            {
-                title: "Network Optimization",
-                desc: "Designing the optimal warehouse and distribution center footprint to minimize time and cost. Determine the best locations for new facilities based on demand heatmaps.",
-                icon: "fa-regular fa-map"
-            }
-        ],
-        process: [
-            {
-                title: "Supply Chain Mapping",
-                desc: "Creating a digital twin of the entire supply network to visualize flows and dependencies. You can't improve what you can't see.",
-                icon: "fa-regular fa-draw-polygon"
-            },
-            {
-                title: "Visibility Integration",
-                desc: "Connecting partners, carriers, and systems for real-time data sharing via APIs. We build the digital threads that tie the chain together.",
-                icon: "fa-regular fa-plug-circle-plus"
-            },
-            {
-                title: "Risk Analysis",
-                desc: "Identifying vulnerabilities and single points of failure to create contingency plans. We stress-test your supply chain against various disruption scenarios.",
-                icon: "fa-regular fa-magnifying-glass-chart"
-            },
-            {
-                title: "Optimization Modeling",
-                desc: "Running simulations to improve efficiency, reduce carbon footprint, and lower costs. We find the mathematical optimum for your logistics operations.",
-                icon: "fa-regular fa-laptop-code"
-            },
-            {
-                title: "Implementation",
-                desc: "Rolling out new tools and processes to teams and partners with a focus on adoption. We ensure everyone in the chain is on the same page.",
-                icon: "fa-regular fa-truck-fast"
-            },
-            {
-                title: "Monitoring",
-                desc: "Continuous supervision and adjustment of supply chain parameters to maintain peak performance. We provide the dashboard for your supply chain control tower.",
-                icon: "fa-regular fa-desktop"
-            }
-        ],
-        edge: [
-            "Global Supply Chain Visibility",
-            "Predictive Risk Analytics",
-            "Sustainability Focus",
-            "vendor-Neutral Integration",
-            "Agile Response Capabilities"
-        ],
-        workingModule: {
-            title: "Supply Chain Resilience",
-            desc: "Building robust supply networks that can withstand disruptions and adapt to changing global demands through data-driven strategies.",
-            image: "/images/industries/supply-chain.jpg"
-        },
-        solutions: [
-            {
-                title: "Demand Forecasting",
-                desc: "Predicting market needs with high accuracy to optimize production and procurement.",
-                image: "/images/industries/supply-chain.jpg",
-                color: "#9C27B0"
-            },
-            {
-                title: "Inventory Optimization",
-                desc: "Balancing stock levels automatically to free up working capital and prevent stockouts.",
-                image: "/images/industries/supply-chain.jpg",
-                color: "#009688"
-            },
-            {
-                title: "Supplier Management",
-                desc: "Tools to evaluate and manage vendor risks and performance effectively.",
-                image: "/images/industries/supply-chain.jpg",
-                color: "#3F51B5"
-            }
-        ],
-        cta: {
-            title: "Strengthen Your Supply Chain",
-            desc: "Build a resilient, efficient, and transparent supply chain with our advanced technology solutions.",
             buttonText: "Contact Us",
             buttonLink: "/contact-us"
         }

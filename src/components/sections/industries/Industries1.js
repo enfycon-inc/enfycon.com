@@ -7,15 +7,16 @@ const Industries1 = () => {
     const industryConfig = {
         banking: { color: "#0891B2", icon: "fa-solid fa-building-columns" }, // Teal
         finance: { color: "#10B981", icon: "fa-solid fa-chart-line" }, // Emerald green
+        government: { color: "#64748B", icon: "fa-solid fa-landmark" }, // Slate
         healthcare: { color: "#8B5CF6", icon: "fa-solid fa-heart-pulse" }, // Vibrant purple
         "human-resource": { color: "#EC4899", icon: "fa-solid fa-users" }, // Vibrant pink
         legal: { color: "#1E40AF", icon: "fa-solid fa-scale-balanced" }, // Deep blue
-        logistics: { color: "#F59E0B", icon: "fa-solid fa-truck-fast" }, // Amber
+        "supply-chain-logistics": { color: "#F59E0B", icon: "fa-solid fa-truck-fast" }, // Amber
         manufacturing: { color: "#F97316", icon: "fa-solid fa-industry" }, // Vibrant orange
-        "supply-chain": { color: "#6366F1", icon: "fa-solid fa-boxes-stacked" }, // Indigo
+        tourism: { color: "#6366F1", icon: "fa-solid fa-plane-departure" }, // Indigo
     };
 
-    const industries = industriesData.slice(0, 8).map(industry => ({
+    const industries = industriesData.slice(0, 9).map(industry => ({
         ...industry,
         bgColor: industryConfig[industry.id]?.color || "#64748B",
         icon: industryConfig[industry.id]?.icon || "fa-solid fa-briefcase"

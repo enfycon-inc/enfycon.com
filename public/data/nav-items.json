@@ -227,33 +227,33 @@
 			},
 			{
 				"id": 4,
+				"name": "Government & Civic Services",
+				"icon": "fa-light fa-landmark",
+				"path": "/industries/government"
+			},
+			{
+				"id": 5,
 				"name": "Human Resource",
 				"icon": "fa-light fa-users",
 				"path": "/industries/human-resource"
 			},
 			{
-				"id": 5,
+				"id": 6,
 				"name": "Legal",
 				"icon": "fa-light fa-balance-scale",
 				"path": "/industries/legal"
 			},
 			{
-				"id": 6,
-				"name": "Logistics",
-				"icon": "fa-light fa-truck",
-				"path": "/industries/logistics"
-			},
-			{
 				"id": 7,
-				"name": "Manufacturing",
-				"icon": "fa-light fa-industry",
-				"path": "/industries/manufacturing"
+				"name": "Logistics & Supply Chain",
+				"icon": "fa-light fa-truck-fast",
+				"path": "/industries/supply-chain-logistics"
 			},
 			{
 				"id": 8,
-				"name": "Supply Chain",
-				"icon": "fa-light fa-boxes-packing",
-				"path": "/industries/supply-chain"
+				"name": "Manufacturing",
+				"icon": "fa-light fa-industry",
+				"path": "/industries/manufacturing"
 			},
 			{
 				"id": 9,
