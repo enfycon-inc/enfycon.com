@@ -196,6 +196,198 @@ export const industriesData = [
         ]
     },
     {
+        id: "government",
+        title: "Government & Civic Services",
+        desc: "Modernizing public sector operations with secure, citizen-centric digital solutions that enhance transparency, efficiency, and accessibility.",
+        image: "/images/industries/government.jpg",
+        metaTitle: "Government Technology Solutions & E-Governance | enfycon",
+        metaDescription: "Empower public sector transformation with enfycon. We provide e-governance platforms, smart city solutions, and secure digital records management.",
+        overviewTitle: "Building the Next-Generation Public Sector",
+        longDesc: [
+            "Governments worldwide are facing increasing pressure to modernize their operations and deliver services that match the efficiency and convenience of the private sector. Citizens today expect seamless digital interactions, transparency, and rapid responsiveness from their public institutions. To meet these demands, government agencies must embrace digital transformation, moving away from paper-based legacy systems to agile, cloud-native platforms that foster trust and engagement.",
+            "enfycon partners with public sector organizations to build secure, scalable, and citizen-centric digital ecosystems. Our solutions range from integrated e-governance portals that simplify access to public services to smart city initiatives that leverage IoT and data analytics for better urban management. By prioritizing security, interoperability, and user experience, we help governments operate more efficiently, make data-driven decisions, and ultimately serve their communities better."
+        ],
+        icon: "fa-regular fa-landmark",
+        challenges: [
+            {
+                title: "Legacy Systems",
+                desc: "Many government agencies rely on outdated, siloed infrastructure that is difficult to maintain and integrate with modern technologies. These legacy systems hinder agility and increase the risk of operational failure.",
+                icon: "fa-regular fa-server"
+            },
+            {
+                title: "Data Security & Privacy",
+                desc: "Protecting sensitive citizen data from cyber threats while ensuring compliance with strict privacy regulations is a paramount concern. Governments are high-value targets for cyberattacks, requiring robust defense mechanisms.",
+                icon: "fa-regular fa-shield-halved"
+            },
+            {
+                title: "Bureaucratic Inefficiency",
+                desc: "Complex, manual workflows and red tape often result in slow service delivery and frustration for citizens. Streamlining these processes through automation is essential for improving public satisfaction.",
+                icon: "fa-regular fa-stamp"
+            },
+            {
+                title: "Citizen Engagement",
+                desc: "Bridging the gap between the government and the public to foster trust and participation is a growing challenge. diverse populations require accessible, multi-channel communication strategies.",
+                icon: "fa-regular fa-users-viewfinder"
+            },
+            {
+                title: "Budget Constraints",
+                desc: "Delivering high-quality digital services with limited public funds requires cost-effective and sustainable solutions. Governments must maximize the value of every taxpayer dollar spent on technology.",
+                icon: "fa-regular fa-file-invoice-dollar"
+            },
+            {
+                title: "Interoperability",
+                desc: "Ensuring different agencies and departments can share data and collaborate effectively is often blocked by incompatible systems. Unified platforms are needed to provide a holistic view of public administration.",
+                icon: "fa-regular fa-network-wired"
+            }
+        ],
+        benefits: [
+            {
+                title: "Enhanced Transparency",
+                desc: "Open data initiatives and digital platforms provide citizens with clear visibility into government operations and spending. This openness builds public trust and accountability.",
+                icon: "fa-regular fa-eye"
+            },
+            {
+                title: "Improved Service Delivery",
+                desc: "Digitizing public services reduces wait times and simplifies access for citizens, available 24/7 from anywhere. This shift improves the overall quality of life and citizen satisfaction.",
+                icon: "fa-regular fa-hand-holding-heart"
+            },
+            {
+                title: "Cost Savings",
+                desc: "Automating manual processes and moving to cloud infrastructure significantly reduces operational overhead. These savings can be redirected towards critical public programs.",
+                icon: "fa-regular fa-piggy-bank"
+            },
+            {
+                title: "Data-Driven Policy",
+                desc: "Leveraging analytics to inform policy decisions leads to more effective and targeted public interventions. Real-time data helps officials respond quickly to emerging societal needs.",
+                icon: "fa-regular fa-chart-pie"
+            },
+            {
+                title: "Increased Security",
+                desc: "Implementing state-of-the-art cybersecurity measures protects critical infrastructure and sensitive citizen information. A secure digital foundation is essential for national stability.",
+                icon: "fa-regular fa-lock"
+            },
+            {
+                title: "Smart Urban Management",
+                desc: "IoT and AI solutions optimize city services like traffic, waste management, and energy consumption. Smart cities are more sustainable, livable, and resilient.",
+                icon: "fa-regular fa-city"
+            }
+        ],
+        useCases: [
+            {
+                title: "Digital Identity",
+                desc: "Secure, unified digital ID systems allow citizens to access multiple government services with a single credential. This simplifies verification and reduces fraud.",
+                icon: "fa-regular fa-id-card"
+            },
+            {
+                title: "Smart Traffic Control",
+                desc: "AI-powered traffic management systems analyze flow patterns to optimize signal timing and reduce congestion. This reduces commute times and lowers vehicle emissions.",
+                icon: "fa-regular fa-traffic-light"
+            },
+            {
+                title: "Public Safety Analytics",
+                desc: "Predictive policing and emergency response optimization using data analysis to improve community safety. Faster response times save lives and resources.",
+                icon: "fa-regular fa-building-shield"
+            },
+            {
+                title: "E-Voting Systems",
+                desc: "Secure, transparent, and accessible electronic voting platforms that encourage higher voter participation. Blockchain technology can ensure the integrity of every vote.",
+                icon: "fa-regular fa-check-to-slot"
+            },
+            {
+                title: "Tax Automation",
+                desc: "Simplifying tax filing and collection through digital portals and automated compliance checks. This increases revenue collection rates and reduces the burden on taxpayers.",
+                icon: "fa-regular fa-file-invoice"
+            },
+            {
+                title: "Disaster Response",
+                desc: "Real-time coordination platforms for emergency services during natural disasters or crises. Effective communication and resource deployment are critical in these high-stakes situations.",
+                icon: "fa-regular fa-house-tsunami"
+            }
+        ],
+        process: [
+            {
+                title: "Needs Assessment",
+                desc: "We conduct a thorough analysis of agency requirements and citizen needs to identify key areas for digital intervention. This ensures our solutions address the most pressing public challenges.",
+                icon: "fa-regular fa-clipboard-list"
+            },
+            {
+                title: "Digital Strategy",
+                desc: "Developing a comprehensive roadmap for digital transformation that aligns with legislative mandates and budget cycles. We prioritize initiatives that deliver the highest public value.",
+                icon: "fa-regular fa-compass"
+            },
+            {
+                title: "Secure Architecture",
+                desc: "Designing resilient, compliant infrastructure that meets the highest standards of government security (e.g., FedRAMP). comprehensive security is baked in from the ground up, not added on.",
+                icon: "fa-regular fa-shield-cat"
+            },
+            {
+                title: "Agile Development",
+                desc: "Iterative development of citizen-facing applications to ensure usability and rapid deployment. We involve end-users early to ensure the solutions meet real-world needs.",
+                icon: "fa-regular fa-code"
+            },
+            {
+                title: "Change Management",
+                desc: "Training government staff and managing the cultural shift towards digital-first operations. We ensure your team is ready to embrace and maximize new technologies.",
+                icon: "fa-regular fa-people-arrows"
+            },
+            {
+                title: "Public Launch",
+                desc: "Rolling out services with robust support and public awareness campaigns to drive adoption. We monitor performance closely to ensure a smooth transition for all citizens.",
+                icon: "fa-regular fa-rocket"
+            }
+        ],
+        edge: [
+            "Government-Grade Security Compliance",
+            "Citizen-Centric Design Principles",
+            "Deep Public Sector Domain Knowledge",
+            "Scalable & Interoperable Platforms",
+            "Focus on Digital Inclusion"
+        ],
+        workingModule: {
+            title: "E-Governance Transformation",
+            desc: "Replacing paper-based bureaucracy with streamlined digital workflows. We assist governments in creating unified portals where citizens can access services, pay fees, and track applications in real-time.",
+            image: "/images/industries/government/e-governance.jpg"
+        },
+        solutions: [
+            {
+                title: "Smart City Platform",
+                desc: "A centralized command center for monitoring and managing urban infrastructure, from streetlights to waste collection.",
+                image: "/images/industries/government/smart-city.jpg",
+                color: "#00dcd3"
+            },
+            {
+                title: "Public Safety Cloud",
+                desc: "Integrated solutions for law enforcement and emergency services to share data and coordinate responses effectively.",
+                image: "/images/industries/government/public-safety.jpg",
+                color: "#ff6b00"
+            },
+            {
+                title: "Digital Records System",
+                desc: "Secure digitization and management of public records, ensuring longevity, accessibility, and compliance with archival laws.",
+                image: "/images/industries/government/digital-records.jpg",
+                color: "#7462e1"
+            }
+        ],
+        cta: {
+            title: "Modernize Public Service Delivery",
+            desc: "Partner with Enfycon to build a smarter, safer, and more efficient government for your citizens.",
+            buttonText: "Contact Us",
+            buttonLink: "/contact-us"
+        },
+        details: [
+            {
+                title: "Citizen Engagement Portals",
+                desc: "Create two-way communication channels between the government and the community. Our platforms facilitate public feedback, town halls, and service requests, strengthening the social contract.",
+                image: "/images/industries/government/citizen-engagement.jpg"
+            },
+            {
+                title: "Secure Data Interoperability",
+                desc: "Break down agency silos with secure data exchange frameworks. We enable seamless collaboration between departments while maintaining strict access controls and privacy standards.",
+                image: "/images/industries/government/data-interoperability.jpg"
+            }
+        ]
+    },
+    {
         id: "finance",
         title: "Finance",
         desc: "Transforming financial services with enfycon's intelligent automation, risk management solutions, and next-generation payment systems for the digital economy.",
