@@ -1,6 +1,6 @@
 "use client";
-import styles from "./Publications.module.css";
-import PublicationCard from "./PublicationCard";
+import styles from "./PublicationsPage.module.css";
+import PublicationCard from "./PublicationsPageCard";
 import Link from "next/link";
 
 const PublicationSections = () => {

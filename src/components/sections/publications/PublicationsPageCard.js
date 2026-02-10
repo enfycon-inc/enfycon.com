@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./Publications.module.css";
+import styles from "./PublicationsPage.module.css";
 
 const PublicationCard = ({
     title,

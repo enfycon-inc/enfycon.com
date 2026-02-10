@@ -1,7 +1,7 @@
 import Footer2 from "@/components/layout/footer/Footer2";
 import Header from "@/components/layout/header/Header";
 import BlogHeroEnterprise from "@/components/sections/blogs/BlogHeroEnterprise";
-import PublicationSections from "@/components/sections/publications/PublicationSections";
+import PublicationSections from "@/components/sections/publications/PublicationPageSections";
 import HeaderSpace from "@/components/shared/others/HeaderSpace";
 import { constructMetadata } from "@/libs/seo";
 
