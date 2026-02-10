@@ -24,7 +24,7 @@ export const metadata = {
 
 export default async function Home() {
 	// Temporary delay removed
-	const blogs = await getAllBlogs(null, 4);
+	const blogs = await getAllBlogs(null, 6);
 
 	return (
 		<div>
@@ -47,11 +47,12 @@ export default async function Home() {
 						{/* <Team1 /> */}
 						{/* <PricingPlan /> */}
 						{/* <PricingPlan /> */}
-						<Blogs2 blogs={blogs} />
-						<HomePublications />
-						<Testimonials2 />
-						<Testimonials2 />
+						/
+						<HomePublications blogs={blogs} />
+					
+
 						<Faq2 type={2} />
+						<Testimonials2 />
 					</main>
 					<Footer2 />
 				</div>

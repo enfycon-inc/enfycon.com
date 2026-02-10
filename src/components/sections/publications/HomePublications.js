@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import PublicationCard from "./PublicationsPageCard";
 
-const HomePublications = () => {
+const HomePublications = ({ blogs }) => {
     const [activeTab, setActiveTab] = useState("All");
     const [featuredIndex, setFeaturedIndex] = useState(0);
 
@@ -181,41 +181,41 @@ const HomePublications = () => {
         ]
     };
 
-    // Helper to get ALL items for the "All" tab
-    const getAllItems = () => {
-        let allItems = [];
-        Object.keys(dummyData).forEach(key => {
-            const itemsWithCategory = dummyData[key].map(item => ({ ...item, category: key }));
-            allItems = [...allItems, ...itemsWithCategory];
-        });
-        // Sort by date equivalent (simplified for this dummy data, just taking the first 4 for now to mimic "Featured" + 3 list items)
-        // In a real app, you would sort by actual date object.
-        return allItems.slice(0, 4);
-    };
+    // Use real blogs if available, otherwise fallback to dummy data
+    const blogItems = (blogs && blogs.length > 0) ? blogs.map(blog => {
+        // Strip HTML from excerpt
+        const stripHtml = (html) => {
+            if (!html) return "";
+            return html.replace(/<[^>]*>?/gm, '');
+        };
 
-    const allItems = getAllItems();
-    const featuredItem = allItems[featuredIndex];
-    // filter out the featured item for the list, limit to 3
-    const listItems = allItems.filter((_, index) => index !== featuredIndex).slice(0, 3);
+        // Format date to "Feb 09, 2026"
+        const formattedDate = `${blog.month} ${String(blog.day).padStart(2, '0')}, ${blog.year}`;
 
-    // If we want the list to always be the index 0, 1, 2, 3 but just highlight different ones on left:
-    // The requirement says: "Clicking a right item updates the featured card on the left"
-    // So the list should probably STAY constant, but the featured one updates? 
-    // OR does the list rotate?
-    // "Right column ... vertical list of 3 compact publications ... Clicking a right item updates the featured card on the left"
-    // Let's keep the list static for simplicity, and just allow clicking them to swap the featured view.
-    // Actually, a better UX is if you click one, it becomes featured, and the previous featured one moves to the list?
-    // No, standard tab behavior usually just updates the view.
-    // Let's stick to: List shows items. Clicking one makes it the "Featured" item.
-    // To make it simple: The "Featured" item is just `allItems[featuredIndex]`.
-    // The "Right List" is `allItems` excluding the `featuredIndex`.
+        return {
+            id: blog.id,
+            title: blog.title,
+            date: formattedDate,
+            excerpt: stripHtml(blog.desc),
+            image: blog.featuredImage || '/images/blog/blogs-backdrop.jpg', // Use backdrop if no image
+            link: `/blogs/${blog.id}`,
+            author: blog.author,
+            readTime: "5 min read", // Hardcoded for now, or calculate if content available
+            category: "Blogs"
+        };
+    }) : dummyData.Blogs.map(item => ({ ...item, category: 'Blogs' }));
 
-    const handleListClick = (originalIndex) => {
-        setFeaturedIndex(originalIndex);
-    }
+    // Get one item from each other category for the right list
+    const otherCategories = ["White Papers", "Newsletters", "Case Studies", "Brochures"];
+    const otherItems = otherCategories.map(cat => {
+        const item = dummyData[cat][0]; // Get the first item
+        return item ? { ...item, category: cat } : null;
+    }).filter(item => item !== null).slice(0, 4); // Limit to 4 items
+
+    const featuredItem = blogItems[featuredIndex];
 
     // For other tabs
-    const activeData = activeTab === "All" ? [] : dummyData[activeTab];
+    const activeData = activeTab === "All" ? [] : (activeTab === "Blogs" ? blogItems : dummyData[activeTab]);
 
 
     return (
@@ -259,7 +259,7 @@ const HomePublications = () => {
                             {/* Featured Hero */}
                             <div
                                 className="featured-hero"
-                                style={{ backgroundImage: `url(${featuredItem?.image || '/images/blog/blog-1.jpg'})` }}
+                                style={{ backgroundImage: `url(${featuredItem?.image || '/images/blog/blogs-backdrop.jpg'})` }}
                             >
                                 <div className="hero-overlay">
                                     <div className="hero-content">
@@ -278,13 +278,13 @@ const HomePublications = () => {
 
                                 <div className="hero-nav">
                                     <button
-                                        onClick={() => setFeaturedIndex(prev => prev > 0 ? prev - 1 : allItems.length - 1)}
+                                        onClick={() => setFeaturedIndex(prev => prev > 0 ? prev - 1 : blogItems.length - 1)}
                                         aria-label="Previous"
                                     >
                                         <i className="tji-arrow-left"></i>
                                     </button>
                                     <button
-                                        onClick={() => setFeaturedIndex(prev => prev < allItems.length - 1 ? prev + 1 : 0)}
+                                        onClick={() => setFeaturedIndex(prev => prev < blogItems.length - 1 ? prev + 1 : 0)}
                                         aria-label="Next"
                                     >
                                         <i className="tji-arrow-right"></i>
@@ -294,31 +294,23 @@ const HomePublications = () => {
 
                             {/* Compact List */}
                             <div className="compact-list">
-                                {allItems.map((item, index) => {
-                                    if (index === featuredIndex) return null; // Don't show the featured item in the list? 
-                                    // The design usually implies a "Up next" or "More" list.
-                                    // Let's show the top 3 items that AREN'T the featured one.
-
-                                    return (
-                                        <div
-                                            key={item.id}
-                                            className="list-item"
-                                            onClick={() => setFeaturedIndex(index)}
-                                        >
-                                            <img
-                                                src={item.image}
-                                                alt={item.title}
-                                                className="item-image"
-                                            />
-                                            <div className="item-content">
-                                                <span className="category-label">{item.category}</span>
-                                                <h4>{item.title}</h4>
-                                            </div>
+                                {otherItems.map((item) => (
+                                    <div
+                                        key={item.id}
+                                        className="list-item"
+                                    // onClick={() => {}} // No interaction requested for list items
+                                    >
+                                        <img
+                                            src={item.image}
+                                            alt={item.title}
+                                            className="item-image"
+                                        />
+                                        <div className="item-content">
+                                            <span className="category-label">{item.category}</span>
+                                            <h4>{item.title}</h4>
                                         </div>
-                                    )
-                                }).slice(0, 3)}
-                                {/* Slice applies to the result of map? No. Map returns array with nulls. */}
-                                {/* Need to filter first. */}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     ) : (
