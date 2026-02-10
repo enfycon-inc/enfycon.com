@@ -48,8 +48,8 @@ export default async function Home() {
 						{/* <PricingPlan /> */}
 						{/* <PricingPlan /> */}
 						/
-						<HomePublications blogs={blogs} />
-					
+						{/* <HomePublications blogs={blogs} /> */}
+					<Blogs2 blogs={blogs} />
 
 						<Faq2 type={2} />
 						<Testimonials2 />
