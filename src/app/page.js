@@ -11,6 +11,7 @@ const Process = dynamic(() => import("@/components/sections/process/Process"));
 const Services6 = dynamic(() => import("@/components/sections/services/Services6"));
 const Testimonials2 = dynamic(() => import("@/components/sections/testimonials/Testimonials2"));
 const Industries6 = dynamic(() => import("@/components/sections/industries/Industries6"));
+const HomePublications = dynamic(() => import("@/components/sections/publications/HomePublications"));
 const Faq2 = dynamic(() => import("@/components/sections/faq/Faq2"));
 import BackToTop from "@/components/shared/others/BackToTop";
 import ClientWrapper from "@/components/shared/wrappers/ClientWrapper";
@@ -36,16 +37,19 @@ export default async function Home() {
 						<Brands2 />
 						<About3 />
 						<Services6 />
-					
+
 						<Industries6 />
-					
+
 
 						<Products2 />
 						<Process />
 
 						{/* <Team1 /> */}
 						{/* <PricingPlan /> */}
+						{/* <PricingPlan /> */}
 						<Blogs2 blogs={blogs} />
+						<HomePublications />
+						<Testimonials2 />
 						<Testimonials2 />
 						<Faq2 type={2} />
 					</main>
