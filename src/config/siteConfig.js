@@ -26,7 +26,7 @@ export const siteConfig = {
     regions: ["USA", "India", "UAE"],
 
     // API Configuration
-    blogApiUrl: (process.env.NEXT_PUBLIC_WORDPRESS_API_URL || "https://wp.enfyjobs.com").replace(/\/$/, ""),
+    blogApiUrl: (process.env.NEXT_PUBLIC_WORDPRESS_API_URL || "https://wp.enfycon.com").replace(/\/$/, ""),
 };
 
 export default siteConfig;
