@@ -95,7 +95,7 @@ const BlogDetailsPrimary = ({ post, option, relatedPosts }) => {
 									<span>Share:</span>
 									<div className="social-icons">
 										{(() => {
-											const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dev.enfyjobs.com";
+											const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://enfycon.com";
 											const shareUrl = `${baseUrl}/blogs/${post.id || ""}`;
 											return (
 												<>
